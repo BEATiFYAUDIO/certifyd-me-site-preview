@@ -1,0 +1,3138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link rel="icon" type="image/png" href="screenshots/tab-icon.png?v=20260404e" />
+  <link rel="shortcut icon" type="image/png" href="screenshots/tab-icon.png?v=20260404e" />
+  <link rel="apple-touch-icon" href="screenshots/tab-icon.png?v=20260404e" />
+  <title>Certifyd | Own Your Content and Revenue</title>
+
+  <meta
+    name="description"
+    content="Certifyd Creator helps creators publish from their own workspace, prove identity, and connect attribution, proofs, and payments across the open web."
+  />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <style>
+
+    /* ===== Anchor jump offset (so header doesn't cover section titles) ===== */
+:root{
+  --header-offset: 122px; /* desktop default */
+}
+
+/* Tell the browser how much space to leave when scrolling to #anchors */
+html{
+  scroll-padding-top: var(--header-offset);
+  scroll-behavior: smooth;
+}
+
+/* Also apply per-section so it works even if some browsers ignore scroll-padding */
+section[id]{
+  scroll-margin-top: var(--header-offset);
+}
+
+/* Match your header sizing on smaller screens */
+@media (max-width: 860px){
+  :root{ --header-offset: 108px; }
+}
+@media (max-width: 520px){
+  :root{ --header-offset: 100px; }
+}
+
+    :root{
+      --bg:#146f95;
+      --bg-elevated:#1a86b0;
+      --bg-overlay:#319cc4;
+      --panel:rgba(8,55,78,0.58);
+      --panel2:rgba(12,70,98,0.66);
+      --border:rgba(205,238,255,0.28);
+      --border2:#3a4554;
+      --text:#e8ecf1;
+      --text-secondary:#b4bdc8;
+      --muted:#8a95a3;
+      --certifyd-orange:#ff8a00;
+      --certifyd-gold:var(--certifyd-orange);
+      --certifyd-sapphire:#5f9fff;
+      --certifyd-blue:var(--certifyd-sapphire);
+      --certifyd-bg:#147dab;
+      --certifyd-text:#ffffff;
+      --glass-surface:rgba(255,255,255,0.042);
+      --glass-surface-soft:rgba(255,255,255,0.026);
+      --glass-border:rgba(255,255,255,0.08);
+      --glass-blur:16px;
+      --focus:rgba(95,159,255,0.42);
+      --brand:var(--certifyd-orange);
+      --brand-hover:#ff9f2a;
+      --brand-active:#d97300;
+      --accent-secondary:var(--certifyd-blue);
+      --success:#4fa078;
+      --warning:var(--certifyd-orange);
+      --danger:#c35f5f;
+      --info:#5f89c6;
+      --radius:20px;
+      --wrap:1280px;
+      --pad:clamp(16px, 4vw, 48px);
+      --space-section:clamp(26px, 4vw, 52px);
+      --space-section-tight:clamp(16px, 2.6vw, 32px);
+      --space-card:clamp(18px, 2.4vw, 28px);
+      --space-stack:clamp(12px, 1.8vw, 20px);
+      --panel-radius:8px;
+      --shadow:0 30px 90px rgba(0,0,0,0.65);
+    }
+
+    *{ box-sizing:border-box; }
+    html{
+      font-size:clamp(16px,1.02vw,18px);
+      background:var(--certifyd-bg);
+      overflow-x:hidden;
+    }
+    body{
+      position:relative;
+      isolation:isolate;
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background:
+        linear-gradient(180deg, rgba(34,120,158,0.9), rgba(12,80,114,0.94)),
+        radial-gradient(1100px 720px at 10% -8%, rgba(184,238,255,0.36), transparent 60%),
+        radial-gradient(980px 660px at 88% 6%, rgba(82,207,250,0.30), transparent 62%),
+        radial-gradient(920px 620px at 42% 42%, rgba(38,169,220,0.40), transparent 70%),
+        radial-gradient(720px 460px at 84% 78%, rgba(255,160,20,0.14), transparent 70%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+      text-rendering:optimizeLegibility;
+    }
+    body::before,
+    body::after{
+      content:"";
+      position:fixed;
+      inset:-20%;
+      pointer-events:none;
+    }
+    body::before{
+      inset:-12%;
+      z-index:0;
+      opacity:0.55;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.42' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 .16 .5 .82 1'/%3E%3CfeFuncG type='discrete' tableValues='0 .16 .5 .82 1'/%3E%3CfeFuncB type='discrete' tableValues='0 .16 .5 .82 1'/%3E%3CfeFuncA type='table' tableValues='0 .36 .66 .9 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E"),
+        radial-gradient(480px 340px at 24% 18%, rgba(0,0,0,0.3), transparent 74%),
+        radial-gradient(520px 360px at 78% 20%, rgba(255,255,255,0.1), transparent 76%),
+        radial-gradient(620px 420px at 70% 76%, rgba(0,0,0,0.24), transparent 78%);
+      background-size:110px 110px, cover, cover, cover;
+      background-color:transparent;
+      mix-blend-mode:multiply;
+      animation:certifyd-tv-static 5200ms steps(8, end) infinite;
+      will-change:transform, background-position, opacity;
+    }
+    body::after{
+      z-index:-1;
+      opacity:0.64;
+      background:
+        radial-gradient(760px 500px at 16% 12%, rgba(208,246,255,0.28), transparent 66%),
+        radial-gradient(700px 460px at 78% 18%, rgba(78,214,255,0.22), transparent 64%),
+        radial-gradient(760px 520px at 18% 82%, rgba(22,139,190,0.18), transparent 70%),
+        radial-gradient(620px 400px at 72% 78%, rgba(255,143,0,0.08), transparent 70%),
+        radial-gradient(900px 620px at 50% 48%, rgba(12,102,148,0.04), rgba(0,0,0,0.14) 76%);
+      filter:blur(12px);
+      animation:certifyd-ambient-drift 46s ease-in-out infinite alternate;
+    }
+
+    main,
+    footer{
+      position:relative;
+      z-index:1;
+      width:100%;
+      min-width:0;
+    }
+    @keyframes certifyd-ambient-drift{
+      from{ transform:translate3d(-1.5%, -1%, 0) scale(1); }
+      to{ transform:translate3d(1.5%, 1%, 0) scale(1.035); }
+    }
+    @keyframes certifyd-tv-static{
+      0%{ transform:translate3d(-1.75%, -1.1%, 0); background-position:-70px -45px, 0 0, 0 0, 0 0; opacity:0.72; }
+      20%{ transform:translate3d(-1.05%, -0.66%, 0); background-position:-42px -27px, 0 0, 0 0, 0 0; opacity:0.81; }
+      40%{ transform:translate3d(-0.35%, -0.22%, 0); background-position:-14px -9px, 0 0, 0 0, 0 0; opacity:0.74; }
+      60%{ transform:translate3d(0.35%, 0.22%, 0); background-position:14px 9px, 0 0, 0 0, 0 0; opacity:0.82; }
+      80%{ transform:translate3d(1.05%, 0.66%, 0); background-position:42px 27px, 0 0, 0 0, 0 0; opacity:0.76; }
+      100%{ transform:translate3d(1.75%, 1.1%, 0); background-position:70px 45px, 0 0, 0 0, 0 0; opacity:0.8; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      body::before,
+      body::after,
+      .hero-grid::before{
+        animation:none;
+      }
+      .btn,
+      .chat-launch{
+        transition:none;
+      }
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    iframe{ max-width:100%; }
+
+    :focus-visible{
+      outline:3px solid var(--certifyd-blue);
+      box-shadow:0 0 0 4px var(--focus);
+      outline-offset:3px;
+      border-radius:10px;
+    }
+
+    /* ✅ One container rule everywhere = no asymmetry */
+    .wrap{
+      width:100%;
+      max-width:var(--wrap);
+      margin:0 auto;
+      padding-inline:var(--pad);
+      box-sizing:border-box;
+    }
+
+    /* ---------- Accessibility ---------- */
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:12px;
+      padding:12px 14px;
+      background:#000;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:12px;
+      transform:translateY(-220%);
+      z-index:2000;
+    }
+    .skip-link:focus{ transform:translateY(0); }
+
+    /* ---------- Header ---------- */
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1600;
+      background:linear-gradient(180deg, rgba(8,10,13,0.82), rgba(8,10,13,0.68));
+      backdrop-filter:blur(var(--glass-blur));
+      -webkit-backdrop-filter:blur(var(--glass-blur));
+      border-bottom:1px solid var(--glass-border);
+      box-shadow:0 18px 70px rgba(0,0,0,0.30);
+    }
+
+    /* ✅ “symmetry rail”: forces equal left/right edges even on mobile */
+    .header-rail{
+      position:relative;
+      border-bottom:0px solid rgba(206,214,255,0.10);
+      background:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.008));
+      overflow:visible;
+    }
+    .header-rail::before{
+      content:"";
+      position:absolute;
+      left:max(18px, calc((100vw - var(--wrap)) / 2));
+      top:-70px;
+      width:260px;
+      height:160px;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 24% 54%, rgba(212,175,55,0.16), transparent 48%),
+        radial-gradient(circle at 62% 46%, rgba(111,168,255,0.08), transparent 56%);
+      filter:blur(28px);
+      opacity:0.82;
+    }
+
+    .header-inner{
+      display:grid;
+      grid-template-columns:auto 1fr auto; /* brand | nav | menu */
+      align-items:center;
+      gap:10px;
+      min-height:94px;
+      padding:6px 0;
+    }
+
+    /* Brand */
+    .brand{
+      display:flex;
+      align-items:center;
+      height:90px;
+      overflow:visible;
+      min-width:0;
+    }
+    .brand img{
+      height:104px;
+      width:auto;
+      max-width:100%;
+      object-fit:contain;
+      transform:none;
+      filter:drop-shadow(0 12px 28px rgba(0,0,0,0.45));
+    }
+
+    /* Desktop nav */
+    .nav-desktop{
+      justify-self:end;
+      display:flex;
+      gap:6px;
+      align-items:center;
+      white-space:nowrap;
+    }
+    .nav-desktop a{
+      padding:10px 14px;
+      font-size:0.95rem;
+      border-radius:12px;
+      min-height:44px;
+      display:flex;
+      align-items:center;
+      border:1px solid transparent;
+      transition:background 210ms ease, border-color 210ms ease, color 210ms ease, box-shadow 210ms ease;
+    }
+    .nav-desktop a:hover{
+      background:var(--glass-surface);
+      border-color:var(--glass-border);
+      box-shadow:0 12px 30px rgba(0,0,0,0.18);
+    }
+
+    /* Mobile menu */
+    .nav-mobile{
+      display:none;
+      position:relative;
+      justify-self:end;
+      z-index:1700;
+    }
+    .nav-mobile summary{
+      list-style:none;
+      cursor:pointer;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--glass-border);
+      background:var(--glass-surface);
+      min-height:40px;
+      width:50px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 14px 40px rgba(0,0,0,0.25);
+    }
+    .nav-mobile summary::-webkit-details-marker{ display:none; }
+
+    .burger{
+      display:inline-block;
+      width:22px;
+      height:14px;
+      position:relative;
+    }
+    .burger::before,
+    .burger::after,
+    .burger span{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      height:2px;
+      background:#d9e0ea;
+      border-radius:999px;
+    }
+    .burger::before{ top:0; }
+    .burger::after{ bottom:0; }
+    .burger span{ top:6px; }
+
+    .nav-drawer{
+      position:absolute;
+      right:0;
+      top:calc(100% + 12px);
+      min-width:260px;
+      padding:10px;
+      border-radius:18px;
+      border:1px solid var(--glass-border);
+      background:rgba(8,10,13,0.82);
+      backdrop-filter:blur(var(--glass-blur));
+      -webkit-backdrop-filter:blur(var(--glass-blur));
+      display:grid;
+      gap:6px;
+      box-shadow:var(--shadow);
+      z-index:1800;
+    }
+    .nav-drawer a{
+      padding:12px 12px;
+      border-radius:14px;
+      min-height:44px;
+      display:flex;
+      align-items:center;
+    }
+    .nav-drawer a:hover{ background:var(--glass-surface); }
+
+    @media (max-width: 860px){
+      .nav-desktop{ display:none; }
+      .nav-mobile{ display:block; }
+      .header-inner{
+        min-height:96px;
+        padding:8px var(--pad);
+      }
+    }
+
+    @media (max-width: 768px){
+      .header-inner{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        min-height:98px;
+        padding:8px var(--pad);
+        gap:14px;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        height:84px;
+        margin-left:0;
+      }
+      .brand img{
+        height:92px;
+        width:auto;
+        max-width:min(70vw, 410px);
+        max-height:98px;
+        object-fit:contain;
+        object-position:left center;
+        display:block;
+      }
+      .nav-mobile{
+        margin-left:auto;
+        margin-right:0;
+        align-self:center;
+        padding-right:2px;
+      }
+      .nav-drawer{
+        right:0;
+        min-width:min(320px, calc(100vw - (var(--pad) * 2)));
+      }
+    }
+    @media (max-width: 380px){
+      .brand img{
+        height:80px;
+        max-width:min(66vw, 300px);
+      }
+      .nav-mobile summary{
+        width:50px;
+        min-height:42px;
+      }
+    }
+
+    /* ---------- Sections ---------- */
+    section{ padding:var(--space-section-tight) 0; }
+    /* Unified primary experience wrapper surface */
+    #top,
+    #live-profile,
+    #fan-app,
+    #product,
+    #ownership,
+    #own,
+    #data,
+    .proof-section,
+    #network{
+      border-left:1px solid rgba(206,235,255,0.22);
+      border-right:1px solid rgba(206,235,255,0.22);
+      background:linear-gradient(180deg, rgba(10,44,67,0.16), rgba(7,33,52,0.14));
+    }
+    #top{
+      border-top:1px solid rgba(206,235,255,0.22);
+      border-top-left-radius:10px;
+      border-top-right-radius:10px;
+    }
+    #network{
+      border-bottom:1px solid rgba(206,235,255,0.22);
+      border-bottom-left-radius:10px;
+      border-bottom-right-radius:10px;
+    }
+    #top{
+      padding-top:clamp(18px, 3vw, 42px);
+      padding-bottom:var(--space-section-tight);
+      position:relative;
+      isolation:isolate;
+    }
+    #top::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      background:
+        linear-gradient(180deg, rgba(6,17,28,0.14), rgba(6,17,28,0.08) 42%, rgba(6,17,28,0.16));
+    }
+    #top .hero-grid{
+      position:relative;
+      z-index:1;
+    }
+    #fan-app,
+    #product,
+    #ownership,
+    #live-profile,
+    #fan-app,
+    #product,
+    #ownership,
+    #live-profile,
+    #fan-app,
+    #product,
+    #ownership,
+    #own,
+    #data,
+    .proof-section,
+    #how,
+    #network{
+      padding-top:var(--space-section-tight);
+      padding-bottom:var(--space-section-tight);
+    }
+    section[id]{
+      position:relative;
+    }
+    section[id] + section[id]::before{
+      content:none;
+    }
+
+    h1{
+      font-size:clamp(2.35rem, 5.7vw, 4.15rem);
+      line-height:1.02;
+      margin:0 0 20px;
+      letter-spacing:-0.032em;
+      text-wrap:balance;
+    }
+    .hero-title{
+      position:relative;
+      display:block;
+      width:100%;
+      font-size:clamp(2.35rem, 4.85vw, 4.35rem);
+      white-space:normal;
+      text-wrap:normal;
+      color:var(--text);
+    }
+    .hero-title-line{
+      display:inline-block;
+      max-width:100%;
+      white-space:nowrap;
+    }
+    .hero-title-orange{ color:var(--certifyd-orange); }
+    .hero-title-blue{ color:var(--certifyd-sapphire); }
+    .hero-title-blue-light{ color:#7ea8d2; }
+    .hero-title-white{ color:var(--certifyd-text); }
+    h2{
+      font-size:clamp(1.7rem, 3.4vw, 2.45rem);
+      margin:0 0 12px;
+      letter-spacing:-0.015em;
+      text-wrap:balance;
+    }
+    h3{ margin:0 0 8px; font-size:1.05rem; }
+
+    p{
+      max-width:72ch;
+      color:var(--text-secondary);
+      margin:0;
+      font-size:1.04rem;
+      line-height:1.65;
+    }
+    ul{
+      margin:12px 0 0;
+      padding-left:20px;
+      color:var(--text-secondary);
+    }
+    li{ margin:8px 0; }
+
+    /* ---------- Hero ---------- */
+    .hero-grid{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(0, 1fr);
+      gap:0;
+      align-items:center;
+      min-width:0;
+    }
+    .hero-grid > div{
+      width:100%;
+      max-width:1120px;
+      margin-inline:auto;
+    }
+    .hero-grid::before{
+      content:"";
+      position:absolute;
+      inset:-80px -10% -60px;
+      pointer-events:none;
+      z-index:-1;
+      background:
+        radial-gradient(520px 320px at 22% 22%, rgba(111,168,255,0.065), transparent 68%),
+        radial-gradient(500px 300px at 62% 8%, rgba(255,138,0,0.06), transparent 66%),
+        radial-gradient(460px 280px at 44% 72%, rgba(255,138,0,0.045), transparent 70%);
+      filter:blur(22px);
+      opacity:0.54;
+      animation:certifyd-hero-breathe 36s ease-in-out infinite alternate;
+    }
+    @keyframes certifyd-hero-breathe{
+      from{ transform:translate3d(-1%, -0.5%, 0) scale(1); }
+      to{ transform:translate3d(1%, 0.8%, 0) scale(1.025); }
+    }
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns:1fr; }
+      .hero-media-stack{ margin-top:8px; }
+      .hero-actions{ gap:10px; }
+      .hero-actions .btn{ flex:1 1 220px; }
+    }
+
+    .panel{
+      background:linear-gradient(160deg, rgba(8,32,51,0.95), rgba(5,24,40,0.95));
+      border:1px solid rgba(125,198,241,0.33);
+      border-radius:8px;
+      padding:26px;
+      box-shadow:0 28px 80px rgba(0,0,0,0.26);
+      backdrop-filter:blur(var(--glass-blur));
+      -webkit-backdrop-filter:blur(var(--glass-blur));
+    }
+    .feature-panel{
+      position:relative;
+      padding:var(--space-card);
+      border-radius:var(--panel-radius);
+      border:1px solid rgba(125,198,241,0.34);
+      background:
+        linear-gradient(155deg, rgba(8,38,60,0.95), rgba(5,27,45,0.95)),
+        rgba(6,30,49,0.94);
+      box-shadow:
+        0 20px 58px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(206,235,255,0.18);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      overflow:hidden;
+    }
+    .feature-panel::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      pointer-events:none;
+      border:1px solid rgba(206,235,255,0.24);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    #how.flow-inline{
+      border-color:rgba(125,198,241,0.5);
+      background:
+        linear-gradient(155deg, rgba(10,47,74,0.9), rgba(6,34,57,0.92)),
+        rgba(7,36,60,0.9);
+    }
+    .hero-shot{
+      display:block;
+      border-radius:20px;
+      border:1px solid rgba(111,134,167,0.34);
+      overflow:hidden;
+      box-shadow:0 36px 98px rgba(0,0,0,0.44);
+      aspect-ratio:16 / 10;
+    }
+    .hero-shot img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center center;
+    }
+    .hero-main-image{
+      position:relative;
+      min-width:0;
+      width:100%;
+      max-width:1120px;
+      margin:18px 0 24px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(207,227,245,0.22);
+      background:linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+      box-shadow:
+        0 28px 70px rgba(0,0,0,0.34),
+        0 0 0 1px rgba(111,168,255,0.05),
+        0 0 34px rgba(111,168,255,0.07);
+      aspect-ratio:16 / 9;
+      isolation:isolate;
+    }
+    .hero-main-image::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(180deg, rgba(4,10,16,0.1), rgba(4,10,16,0.22)),
+        radial-gradient(420px 220px at 18% 16%, rgba(255,159,10,0.035), transparent 68%),
+        radial-gradient(460px 250px at 86% 10%, rgba(111,168,255,0.055), transparent 70%);
+      mix-blend-mode:multiply;
+      opacity:0.58;
+      z-index:1;
+    }
+    .hero-main-image img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center center;
+      transform:scale(1.01);
+      filter:saturate(1.04) contrast(1.06) brightness(1.01);
+    }
+    .hero-image-caption{
+      margin:-6px 0 24px;
+      width:100%;
+      max-width:1120px;
+      color:rgba(223,232,242,0.84);
+      font-size:0.92rem;
+      font-style:normal;
+      font-weight:500;
+      letter-spacing:.01em;
+      line-height:1.5;
+      white-space:normal;
+      text-align:left;
+    }
+    .hero-media-stack{
+      display:grid;
+      gap:12px;
+      margin-top:12px;
+    }
+    .hero-mini-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:1fr 1fr;
+    }
+    .hero-mini{
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.02);
+      box-shadow:0 16px 44px rgba(0,0,0,0.24);
+    }
+    .hero-mini img{
+      width:100%;
+      display:block;
+    }
+    .hero-strip{
+      margin-top:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .hero-pill{
+      border:1px solid var(--border2);
+      background:rgba(255,255,255,0.02);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:0.82rem;
+      color:var(--text-secondary);
+    }
+    .hero-note{
+      margin-top:10px;
+      font-size:.86rem;
+      color:var(--muted);
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      margin-top:28px;
+      flex-wrap:wrap;
+    }
+    .hero-message-card{
+      margin-top:16px;
+      margin-bottom:16px;
+      padding:14px 16px;
+      border-radius:10px;
+      border:1px solid rgba(125,198,241,0.32);
+      background:linear-gradient(160deg, rgba(8,38,60,0.88), rgba(5,27,45,0.9));
+      box-shadow:0 12px 30px rgba(0,0,0,0.2);
+      max-width:none;
+    }
+    .hero-message-card p + p{
+      margin-top:10px;
+    }
+    #top .hero-actions .btn{
+      border-color:rgba(156,191,221,0.42);
+      background:linear-gradient(180deg, rgba(18,34,49,0.78), rgba(11,25,37,0.82));
+      color:#dbe6f2;
+      box-shadow:0 10px 28px rgba(0,0,0,0.24);
+    }
+    #top .hero-actions .btn:hover{
+      border-color:rgba(173,204,231,0.64);
+      background:linear-gradient(180deg, rgba(20,38,54,0.84), rgba(12,28,40,0.88));
+      box-shadow:0 14px 34px rgba(0,0,0,0.28);
+    }
+    #top .hero-actions .btn.primary{
+      color:#10151b;
+      border-color:rgba(255,163,41,0.82);
+      background:linear-gradient(180deg, #ffad33, #ff8a00 62%, #e67d00);
+      box-shadow:0 16px 38px rgba(255,138,0,0.26), inset 0 1px 0 rgba(255,255,255,0.22);
+    }
+    #top .hero-actions .btn.primary:hover{
+      border-color:rgba(255,177,79,0.92);
+      background:linear-gradient(180deg, #ffb347, #ff9820 62%, #e67d00);
+      box-shadow:0 18px 42px rgba(255,138,0,0.32), inset 0 1px 0 rgba(255,255,255,0.24);
+    }
+    .form-cta{
+      display:flex;
+      margin-top:6px;
+    }
+    .form-cta .btn{
+      width:auto;
+      min-height:42px;
+      padding:10px 14px;
+      font-size:.9rem;
+    }
+
+    .btn{
+      padding:14px 22px;
+      border-radius:16px;
+      border:1px solid rgba(111,168,255,0.44);
+      background:linear-gradient(180deg, rgba(255,255,255,0.052), rgba(255,255,255,0.024));
+      color:#f8fbff;
+      font-weight:720;
+      min-height:44px;
+      font-size:0.96rem;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 14px 44px rgba(0,0,0,0.22);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      transition:
+        transform 220ms cubic-bezier(.2,.8,.2,1),
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease,
+        color 220ms ease;
+    }
+    .btn:hover{
+      border-color:rgba(111,168,255,0.78);
+      box-shadow:0 18px 48px rgba(111,168,255,0.16);
+      transform:translateY(-1px);
+    }
+    .btn:focus-visible{
+      outline:3px solid rgba(111,168,255,0.82);
+      box-shadow:0 0 0 4px rgba(111,168,255,0.20), 0 18px 48px rgba(111,168,255,0.18);
+    }
+    .btn.primary{
+      color:#111418;
+      border-color:rgba(255,138,0,0.62);
+      background:linear-gradient(180deg, #ffad33, var(--certifyd-orange));
+      box-shadow:0 18px 44px rgba(255,138,0,0.22), inset 0 1px 0 rgba(255,255,255,0.20);
+    }
+    .btn.primary:hover{
+      border-color:rgba(255,177,79,0.88);
+      background:linear-gradient(180deg, #ffb347, #ff9820 58%, var(--certifyd-orange));
+      box-shadow:0 20px 50px rgba(255,138,0,0.26), inset 0 1px 0 rgba(255,255,255,0.24);
+      transform:translateY(-2px);
+    }
+    .btn.primary:focus-visible{
+      outline:3px solid rgba(255,138,0,0.82);
+      box-shadow:0 0 0 4px rgba(255,138,0,0.2), 0 22px 54px rgba(255,138,0,0.26);
+    }
+    .btn.primary:active{
+      background:linear-gradient(180deg, var(--brand-active), #ff8a00);
+      border-color:rgba(255,138,0,0.94);
+      box-shadow:0 10px 28px rgba(255,138,0,0.16), inset 0 2px 8px rgba(0,0,0,0.18);
+      transform:translateY(0);
+    }
+
+    /* ---------- Live Profile ---------- */
+    .live-profile-section{
+      margin-top:0;
+      padding-top:var(--space-section-tight);
+      padding-bottom:var(--space-section-tight);
+      border-top:none;
+    }
+    .live-profile-eyebrow{
+      font-size:0.74rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:#9fb2c9;
+      margin:0 0 8px;
+    }
+    .live-profile-intro{
+      margin:0 0 18px;
+      color:var(--text-secondary);
+    }
+    .live-profile-frame{
+      position:relative;
+      min-width:0;
+      width:100%;
+      margin-top:16px;
+      border:1px solid rgba(125,198,241,0.46);
+      border-radius:8px;
+      overflow:hidden;
+      background:linear-gradient(160deg, rgba(9,43,68,0.92), rgba(6,32,52,0.94));
+      box-shadow:0 34px 102px rgba(0,0,0,0.46);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+    .live-profile-open{
+      position:absolute;
+      top:12px;
+      right:12px;
+      z-index:2;
+      font-size:0.86rem;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(180deg, #ffad33, var(--certifyd-orange));
+      border:1px solid rgba(255,138,0,0.62);
+      color:#111418;
+      text-decoration:none;
+      font-weight:700;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      box-shadow:0 16px 38px rgba(255,138,0,0.24), inset 0 1px 0 rgba(255,255,255,0.2);
+    }
+    .live-profile-open:hover{
+      border-color:rgba(255,177,79,0.88);
+      background:linear-gradient(180deg, #ffb347, #ff9820 58%, var(--certifyd-orange));
+    }
+    .live-profile-embed{
+      display:block;
+      width:100%;
+      height:720px;
+      border:0;
+      background:#090c10;
+    }
+
+    /* ---------- Mid-page declaration stack ---------- */
+    .mid-editorial{
+      position:relative;
+      isolation:isolate;
+    }
+    .mid-editorial::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(180deg, rgba(0,0,0,0.80), rgba(0,0,0,0.9));
+      z-index:0;
+    }
+    .mid-editorial > *{
+      position:relative;
+      z-index:1;
+    }
+    .declaration-section{
+      padding-top:var(--space-section-tight);
+      padding-bottom:var(--space-section-tight);
+    }
+    .declaration-copy{
+      max-width:760px;
+    }
+    .ownership-moment{
+      margin-top:0;
+      margin-bottom:0;
+    }
+    .proof-section{
+      margin-top:0;
+      margin-bottom:0;
+    }
+    .proof-section .declaration-copy{
+      max-width:720px;
+    }
+    .network-section{
+      margin-top:0;
+    }
+    .network-section .declaration-copy{
+      max-width:640px;
+    }
+    .declaration-copy p + p{
+      margin-top:10px;
+    }
+    .declaration-center{
+      text-align:left;
+      margin-left:0;
+      margin-right:0;
+      display:grid;
+      gap:var(--space-stack);
+    }
+    .ownership-headline{
+      font-size:clamp(40px, 5vw, 72px);
+      line-height:1.06;
+      letter-spacing:-0.02em;
+      margin:0;
+      font-weight:800;
+      text-shadow:0 8px 24px rgba(0,0,0,0.45);
+    }
+    .ownership-mainline{
+      font-size:clamp(28px, 4vw, 48px);
+      line-height:1.12;
+      color:var(--text);
+      margin:0;
+      letter-spacing:-0.01em;
+      font-weight:600;
+      opacity:0.95;
+      text-shadow:0 6px 18px rgba(0,0,0,0.35);
+    }
+    .ownership-support{
+      margin-top:0;
+      font-size:18px;
+      color:var(--text-secondary);
+      font-weight:600;
+      opacity:0.7;
+    }
+    .proof-headline,
+    .network-headline{
+      font-size:clamp(36px, 4.2vw, 56px);
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      margin-bottom:14px;
+      text-shadow:0 8px 24px rgba(0,0,0,0.4);
+    }
+    .proof-body,
+    .network-body{
+      font-size:clamp(19px, 2vw, 24px);
+      line-height:1.45;
+      color:var(--text-secondary);
+      margin:0;
+      max-width:760px;
+      opacity:0.86;
+    }
+    .proof-kicker{
+      margin-top:14px;
+      font-size:clamp(18px, 1.8vw, 21px);
+      color:var(--text);
+      font-weight:700;
+      opacity:1;
+    }
+    .flow-divider{
+      text-align:left;
+      font-size:clamp(40px, 6.4vw, 82px);
+      font-weight:900;
+      letter-spacing:-0.03em;
+      line-height:1.02;
+      margin:0;
+      text-shadow:0 10px 30px rgba(0,0,0,0.48);
+    }
+    .flow-inline{
+      width:100%;
+      max-width:1120px;
+      padding:22px 26px;
+    }
+    .flow-arrow{
+      display:inline-block;
+      font-size:1.1em;
+      font-weight:900;
+      line-height:1;
+      margin:0 .08em;
+      color:var(--text);
+      text-shadow:0 10px 30px rgba(0,0,0,0.52);
+    }
+    .flow-break{
+      display:none;
+    }
+    .flow-tail{
+      display:block;
+      margin-top:2px;
+      font-size:1em;
+      font-weight:900;
+      letter-spacing:-0.01em;
+      color:#cfe5ff;
+      text-transform:none;
+    }
+    .distribution-card-title{
+      margin:0 0 14px;
+      font-size:clamp(1.55rem, 3vw, 2.2rem);
+      line-height:1.15;
+      letter-spacing:0.01em;
+      color:#f5fbff;
+      text-shadow:0 6px 20px rgba(0,0,0,0.32);
+    }
+    .distribution-card-copy{
+      font-size:clamp(1.2rem, 2.15vw, 1.5rem);
+      line-height:1.6;
+      color:#eef7ff;
+      max-width:68ch;
+      font-weight:600;
+      text-shadow:0 4px 16px rgba(0,0,0,0.22);
+    }
+    .distribution-manifesto{
+      padding:clamp(26px, 3vw, 38px);
+    }
+    .distribution-manifesto .distribution-card-title{
+      margin:0 0 20px;
+      max-width:24ch;
+      font-size:clamp(1.34rem, 2.15vw, 1.82rem);
+      line-height:1.18;
+      letter-spacing:0.003em;
+      font-weight:700;
+      color:rgba(241,248,255,0.96);
+      text-shadow:0 3px 12px rgba(0,0,0,0.24);
+    }
+    .distribution-manifesto .distribution-card-copy{
+      margin-top:0;
+      max-width:56ch;
+      font-size:clamp(1rem, 1.34vw, 1.11rem);
+      line-height:1.8;
+      font-weight:460;
+      color:rgba(224,236,248,0.9);
+      text-shadow:0 1px 8px rgba(0,0,0,0.16);
+    }
+    .distribution-manifesto .distribution-card-copy + .distribution-card-copy{
+      margin-top:14px;
+    }
+    .infra-subhead{
+      margin:0 0 20px;
+      max-width:62ch;
+      font-size:clamp(1rem, 1.34vw, 1.1rem);
+      line-height:1.7;
+      font-weight:500;
+      color:rgba(224,236,248,0.9);
+      text-shadow:0 1px 8px rgba(0,0,0,0.16);
+    }
+    .infra-grid{
+      margin-top:4px;
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+      max-width:980px;
+      margin-inline:auto;
+      align-items:stretch;
+    }
+    .infra-cap{
+      padding:14px 16px 13px;
+      border-radius:8px;
+      border:1px solid rgba(206,235,255,0.32);
+      background:linear-gradient(180deg, rgba(205,236,255,0.14), rgba(130,201,239,0.08));
+      box-shadow:0 8px 22px rgba(0,0,0,0.16);
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+    .infra-cap h4{
+      margin:0 0 6px;
+      font-size:clamp(0.98rem, 1.2vw, 1.1rem);
+      line-height:1.3;
+      font-weight:680;
+      letter-spacing:0.003em;
+      color:#eff7ff;
+    }
+    .infra-cap p{
+      margin:0;
+      max-width:none;
+      font-size:0.94rem;
+      line-height:1.55;
+      font-weight:460;
+      color:rgba(220,233,247,0.9);
+    }
+    .infra-grid .infra-cap:last-child{
+      grid-column:auto;
+    }
+    @media (max-width: 900px){
+      .infra-grid{
+        grid-template-columns:1fr;
+      }
+    }
+    .infra-manifesto{
+      padding:clamp(26px, 3vw, 38px);
+    }
+    .infra-manifesto .distribution-card-title{
+      margin:0 0 16px;
+      max-width:26ch;
+      font-size:clamp(1.34rem, 2.2vw, 1.9rem);
+      line-height:1.18;
+      font-weight:720;
+      letter-spacing:0.003em;
+      color:rgba(241,248,255,0.98);
+      text-shadow:0 3px 12px rgba(0,0,0,0.24);
+    }
+    .infra-manifesto .infra-subhead{
+      margin:0 0 18px;
+      max-width:62ch;
+      font-size:clamp(1rem, 1.28vw, 1.08rem);
+      line-height:1.72;
+      font-weight:500;
+    }
+    .infra-list{
+      margin:0 auto;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+      max-width:980px;
+    }
+    .infra-list li{
+      margin:0;
+      padding:12px 13px;
+      border-radius:8px;
+      border:1px solid rgba(206,235,255,0.3);
+      background:linear-gradient(180deg, rgba(205,236,255,0.12), rgba(130,201,239,0.07));
+      color:rgba(226,238,248,0.92);
+      font-size:0.98rem;
+      line-height:1.62;
+      font-weight:500;
+    }
+    .infra-list li.infra-priority{
+      border-color:rgba(206,235,255,0.44);
+      background:linear-gradient(180deg, rgba(205,236,255,0.18), rgba(130,201,239,0.1));
+      color:rgba(236,245,252,0.96);
+      font-weight:600;
+    }
+    .infra-close{
+      margin-top:16px;
+      margin-inline:auto;
+      max-width:980px;
+      font-size:clamp(1.05rem, 1.46vw, 1.22rem);
+      line-height:1.5;
+      font-weight:650;
+      color:#eff7ff;
+      text-shadow:0 2px 10px rgba(0,0,0,0.2);
+    }
+    /* Apply "Grow Your IP..." visual system to the rest of the page cards */
+    #live-profile .live-profile-frame,
+    #fan-app .feature-panel,
+    #product .feature-panel,
+    #ownership .feature-panel,
+    #own .feature-panel,
+    #data .feature-panel,
+    .proof-section .feature-panel,
+    #network .feature-panel{
+      border-radius:8px;
+      border:1px solid rgba(125,198,241,0.34);
+      background:
+        linear-gradient(155deg, rgba(8,38,60,0.95), rgba(5,27,45,0.95)),
+        rgba(6,30,49,0.94);
+      box-shadow:
+        0 20px 58px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(206,235,255,0.18);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+    #ownership .why-card,
+    #own .why-card,
+    #network .who-card,
+    #ownership .compare-list li,
+    #own .why-list li{
+      border:1px solid rgba(206,235,255,0.3);
+      border-radius:8px;
+      background:linear-gradient(180deg, rgba(205,236,255,0.12), rgba(130,201,239,0.07));
+      box-shadow:0 8px 22px rgba(0,0,0,0.16);
+    }
+    /* Match top-card spacing and typography rhythm on sections below IP card */
+    #live-profile .live-profile-frame,
+    #fan-app .feature-panel,
+    #product .feature-panel,
+    #ownership .feature-panel,
+    #own .feature-panel,
+    #data .feature-panel,
+    .proof-section .feature-panel,
+    #network .feature-panel{
+      padding:clamp(26px, 3vw, 38px);
+    }
+    #live-profile .feature-panel .live-profile-frame{
+      padding:0 !important;
+    }
+    #live-profile h2,
+    #fan-app .feature-panel h2,
+    #product .feature-panel h2,
+    #ownership .feature-panel h2,
+    #own .feature-panel h2,
+    #data .feature-panel h2,
+    .proof-section .feature-panel h2,
+    #network .feature-panel h2{
+      margin:0 0 16px;
+      font-size:clamp(1.34rem, 2.15vw, 1.82rem);
+      line-height:1.18;
+      letter-spacing:0.003em;
+      font-weight:700;
+      color:rgba(241,248,255,0.96);
+      text-shadow:0 3px 12px rgba(0,0,0,0.24);
+    }
+    #live-profile p,
+    #fan-app .feature-panel p,
+    #product .feature-panel p,
+    #ownership .feature-panel p,
+    #own .feature-panel p,
+    #data .feature-panel p,
+    .proof-section .feature-panel p,
+    #network .feature-panel p{
+      font-size:clamp(1rem, 1.34vw, 1.11rem);
+      line-height:1.72;
+      font-weight:460;
+      color:rgba(224,236,248,0.9);
+      text-shadow:0 1px 8px rgba(0,0,0,0.16);
+    }
+    .distribution-image-frame{
+      position:relative;
+      margin-top:16px;
+      margin-inline:auto;
+      max-width:980px;
+      border-radius:8px;
+      overflow:hidden;
+      border:1px solid rgba(126,168,210,0.52);
+      background:rgba(8,18,30,0.55);
+      box-shadow:
+        0 14px 34px rgba(0,0,0,0.24),
+        0 0 0 1px rgba(126,168,210,0.24),
+        0 0 24px rgba(95,159,255,0.18);
+    }
+    .distribution-image-frame::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background:
+        linear-gradient(160deg, rgba(126,168,210,0.36), rgba(95,159,255,0.28) 44%, rgba(6,16,30,0.2));
+      mix-blend-mode:screen;
+    }
+    .distribution-image-frame::after{
+      content:"";
+      position:absolute;
+      left:16px;
+      top:16px;
+      width:clamp(120px, 18vw, 210px);
+      aspect-ratio:3.2 / 1;
+      background:url("screenshots/logo-lockup.png") left center / contain no-repeat;
+      opacity:0.9;
+      filter:drop-shadow(0 6px 14px rgba(0,0,0,0.45));
+      pointer-events:none;
+      z-index:2;
+    }
+    .distribution-image-frame img{
+      width:100%;
+      display:block;
+      position:relative;
+      z-index:0;
+      height:auto;
+      aspect-ratio:auto;
+      object-fit:initial;
+      filter:hue-rotate(12deg) saturate(.84) contrast(.95) brightness(.94);
+    }
+    .hero-subheader{
+      margin:16px 0 4px;
+      font-size:clamp(1.45rem, 4.2vw, 2.45rem);
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:-0.015em;
+      color:#f4fbff;
+      text-shadow:0 8px 26px rgba(0,0,0,0.34);
+      max-width:none;
+      text-wrap:normal;
+    }
+    .inner-rail{
+      width:calc(100% - (var(--space-card) * 2));
+      margin-inline:auto;
+    }
+    .hero-btc-mark{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:clamp(34px, 3.1vw, 48px);
+      height:clamp(34px, 3.1vw, 48px);
+      margin:0 8px 0 4px;
+      vertical-align:middle;
+    }
+    .hero-btc-mark img{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+    .ownership-copy-card{
+      margin-top:8px;
+      margin-bottom:16px;
+    }
+    .btc-inline{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:10px;
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid rgba(255,138,0,0.42);
+      background:linear-gradient(180deg, rgba(255,138,0,0.18), rgba(255,138,0,0.08));
+    }
+    .btc-mark{
+      width:30px;
+      height:30px;
+      flex:0 0 30px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .btc-mark img{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+    .btc-copy{
+      margin:0;
+    }
+    .ownership-media-card{
+      padding:12px;
+    }
+    .ownership-media-card .shot-card{
+      border-radius:6px;
+    }
+    .flow-section{
+      padding-top:var(--space-section);
+      padding-bottom:var(--space-section);
+    }
+    .why-section{
+      padding-bottom:var(--space-section-tight);
+    }
+    .why-subline{
+      font-size:clamp(20px, 2.2vw, 30px);
+      color:var(--text);
+      margin-bottom:var(--space-stack);
+    }
+    .why-grid{
+      display:grid;
+      gap:22px;
+      grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    }
+    .why-card{
+      padding:24px 28px;
+      border-radius:8px;
+      border:1px solid rgba(206,235,255,0.38);
+      background:linear-gradient(180deg, rgba(205,236,255,0.3), rgba(130,201,239,0.2));
+      box-shadow:0 14px 34px rgba(0,0,0,0.18);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+    .why-card h3{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:0.01em;
+      opacity:0.6;
+    }
+    .why-list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:16px;
+      color:var(--text-secondary);
+    }
+    .why-list li{
+      padding:4px 0;
+      border:none;
+      background:none;
+      line-height:1.55;
+    }
+    .who-heading{
+      margin-top:var(--space-section-tight);
+      font-size:clamp(28px, 3.4vw, 46px);
+      letter-spacing:-0.015em;
+    }
+    .who-grid{
+      margin-top:var(--space-stack);
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:22px;
+    }
+    .who-card{
+      padding:34px 28px;
+      border-radius:8px;
+      border:1px solid rgba(206,235,255,0.38);
+      background:linear-gradient(180deg, rgba(205,236,255,0.28), rgba(130,201,239,0.2));
+      box-shadow:0 12px 30px rgba(0,0,0,0.16);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+    .who-card h3{
+      margin:0 0 8px;
+      font-size:1.16rem;
+      color:var(--text);
+    }
+    .who-card p{
+      margin:0;
+      color:var(--text-secondary);
+    }
+    @media (max-width: 980px){
+      .live-profile-embed{ height:640px; }
+    }
+    @media (max-width: 760px){
+      .live-profile-embed{ height:560px; }
+      .live-profile-open{
+        top:10px;
+        right:10px;
+        font-size:0.8rem;
+        padding:8px 12px;
+      }
+    }
+
+    /* ---------- Cards ---------- */
+    .grid{ display:grid; gap:22px; min-width:0; }
+    .grid-3{ grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+    .grid-2{ grid-template-columns:repeat(auto-fit, minmax(min(360px, 100%), 1fr)); }
+
+    .card{
+      min-width:0;
+      background:linear-gradient(160deg, rgba(9,40,64,0.9), rgba(6,30,49,0.92));
+      border:1px solid rgba(125,198,241,0.42);
+      border-radius:8px;
+      padding:24px;
+      box-shadow:0 18px 48px rgba(0,0,0,0.18);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+    .compare-card{
+      border-color:rgba(125,198,241,0.42);
+      background:linear-gradient(160deg, rgba(9,40,64,0.9), rgba(6,30,49,0.92));
+    }
+    .compare-list{
+      margin:8px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+      color:var(--text-secondary);
+    }
+    .compare-list li{
+      margin:0;
+      padding:12px 14px;
+      border-radius:6px;
+      border:1px solid rgba(206,235,255,0.38);
+      background:linear-gradient(180deg, rgba(205,236,255,0.3), rgba(130,201,239,0.2));
+      line-height:1.45;
+    }
+    .compare-list strong{
+      color:var(--text);
+      font-weight:700;
+    }
+    .own-card{
+      border-color:rgba(170,220,248,0.45);
+      background:linear-gradient(180deg, rgba(196,230,252,0.28), rgba(118,186,224,0.18));
+    }
+
+    /* ---------- Screenshots ---------- */
+    .shot{ cursor:zoom-in; display:block; }
+    .shot img{
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--border);
+      transition:transform 140ms ease, filter 140ms ease;
+      object-fit:cover;
+      object-position:center center;
+    }
+    .shot:hover img{ transform:translateY(-1px); filter:brightness(1.05); }
+    .shot-card{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:inherit;
+      overflow:hidden;
+      border-radius:8px;
+      border:1px solid rgba(206,235,255,0.38);
+      background:linear-gradient(180deg, rgba(205,236,255,0.3), rgba(130,201,239,0.2));
+      aspect-ratio:16 / 10;
+    }
+    .shot-card img{
+      width:100%;
+      height:100%;
+      border:0;
+      box-shadow:none;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    /* Middle narrative band: consistent premium surface instead of floating text on wallpaper */
+    #own,
+    #data,
+    .proof-section,
+    #how,
+    #network{
+      background:linear-gradient(180deg, rgba(8,11,16,0.78), rgba(8,11,16,0.70)) !important;
+      border:1px solid rgba(84,103,128,0.36);
+      border-radius:22px;
+      box-shadow:0 18px 44px rgba(0,0,0,0.24);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      padding-left:22px;
+      padding-right:22px;
+    }
+    #live-profile,
+    #fan-app,
+    #product,
+    #ownership,
+    #own,
+    #data,
+    .proof-section,
+    #how{
+      margin-bottom:18px;
+    }
+    .shot-meta{
+      margin-top:12px;
+    }
+    .shot-meta h3{
+      margin:0 0 6px;
+      font-size:1.02rem;
+    }
+    .ea-form{
+      margin-top:18px;
+      display:grid;
+      gap:12px;
+    }
+    .ea-status{
+      display:none;
+      border-radius:12px;
+      padding:10px 12px;
+      font-size:0.92rem;
+      border:1px solid var(--border2);
+      background:rgba(255,255,255,0.02);
+      color:var(--text-secondary);
+    }
+    .ea-status.show{ display:block; }
+    .ea-status.success{
+      border-color:rgba(79,160,120,0.5);
+      background:rgba(79,160,120,0.14);
+      color:#e5f4ea;
+    }
+    .ea-status.error{
+      border-color:rgba(195,95,95,0.55);
+      background:rgba(195,95,95,0.14);
+      color:rgba(255,235,240,0.96);
+    }
+    .ea-grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+    .ea-field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .ea-label{
+      font-size:0.86rem;
+      color:var(--text-secondary);
+    }
+    .ea-input,
+    .ea-select,
+    .ea-textarea{
+      width:100%;
+      background:#0e141b;
+      border:1px solid #2b3542;
+      color:var(--text);
+      border-radius:12px;
+      padding:12px 14px;
+      font:inherit;
+    }
+    .ea-input::placeholder,
+    .chat-input::placeholder{
+      color:#7d8897;
+    }
+    .ea-textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+    @media (max-width: 820px){
+      .ea-grid{ grid-template-columns:1fr; }
+    }
+    @media (max-width: 900px){
+      .grid-2{ grid-template-columns:1fr; }
+    }
+
+    /* ---------- Lightbox ---------- */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.88);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:1000;
+    }
+    .lightbox:target{ display:flex; }
+    .lightbox img{
+      position:relative;
+      z-index:2;
+      max-width:min(1280px, 96vw);
+      max-height:92vh;
+      border-radius:16px;
+      box-shadow:0 40px 120px rgba(0,0,0,0.8);
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.12);
+    }
+    .lightbox-bg{ position:absolute; inset:0; z-index:1; }
+
+    .lightbox-close{
+      position:absolute;
+      top:calc(18px + env(safe-area-inset-top, 0px));
+      right:calc(18px + env(safe-area-inset-right, 0px));
+      width:56px;
+      height:56px;
+      display:grid;
+      place-items:center;
+      font-size:34px;
+      line-height:1;
+      color:#fff;
+      background:rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.18);
+      border-radius:14px;
+      text-decoration:none;
+      cursor:pointer;
+      padding:0;
+      z-index:3;
+    }
+    .lightbox-close:hover,
+    .lightbox-close:focus-visible{ background:rgba(255,255,255,0.12); }
+
+    /* ---------- Footer ---------- */
+
+    .reveal-up{
+      opacity:1;
+      transform:none;
+      transition:opacity .55s ease, transform .55s ease;
+      will-change:transform, opacity;
+    }
+    .reveal-enabled .reveal-up{
+      opacity:0;
+      transform:translateY(18px);
+    }
+    .reveal-up.in{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:48px 0;
+      color:var(--muted);
+    }
+
+    /* ---------- Chatbot ---------- */
+    .chat-launch{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:1200;
+      border:1px solid var(--border2);
+      background:linear-gradient(180deg, #ffad33, var(--certifyd-orange));
+      color:#111418;
+      border-radius:999px;
+      min-height:44px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 18px 40px rgba(0,0,0,0.38);
+      transition:
+        transform 220ms cubic-bezier(.2,.8,.2,1),
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+    }
+    .chat-launch:hover{
+      background:linear-gradient(180deg, #ffb347, #ff9820 58%, var(--certifyd-orange));
+      border-color:rgba(255,177,79,0.88);
+      transform:translateY(-1px);
+      box-shadow:0 20px 48px rgba(255,138,0,0.22), 0 18px 40px rgba(0,0,0,0.38);
+    }
+    .chat-launch:focus-visible{
+      outline:3px solid rgba(255,138,0,0.82);
+      box-shadow:0 0 0 4px rgba(255,138,0,0.2), 0 18px 40px rgba(0,0,0,0.38);
+    }
+    .chat-launch:active{
+      transform:translateY(0);
+      background:linear-gradient(180deg, var(--brand-active), #ff8a00);
+    }
+
+    .chatbot{
+      position:fixed;
+      right:16px;
+      bottom:70px;
+      width:min(380px, calc(100vw - 24px));
+      max-height:min(70vh, 620px);
+      background:rgba(8,10,13,0.96);
+      border:1px solid var(--border2);
+      border-radius:16px;
+      box-shadow:0 26px 80px rgba(0,0,0,0.48);
+      z-index:1200;
+      display:none;
+      overflow:hidden;
+      backdrop-filter:blur(12px);
+    }
+    .chatbot.open{ display:flex; flex-direction:column; }
+    .chat-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      border-bottom:1px solid var(--border);
+      background:rgba(255,255,255,0.02);
+    }
+    .chat-title{ font-weight:700; font-size:0.95rem; }
+    .chat-close{
+      border:1px solid var(--border2);
+      background:#1a212a;
+      color:var(--text);
+      border-radius:10px;
+      min-height:36px;
+      min-width:36px;
+      cursor:pointer;
+    }
+    .chat-body{
+      padding:12px;
+      overflow:auto;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .chat-msg{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.02);
+      border-radius:12px;
+      padding:10px 11px;
+      font-size:0.92rem;
+      color:var(--muted);
+    }
+    .chat-msg.bot{ border-color:rgba(95,137,198,0.45); color:#dfeaf8; }
+    .chat-msg.user{ border-color:rgba(255,138,0,0.52); color:#fff1d2; }
+    .chat-quick{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:4px;
+    }
+    .chat-chip{
+      border:1px solid var(--border2);
+      background:#1a212a;
+      color:var(--text-secondary);
+      border-radius:999px;
+      min-height:34px;
+      padding:6px 10px;
+      font-size:0.82rem;
+      cursor:pointer;
+    }
+    .chat-form{
+      border-top:1px solid var(--border);
+      padding:10px;
+      display:flex;
+      gap:8px;
+    }
+    .chat-input{
+      flex:1;
+      border:1px solid #2b3542;
+      background:#0e141b;
+      color:var(--text);
+      border-radius:10px;
+      min-height:40px;
+      padding:8px 10px;
+      font:inherit;
+    }
+    .chat-send{
+      border:1px solid var(--border2);
+      background:#1a212a;
+      color:var(--text);
+      border-radius:10px;
+      min-height:40px;
+      padding:8px 12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    @media (max-width: 680px){
+      body{
+        background:
+          linear-gradient(180deg, rgba(23,94,132,0.86), rgba(10,56,84,0.9)),
+          radial-gradient(820px 520px at 14% -12%, rgba(188,234,255,0.26), transparent 60%),
+          radial-gradient(760px 460px at 88% 10%, rgba(255,165,46,0.16), transparent 62%),
+          url("images/certifyd-bg.png") center/cover no-repeat,
+          var(--bg);
+      }
+      body::before{
+        inset:0;
+        z-index:0;
+        opacity:0.17;
+        mix-blend-mode:normal;
+        background-image:
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.22' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 .2 .58 .86 1'/%3E%3CfeFuncG type='discrete' tableValues='0 .2 .58 .86 1'/%3E%3CfeFuncB type='discrete' tableValues='0 .2 .58 .86 1'/%3E%3CfeFuncA type='table' tableValues='0 .24 .46 .7 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='420' height='420' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+        background-size:180px 180px;
+        background-position:0 0;
+        background-repeat:repeat;
+        animation:none;
+        transform:none;
+        will-change:auto;
+      }
+      body::after{
+        opacity:0.74;
+        filter:blur(8px);
+        animation:none;
+      }
+      section{ padding:22px 0; }
+      #top{
+        padding-top:16px;
+        padding-bottom:22px;
+      }
+      h1{ font-size:clamp(2.15rem, 10.6vw, 2.85rem); line-height:1.03; }
+      .hero-title{
+        display:block;
+        max-width:100%;
+        white-space:normal;
+        text-wrap:normal;
+        overflow-wrap:normal;
+        font-size:clamp(2.1rem, 9.6vw, 2.85rem);
+      }
+      .hero-title-line{
+        white-space:normal;
+      }
+      h2{ margin-bottom:10px; }
+      p{ font-size:1.03rem; line-height:1.62; }
+      .hero-grid{ gap:28px; }
+      .hero-main-image{
+        border-radius:20px;
+        aspect-ratio:16 / 9;
+        margin:14px 0 18px;
+      }
+      .hero-image-caption{
+        margin:-8px 0 18px;
+        font-size:0.82rem;
+        white-space:normal;
+      }
+      .hero-strip{ gap:6px; }
+      .hero-pill{ font-size:.78rem; padding:5px 9px; }
+      .hero-actions{
+        margin-top:16px;
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .hero-actions .btn{
+        width:100%;
+        min-height:48px;
+      }
+      .distribution-manifesto{
+        padding:22px 22px;
+      }
+      .distribution-manifesto .distribution-card-title{
+        margin-bottom:16px;
+        font-size:clamp(1.12rem, 5.6vw, 1.34rem);
+        line-height:1.22;
+        max-width:100%;
+      }
+      .distribution-manifesto .distribution-card-copy{
+        font-size:0.98rem;
+        line-height:1.72;
+        max-width:100%;
+      }
+      .infra-subhead{
+        margin-bottom:16px;
+        max-width:100%;
+        font-size:0.98rem;
+        line-height:1.66;
+      }
+      .infra-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+      .infra-cap{
+        padding:12px 14px;
+      }
+      .infra-manifesto{
+        padding:22px 22px;
+      }
+      .infra-manifesto .distribution-card-title{
+        margin-bottom:14px;
+        font-size:clamp(1.12rem, 5.6vw, 1.34rem);
+        line-height:1.22;
+        max-width:100%;
+      }
+      .infra-manifesto .infra-subhead{
+        margin-bottom:14px;
+        max-width:100%;
+        font-size:0.98rem;
+        line-height:1.68;
+      }
+      .infra-list{
+        gap:8px;
+        max-width:100%;
+      }
+      .infra-list li{
+        padding:11px 12px;
+        font-size:0.95rem;
+        line-height:1.58;
+      }
+      .infra-list li.infra-priority{
+        font-weight:580;
+      }
+      .infra-close{
+        margin-top:14px;
+        max-width:100%;
+        font-size:1rem;
+        line-height:1.5;
+      }
+      .distribution-image-frame::after{
+        display:none;
+      }
+      .hero-btc-mark{
+        width:34px;
+        height:34px;
+        font-size:20px;
+        margin:0 6px 0 3px;
+      }
+      .hero-cta{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:12px;
+        align-items:stretch;
+      }
+      .hero-cta .btn{
+        width:100%;
+        min-height:52px;
+        padding:12px 14px;
+        font-size:1rem;
+      }
+      .network-cta{
+        flex-direction:row;
+        align-items:flex-start;
+      }
+      .network-cta .btn{
+        width:auto;
+        min-height:40px;
+        padding:9px 13px;
+        font-size:.88rem;
+      }
+      .form-cta{
+        margin-top:8px;
+      }
+      .form-cta .btn{
+        width:auto;
+        min-height:40px;
+        padding:9px 13px;
+        font-size:.88rem;
+      }
+      .card{ padding:20px; }
+      .compare-list li{ padding:12px 12px; }
+      .declaration-section{ padding-top:22px; padding-bottom:22px; }
+      .flow-section{ padding-top:24px; padding-bottom:24px; }
+      .why-section{ padding-bottom:22px; }
+      .ownership-moment{ margin-top:0; margin-bottom:0; }
+      .proof-section{ margin-top:0; margin-bottom:0; }
+      .network-section{ margin-top:0; }
+      .why-card{ padding:28px 22px; }
+      .who-heading{ margin-top:74px; }
+      .who-grid{ gap:20px; }
+      .who-card{ padding:24px 18px; }
+      .ownership-headline{ font-size:clamp(36px, 12vw, 54px); }
+      .ownership-mainline{ font-size:clamp(24px, 8vw, 36px); }
+      .ownership-support{ font-size:16px; opacity:0.86; }
+      .proof-headline,
+      .network-headline{ font-size:clamp(30px, 10vw, 44px); }
+      .proof-body,
+      .network-body{ font-size:16px; line-height:1.55; opacity:0.92; }
+      .proof-kicker{ font-size:16px; }
+      .flow-divider{ font-size:clamp(34px, 11vw, 46px); line-height:1.16; }
+      #how.flow-inline{
+        padding:18px 20px;
+      }
+      #how .flow-divider{
+        font-size:clamp(28px, 10vw, 44px);
+        line-height:1.14;
+      }
+      #how .flow-break{
+        display:block;
+        height:0;
+      }
+      #how .flow-arrow{
+        margin:0 .1em;
+      }
+      .declaration-center{
+        text-align:left;
+        margin-left:0;
+        margin-right:0;
+        display:block;
+      }
+      .network-headline,
+      .network-body,
+      .flow-divider{
+        text-align:left;
+        margin-left:0;
+        margin-right:0;
+      }
+      .proof-body,
+      .network-body,
+      .ownership-support{ font-size:clamp(18px, 4.6vw, 22px); }
+      .ownership-headline{
+        font-size:34px;
+        line-height:1.12;
+        letter-spacing:-0.01em;
+        text-wrap:balance;
+      }
+      .ownership-mainline{
+        font-size:28px;
+        line-height:1.2;
+        text-wrap:balance;
+      }
+      .ownership-support{
+        font-size:16px;
+        margin-top:8px;
+      }
+      .proof-headline,
+      .network-headline{
+        font-size:40px;
+        line-height:1.14;
+        text-wrap:balance;
+      }
+      .proof-body,
+      .network-body{
+        font-size:16px;
+        line-height:1.55;
+      }
+      .proof-kicker{
+        font-size:16px;
+      }
+      .flow-divider{
+        font-size:36px;
+        line-height:1.2;
+        letter-spacing:-0.01em;
+        max-width:100%;
+        overflow-wrap:anywhere;
+      }
+      .chatbot{
+        right:12px;
+        left:12px;
+        width:auto;
+        bottom:66px;
+        max-height:68vh;
+      }
+      .chat-launch{ right:12px; bottom:12px; }
+    }
+
+    /* Mid-section readability for phone/tablet widths where 680px rules may not trigger */
+    @media (max-width: 900px){
+      .btc-inline{ gap:8px; }
+      .btc-mark{
+        width:26px;
+        height:26px;
+        flex-basis:26px;
+        font-size:16px;
+      }
+      #live-profile,
+      #fan-app,
+      #product,
+      #ownership,
+      #data,
+      #own,
+      .proof-section,
+      #how,
+      #network{
+        padding-top:24px !important;
+        padding-bottom:24px !important;
+        padding-left:var(--pad) !important;
+        padding-right:var(--pad) !important;
+      }
+      #data{ margin-top:0 !important; margin-bottom:0 !important; }
+      .proof-section{ margin-top:0 !important; margin-bottom:0 !important; }
+      #network{ margin-top:0 !important; }
+
+      #data .declaration-center{
+        text-align:left !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+        display:block !important;
+      }
+
+      #data .ownership-headline{
+        font-size:2.35rem !important;
+        line-height:1.12 !important;
+        letter-spacing:-0.01em !important;
+      }
+      #data .ownership-mainline{
+        font-size:1.72rem !important;
+        line-height:1.2 !important;
+      }
+      #data .ownership-support{
+        font-size:1rem !important;
+        line-height:1.55 !important;
+        opacity:0.9 !important;
+      }
+
+      .proof-section .proof-headline,
+      #network .network-headline,
+      #how .flow-divider{
+        font-size:2.15rem !important;
+        line-height:1.15 !important;
+        letter-spacing:-0.01em !important;
+      }
+      .proof-section .proof-body,
+      .proof-section .proof-kicker,
+      #network .network-body{
+        font-size:1rem !important;
+        line-height:1.55 !important;
+        opacity:0.9 !important;
+      }
+      #how .flow-divider{
+        text-align:left !important;
+        margin-left:0 !important;
+        margin-right:0 !important;
+        max-width:none !important;
+        overflow-wrap:break-word !important;
+      }
+    }
+
+    /* Enforce top-card styling across all sections below the IP card */
+    #live-profile .live-profile-frame,
+    #fan-app > .feature-panel,
+    #product > .feature-panel,
+    #ownership > .feature-panel,
+    #own > .feature-panel,
+    #data > .feature-panel,
+    .proof-section > .feature-panel,
+    #network > .feature-panel{
+      position:relative;
+      overflow:hidden;
+      padding:clamp(26px, 3vw, 38px) !important;
+      border-radius:8px !important;
+      border:1px solid rgba(125,198,241,0.34) !important;
+      background:
+        linear-gradient(155deg, rgba(8,38,60,0.95), rgba(5,27,45,0.95)),
+        rgba(6,30,49,0.94) !important;
+      box-shadow:
+        0 20px 58px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(206,235,255,0.18),
+        0 0 0 1px rgba(126,168,210,0.24),
+        0 0 24px rgba(95,159,255,0.18) !important;
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-color:rgba(173,222,248,0.48) !important;
+      outline:1px solid rgba(214,241,255,0.22);
+      outline-offset:0;
+    }
+    #fan-app > .feature-panel::after,
+    #product > .feature-panel::after,
+    #ownership > .feature-panel::after,
+    #own > .feature-panel::after,
+    #data > .feature-panel::after,
+    .proof-section > .feature-panel::after,
+    #network > .feature-panel::after,
+    #live-profile .feature-panel::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:inherit;
+      border:1px solid rgba(206,235,255,0.24);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.05),
+        inset 0 1px 0 rgba(255,255,255,0.09);
+    }
+    #live-profile .live-profile-frame::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border-radius:inherit;
+      border:1px solid rgba(206,235,255,0.24);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    #live-profile h2,
+    #fan-app > .feature-panel h2,
+    #product > .feature-panel h2,
+    #ownership > .feature-panel h2,
+    #own > .feature-panel h2,
+    #data > .feature-panel h2,
+    .proof-section > .feature-panel h2,
+    #network > .feature-panel h2{
+      margin:0 0 16px !important;
+      font-size:clamp(1.34rem, 2.15vw, 1.82rem) !important;
+      line-height:1.18 !important;
+      letter-spacing:0.003em !important;
+      font-weight:700 !important;
+      color:rgba(241,248,255,0.96) !important;
+      text-shadow:0 3px 12px rgba(0,0,0,0.24) !important;
+    }
+    #live-profile p,
+    #fan-app > .feature-panel p,
+    #product > .feature-panel p,
+    #ownership > .feature-panel p,
+    #own > .feature-panel p,
+    #data > .feature-panel p,
+    .proof-section > .feature-panel p,
+    #network > .feature-panel p{
+      font-size:clamp(1rem, 1.34vw, 1.11rem) !important;
+      line-height:1.72 !important;
+      font-weight:460 !important;
+      color:rgba(224,236,248,0.9) !important;
+      text-shadow:0 1px 8px rgba(0,0,0,0.16) !important;
+    }
+    #ownership .why-card,
+    #own .why-card,
+    #network .who-card,
+    #ownership .compare-list li,
+    #own .why-list li{
+      border:1px solid rgba(206,235,255,0.32) !important;
+      border-radius:8px !important;
+      background:linear-gradient(180deg, rgba(205,236,255,0.14), rgba(130,201,239,0.08)) !important;
+      box-shadow:0 8px 22px rgba(0,0,0,0.16) !important;
+    }
+
+    /* Cohesive section system pass (primary experience) */
+    #live-profile > .feature-panel,
+    #fan-app > .feature-panel,
+    #product > .feature-panel,
+    #ownership > .feature-panel,
+    #own > .feature-panel,
+    #data > .feature-panel,
+    .proof-section > .feature-panel,
+    #network > .feature-panel{
+      width:100%;
+      max-width:none;
+      margin:0;
+      border-radius:8px;
+      padding:clamp(24px, 2.8vw, 34px) !important;
+      background:
+        linear-gradient(155deg, rgba(8,38,60,0.95), rgba(5,27,45,0.95)),
+        rgba(6,30,49,0.94) !important;
+      border:1px solid rgba(125,198,241,0.34) !important;
+      box-shadow:
+        0 20px 58px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(206,235,255,0.18) !important;
+    }
+    #live-profile h2,
+    #fan-app > .feature-panel h2,
+    #product > .feature-panel h2,
+    #ownership > .feature-panel h2,
+    #own > .feature-panel h2,
+    #data > .feature-panel h2,
+    .proof-section > .feature-panel h2,
+    #network > .feature-panel h2{
+      font-size:clamp(1.38rem, 2.2vw, 1.92rem) !important;
+      line-height:1.18 !important;
+      margin:0 0 14px !important;
+      letter-spacing:0.003em;
+    }
+    #live-profile p,
+    #fan-app > .feature-panel p,
+    #product > .feature-panel p,
+    #ownership > .feature-panel p,
+    #own > .feature-panel p,
+    #data > .feature-panel p,
+    .proof-section > .feature-panel p,
+    #network > .feature-panel p{
+      margin:0 0 10px;
+      max-width:72ch;
+    }
+    #data .declaration-copy,
+    .proof-section .declaration-copy,
+    #network .declaration-copy{
+      max-width:none;
+    }
+    #fan-app .feature-panel{
+      background:
+        linear-gradient(155deg, rgba(9,41,65,0.95), rgba(6,31,50,0.95)),
+        rgba(6,30,49,0.94) !important;
+    }
+    #live-profile .live-profile-intro{
+      margin:0 0 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-rail">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="Certifyd Creator home">
+          <img src="screenshots/logo-lockup.png" alt="Certifyd Creator logo" />
+        </a>
+
+        <nav class="nav-desktop" aria-label="Primary navigation">
+          <a href="#live-profile">Live profile</a>
+          <a href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
+          <a href="#ownership">Ownership</a>
+          <a href="#own">What you own</a>
+          <a href="#how">How it works</a>
+          <a href="#built-for">Built for</a>
+          <a href="#product">Screens</a>
+          <a href="#network">Network</a>
+        </nav>
+
+        <details class="nav-mobile">
+          <summary aria-label="Open menu">
+            <span class="burger" aria-hidden="true"><span></span></span>
+          </summary>
+
+          <nav class="nav-drawer" aria-label="Mobile navigation">
+            <a href="#live-profile">Live profile</a>
+            <a href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
+            <a href="#ownership">Ownership</a>
+            <a href="#own">What you own</a>
+            <a href="#how">How it works</a>
+            <a href="#built-for">Built for</a>
+            <a href="#product">Screens</a>
+            <a href="#network">Network</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="wrap" id="top">
+      <div class="hero-grid">
+        <div>
+          <h1 class="hero-title"><span class="hero-title-line"><span class="hero-title-white">Certifyd</span> <span class="hero-title-orange">Music</span> <span class="hero-title-blue-light">&amp;</span></span><br><span class="hero-title-line"><span class="hero-title-blue-light">Content</span> <span class="hero-title-white">Distribution</span></span></h1>
+
+          <figure class="hero-main-image" aria-label="Certifyd featured creators">
+            <img src="images/certifyd-main-image.jpeg" alt="Two music creators posing under stage lights" fetchpriority="high" decoding="async" />
+          </figure>
+          <p class="hero-image-caption">Built alongside creators and entertainment leaders. Featuring President Vassal Benford and Mally Mall.</p>
+
+          <div class="hero-message-card">
+            <p>Get paid instantly, no middleman.<br />A commerce creator network.</p>
+            <p>Stay on Apple, Spotify, YouTube.<br />Reach a global audience while keeping creative control.</p>
+            <p>Empower yourself with unlimited distribution and put your music and content in front of a global audience.</p>
+          </div>
+          <div class="hero-actions hero-cta">
+            <a class="btn" href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
+            <a class="btn primary" href="#early-access">Get Certifyd</a>
+          </div>
+          <h3 class="hero-subheader">Built on decentralized infrastructure and <span class="hero-btc-mark" aria-hidden="true"><img src="images/bitcoin-logo.svg?v=20260529b" alt="" loading="lazy" decoding="async" /></span>Bitcoin-powered payments.</h3>
+          <p style="margin-top:10px;">
+            A distributed creator commerce network connecting creators and fans directly.
+          </p>
+          <div id="how" class="feature-panel flow-inline" style="margin-top:18px;">
+            <h2 class="flow-divider"><span>CREATE</span> <span class="flow-arrow" aria-hidden="true">→</span> <span>PUBLISH</span> <span class="flow-break" aria-hidden="true"></span><span>SELL</span> <span class="flow-arrow" aria-hidden="true">→</span> <span>GET PAID</span></h2>
+          </div>
+          <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
+            <h3 class="distribution-card-title">Creator Commerce Infrastructure</h3>
+            <p class="infra-subhead">Core infrastructure for creator publishing, commerce, and settlement.</p>
+            <div class="infra-grid" role="list" aria-label="Certifyd capabilities">
+              <article class="infra-cap" role="listitem">
+                <h4>Publish &amp; Distribute</h4>
+                <p>Release music, video, files, products, and creative work globally.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>Sell &amp; Get Paid</h4>
+                <p>Accept payments, generate receipts, and settle earnings without payout queues.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>Splits &amp; Payouts</h4>
+                <p>Track collaborators, royalties, participant earnings, and payout execution clearly.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>Ownership &amp; Provenance</h4>
+                <p>Preserve attribution, rights, lineage, and proof of what was created, sold, and paid.</p>
+              </article>
+            </div>
+          </div>
+          <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
+            <h3 class="distribution-card-title">Why Creators Choose Certifyd</h3>
+            <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
+            <div class="infra-grid" role="list" aria-label="Why creators choose Certifyd">
+              <article class="infra-cap" role="listitem">
+                <h4>Publish Without Gatekeepers</h4>
+                <p>Release music, video, files, and digital products on your terms.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>Creator-to-Fan Commerce</h4>
+                <p>Run direct commerce with fans instead of renting access from a platform.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>P2P Creator Economy</h4>
+                <p>Creators, collaborators, and operators participate in a peer-to-peer economy that compounds value.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>Creator-Owned Infrastructure</h4>
+                <p>Your content and audience relationships are portable, durable, and creator-controlled.</p>
+              </article>
+              <article class="infra-cap" role="listitem">
+                <h4>Built for Independent Creators</h4>
+                <p>Designed for artists, labels, collectives, agencies, educators, and creator networks.</p>
+              </article>
+            </div>
+            <figure class="distribution-image-frame" aria-label="Creator listening with headphones">
+              <img src="images/promo-2026-01-27-14.png" alt="Creator commerce infrastructure promo visual with creator profile and platform metrics" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+          <h3 class="hero-subheader inner-rail">No Label Needed. Sell your music worldwide. Stream, distribute and own your future.</h3>
+          <div class="feature-panel infra-manifesto" style="margin-top:16px;">
+            <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
+            <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
+            <ul class="infra-list" aria-label="Creator value statements">
+              <li>Keep control of your music.</li>
+              <li>Keep control of your money.</li>
+              <li>Keep control of your destiny.</li>
+              <li>No label needed.</li>
+            </ul>
+            <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
+          </div>
+          <h3 class="hero-subheader inner-rail">Accelerate your publishing earnings through the power of your own IP.</h3>
+          <div class="feature-panel infra-manifesto" style="margin-top:16px;">
+            <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
+            <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
+            <ul class="infra-list" aria-label="IP and earnings capabilities">
+              <li>Ownership-first infrastructure</li>
+              <li>Publishing and royalty tools</li>
+              <li>Transparent royalty and earnings tracking</li>
+              <li>Audience, streaming, and sales insights</li>
+              <li>Collaboration and rights metadata management</li>
+              <li>Global publishing-ready release support</li>
+              <li>Catalog and rights control</li>
+            </ul>
+            <p class="infra-close">Grow your audience.<br />Build publishing revenue.<br />Keep control of your work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT PROOF -->
+    <section class="wrap live-profile-section" id="live-profile">
+      <div class="feature-panel distribution-manifesto">
+        <p class="live-profile-eyebrow">Live profile</p>
+        <h2>See Certifyd in production</h2>
+        <p class="live-profile-intro">Live profile and storefront.</p>
+        <div class="live-profile-frame" role="region" aria-label="Live Certifyd profile embed">
+          <a class="live-profile-open" href="https://public.certifyd.me/u/certifyd" target="_blank" rel="noreferrer">Open full profile ↗</a>
+          <iframe
+            class="live-profile-embed"
+            src="https://public.certifyd.me/u/certifyd"
+            title="Live Certifyd profile"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOVER -->
+    <section class="wrap" id="fan-app">
+      <div class="feature-panel distribution-manifesto">
+        <h2>Discover creators across the Certifyd network.</h2>
+        <p>
+          Fans can explore creators, unlock content, and support artists across independently operated Certifyd nodes.
+        </p>
+        <p style="margin-top:12px;"><strong>One identity.<br />One network.<br />No platform controlling the creator-fan relationship.</strong></p>
+        <div class="hero-actions hero-cta" style="margin-top:18px;">
+          <a class="btn primary" href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIENCE OWNERSHIP -->
+    <section id="product" class="wrap">
+      <div class="feature-panel distribution-manifesto">
+        <h2>Own your audience. Take them with you.</h2>
+        <p>Own the relationship, not just the reach.</p>
+        <p style="margin-top:12px;"><strong>The people who support you stay yours.</strong></p>
+      </div>
+    </section>
+
+    <!-- CORE MECHANIC -->
+    <section id="ownership" class="wrap">
+      <div class="feature-panel distribution-manifesto">
+        <div class="why-card ownership-copy-card">
+          <h2>One payment. You’re paid.</h2>
+          <div class="btc-inline" aria-label="Bitcoin Lightning payment">
+            <span class="btc-mark" aria-hidden="true"><img src="images/bitcoin-logo.svg?v=20260529b" alt="" loading="lazy" decoding="async" /></span>
+            <p class="btc-copy">A fan pays. You receive money directly over Bitcoin Lightning.</p>
+          </div>
+          <p>A fan pays → the money goes straight to you.</p>
+          <ul class="compare-list" style="margin-top:16px; margin-bottom:0; max-width:760px;">
+            <li><strong>Access unlocks instantly.</strong></li>
+            <li><strong>Collaborators are paid automatically.</strong></li>
+            <li><strong>No waiting. No chasing.</strong></li>
+          </ul>
+        </div>
+
+        <div class="why-card ownership-media-card">
+          <a class="shot-card" href="#shot-how" aria-label="Open payment confirmation screenshot">
+            <img src="images/screenshots/payment-phone-warm.png" alt="Mobile payment confirmation showing sats received via Lightning" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT'S BETTER -->
+    <section id="own" class="wrap why-section">
+      <div class="feature-panel distribution-manifesto">
+        <h2>Why it’s better</h2>
+        <p class="why-subline">If you get paid, you have it.</p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <h3>Platforms</h3>
+            <ul class="why-list">
+              <li><strong>Hold your money</strong></li>
+              <li><strong>Pay you later</strong></li>
+              <li><strong>Control access</strong></li>
+            </ul>
+          </div>
+          <div class="why-card">
+            <h3>Certifyd</h3>
+            <ul class="why-list">
+              <li><strong>Pays you instantly</strong></li>
+              <li><strong>Sends funds directly</strong></li>
+              <li><strong>Handles splits automatically</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OWNERSHIP -->
+    <section id="data" class="wrap declaration-section ownership-moment">
+      <div class="feature-panel distribution-manifesto declaration-copy declaration-center">
+        <h2 class="ownership-headline">What you build stays yours.</h2>
+        <p class="ownership-mainline">Audience. Work. Money.</p>
+        <p class="ownership-support">All under your control.</p>
+      </div>
+    </section>
+
+    <!-- PROOF / DATA -->
+    <section class="wrap declaration-section proof-section">
+      <div class="feature-panel distribution-manifesto declaration-copy">
+        <h2 class="proof-headline">Not a dashboard. A record.</h2>
+        <p class="proof-body">See who paid, what they got, and where the money went.</p>
+        <p class="proof-kicker">Nothing hidden.</p>
+      </div>
+    </section>
+
+    <!-- NETWORK -->
+    <section id="network" class="wrap declaration-section network-section">
+      <div class="feature-panel distribution-manifesto">
+        <h2 class="network-headline">Run it. Or use it.</h2>
+        <div class="declaration-copy">
+          <p class="network-body">Use Certifyd as a creator,<br />or run infrastructure and earn from network activity.</p>
+          <p class="network-body" style="margin-top:10px;">Powered by peer-to-peer infrastructure, creator ownership, and borderless payments.</p>
+        </div>
+        <div class="declaration-copy" style="margin-top:24px;">
+          <h3 style="font-size:clamp(1.1rem,2.5vw,1.45rem); margin-bottom:10px;">This is already live.</h3>
+          <p class="network-body" style="font-size:1.05rem; line-height:1.6;">
+            Creators are publishing.<br />
+            Fans are unlocking content.<br />
+            Payments are settling over Bitcoin Lightning.
+          </p>
+          <p style="margin-top:12px;">
+            <a href="https://fan.certifyd.me" target="_blank" rel="noreferrer" style="font-weight:700;">Visit Discover</a>
+          </p>
+        </div>
+        <h2 id="built-for" class="who-heading">Who it’s for</h2>
+        <div class="who-grid">
+          <div class="who-card">
+            <h3>Creators</h3>
+            <p>Sell without giving up control.</p>
+          </div>
+          <div class="who-card">
+            <h3>Collaborators</h3>
+            <p>Get paid automatically.</p>
+          </div>
+          <div class="who-card">
+            <h3>Operators</h3>
+            <p>Run payments. Earn from the network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EARLY ACCESS -->
+    <section id="early-access" class="wrap">
+      <h2>Apply for Early Access</h2>
+      <p>
+        Certifyd is opening to creators, musicians, writers, publishers, and node operators.
+      </p>
+
+      <div class="card" style="margin-top:20px;">
+        <form class="ea-form" id="early-access-form" action="#" method="post" data-endpoint="https://script.google.com/macros/s/AKfycbxO8lMdZTsPWvtEuTInZ1jRtuW854X_hde4gBSYXa1PktcT9bAuAhFR3Bwl_9lVqWENpw/exec">
+          <div class="ea-grid">
+            <label class="ea-field">
+              <span class="ea-label">Name</span>
+              <input class="ea-input" type="text" name="name" autocomplete="name" />
+            </label>
+            <label class="ea-field">
+              <span class="ea-label">Email</span>
+              <input class="ea-input" type="email" name="email" autocomplete="email" />
+            </label>
+          </div>
+
+          <label class="ea-field">
+            <span class="ea-label">Website / Domain</span>
+            <input class="ea-input" type="url" name="website" placeholder="https://yourdomain.com" />
+          </label>
+
+          <div class="ea-grid">
+            <label class="ea-field">
+              <span class="ea-label">Role</span>
+              <select class="ea-select" name="role">
+                <option>Musician</option>
+                <option>Producer</option>
+                <option>Video creator</option>
+                <option>Developer</option>
+                <option>Creative team</option>
+              </select>
+            </label>
+            <label class="ea-field">
+              <span class="ea-label">Do you run a Bitcoin / Lightning node?</span>
+              <select class="ea-select" name="node_status">
+                <option>Yes — Bitcoin Core + LND</option>
+                <option>Yes — another Lightning implementation</option>
+                <option>No but interested</option>
+                <option>No</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="ea-field">
+            <span class="ea-label">Are you comfortable testing early software?</span>
+            <select class="ea-select" name="testing_comfort">
+              <option>Yes</option>
+              <option>Somewhat</option>
+              <option>No</option>
+            </select>
+          </label>
+
+          <label class="ea-field">
+            <span class="ea-label">What do you want to publish with Certifyd?</span>
+            <textarea class="ea-textarea" name="publish_goals"></textarea>
+          </label>
+
+          <div class="form-cta">
+            <button class="btn primary" type="submit">Apply for Early Access</button>
+          </div>
+          <div id="early-access-status" class="ea-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Lightboxes -->
+    <div id="shot-library" class="lightbox" role="dialog" aria-modal="true" aria-label="Publish your work screenshot">
+      <a class="lightbox-bg" href="#product" aria-label="Close"></a>
+      <a href="#product" class="lightbox-close" aria-label="Close image">×</a>
+      <img src="images/screenshots/contentlibrary.png" alt="Content library view for publishing with structured creator metadata" />
+    </div>
+
+    <div id="shot-royalties" class="lightbox" role="dialog" aria-modal="true" aria-label="Credit collaborators screenshot">
+      <a class="lightbox-bg" href="#product" aria-label="Close"></a>
+      <a href="#product" class="lightbox-close" aria-label="Close image">×</a>
+      <img src="images/screenshots/royalties.png" alt="Royalties view showing contributor attribution and split details" />
+    </div>
+
+    <div id="shot-revenue" class="lightbox" role="dialog" aria-modal="true" aria-label="Route payments screenshot">
+      <a class="lightbox-bg" href="#product" aria-label="Close"></a>
+      <a href="#product" class="lightbox-close" aria-label="Close image">×</a>
+      <img src="images/screenshots/revenue.png" alt="Revenue dashboard showing Bitcoin and Lightning payment activity" />
+    </div>
+
+    <div id="shot-identity" class="lightbox" role="dialog" aria-modal="true" aria-label="Creator identity screenshot">
+      <a class="lightbox-bg" href="#own" aria-label="Close"></a>
+      <a href="#own" class="lightbox-close" aria-label="Close image">×</a>
+      <img src="images/screenshots/identity.png" alt="Creator identity panel with verification fingerprint and proof state" />
+    </div>
+
+    <div id="shot-workspace" class="lightbox" role="dialog" aria-modal="true" aria-label="Creator workspace screenshot">
+      <a class="lightbox-bg" href="#own" aria-label="Close"></a>
+      <a href="#own" class="lightbox-close" aria-label="Close image">×</a>
+      <img src="images/screenshots/personallibrary.png" alt="Personal creator workspace for releases, proofs, and publishing" />
+    </div>
+
+    <div id="shot-hero" class="lightbox" role="dialog" aria-modal="true" aria-label="Attribution hero screenshot">
+      <a class="lightbox-bg" href="#top" aria-label="Close"></a>
+      <a href="#top" class="lightbox-close" aria-label="Close image">×</a>
+      <img src="images/screenshots/contentattribution.png" alt="Certifyd Creator view showing publishing with attribution and collaborator context" />
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      No banks. No platforms. No lock-in.
+      <br />
+      Take your audience. Take your income.
+      <br />
+      Built by <a href="https://beatifygroup.com" target="_blank" rel="noreferrer">Beatify Group</a>.
+    </div>
+  </footer>
+
+  <button id="chat-launch" class="chat-launch" type="button" aria-controls="site-chatbot" aria-expanded="false">
+    Ask Certifyd
+  </button>
+  <aside id="site-chatbot" class="chatbot" aria-label="Certifyd assistant" aria-hidden="true">
+    <div class="chat-head">
+      <div class="chat-title">Certifyd Assistant</div>
+      <button id="chat-close" class="chat-close" type="button" aria-label="Close assistant">×</button>
+    </div>
+    <div id="chat-body" class="chat-body">
+      <div class="chat-msg bot">
+        Hi. I can help with product questions and where to find things on this page.
+      </div>
+      <div class="chat-quick">
+        <button class="chat-chip" type="button" data-q="What is Certifyd?">What is Certifyd?</button>
+        <button class="chat-chip" type="button" data-q="How is this different from a platform?">How is this different?</button>
+        <button class="chat-chip" type="button" data-q="What do I actually own?">What do I own?</button>
+        <button class="chat-chip" type="button" data-q="How do payouts work?">How do payouts work?</button>
+        <button class="chat-chip" type="button" data-q="Is this like Patreon, Substack, or YouTube?">Is this like Patreon?</button>
+      </div>
+    </div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" class="chat-input" type="text" placeholder="Ask a question…" autocomplete="off" />
+      <button class="chat-send" type="submit">Send</button>
+    </form>
+  </aside>
+
+  <script>
+    // Footer year (null-safe so other scripts still run on static variants)
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+    // Mobile menu auto-close (link click, outside click, Escape)
+    (function () {
+      const menu = document.querySelector(".nav-mobile");
+      if (!menu) return;
+
+      menu.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => { menu.open = false; });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.open) return;
+        if (!menu.contains(e.target)) menu.open = false;
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") menu.open = false;
+      });
+    })();
+
+    // Early access form -> Google Apps Script endpoint
+    (function () {
+      const form = document.getElementById("early-access-form");
+      const statusEl = document.getElementById("early-access-status");
+      if (!form || !statusEl) return;
+
+      const submitButton = form.querySelector("button[type='submit']");
+      const endpoint =
+        form.dataset.endpoint ||
+        window.EARLY_ACCESS_ENDPOINT ||
+        "";
+
+      function setStatus(kind, message) {
+        statusEl.className = "ea-status show " + kind;
+        statusEl.textContent = message;
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!endpoint) {
+          setStatus(
+            "error",
+            "Form endpoint is not configured yet. Add your Google Apps Script URL to data-endpoint."
+          );
+          return;
+        }
+
+        const formData = new FormData(form);
+        const payload = {
+          name: String(formData.get("name") || "").trim(),
+          email: String(formData.get("email") || "").trim(),
+          website: String(formData.get("website") || "").trim(),
+          role: String(formData.get("role") || "").trim(),
+          nodeStatus: String(formData.get("node_status") || "").trim(),
+          testingComfort: String(formData.get("testing_comfort") || "").trim(),
+          publishIntent: String(formData.get("publish_goals") || "").trim(),
+        };
+
+        if (!payload.name || !payload.email) {
+          setStatus("error", "Please provide your name and email.");
+          return;
+        }
+
+        if (submitButton) submitButton.disabled = true;
+        setStatus("success", "Submitting...");
+
+        try {
+          const body = new URLSearchParams();
+          body.set("name", payload.name);
+          body.set("email", payload.email);
+          body.set("website", payload.website);
+          body.set("role", payload.role);
+          body.set("nodeStatus", payload.nodeStatus);
+          body.set("testingComfort", payload.testingComfort);
+          body.set("publishIntent", payload.publishIntent);
+
+          const isGoogleAppsScript = endpoint.includes("script.google.com/macros/s/");
+          if (isGoogleAppsScript) {
+            // Apps Script web apps often don't return CORS headers for browser fetch reads.
+            // Use no-cors submit mode so the POST still reaches Sheets.
+            await fetch(endpoint, {
+              method: "POST",
+              mode: "no-cors",
+              body,
+            });
+          } else {
+            const res = await fetch(endpoint, {
+              method: "POST",
+              body,
+            });
+
+            const text = await res.text();
+            let data = null;
+            try { data = text ? JSON.parse(text) : null; } catch {}
+
+            if (!res.ok || (data && data.ok === false)) {
+              throw new Error((data && data.error) || "Submission failed");
+            }
+          }
+
+          setStatus("success", "Thanks. Your early access application was submitted.");
+          form.reset();
+        } catch (err) {
+          setStatus(
+            "error",
+            "Could not submit right now. Please try again in a moment."
+          );
+          console.error("Early access form submission failed", err);
+        } finally {
+          if (submitButton) submitButton.disabled = false;
+        }
+      });
+    })();
+
+    // Chatbot: endpoint-backed when configured, FAQ fallback otherwise.
+    (function () {
+      document.documentElement.classList.add('reveal-enabled');
+      const revealTargets = Array.from(document.querySelectorAll('.panel, .card, .shot-card, .hero-shot, .hero-mini'));
+      revealTargets.forEach((el, i) => {
+        el.classList.add('reveal-up');
+        el.style.transitionDelay = (Math.min(i % 8, 7) * 35) + 'ms';
+      });
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        revealTargets.forEach((el) => io.observe(el));
+      } else {
+        revealTargets.forEach((el) => el.classList.add('in'));
+      }
+
+      const launch = document.getElementById("chat-launch");
+      const panel = document.getElementById("site-chatbot");
+      const closeBtn = document.getElementById("chat-close");
+      const form = document.getElementById("chat-form");
+      const input = document.getElementById("chat-input");
+      const body = document.getElementById("chat-body");
+      if (!launch || !panel || !closeBtn || !form || !input || !body) return;
+      const chatEndpoint = String(
+        window.CERTIFYD_CHAT_ENDPOINT ||
+        panel.getAttribute("data-endpoint") ||
+        ""
+      ).trim();
+      const liveMode = /^https?:\/\//i.test(chatEndpoint);
+
+      function toggle(open) {
+        const shouldOpen = typeof open === "boolean" ? open : !panel.classList.contains("open");
+        panel.classList.toggle("open", shouldOpen);
+        panel.setAttribute("aria-hidden", shouldOpen ? "false" : "true");
+        launch.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+        if (shouldOpen) input.focus();
+      }
+
+      function appendMessage(kind, text) {
+        const el = document.createElement("div");
+        el.className = "chat-msg " + kind;
+        el.textContent = text;
+        body.appendChild(el);
+        body.scrollTop = body.scrollHeight;
+        return el;
+      }
+
+      function answerFor(questionRaw) {
+        const q = String(questionRaw || "").toLowerCase().trim();
+        if (!q) {
+          return {
+            matched: false,
+            text: "Ask about what Certifyd is, ownership, publishing, payments, receipts, splits, payouts, Bitcoin Lightning, network, or who Certifyd is for."
+          };
+        }
+
+        const faq = [
+          {
+            patterns: ["what is certifyd", "what's certifyd", "what is certfiyd", "certifyd"],
+            answer: "Certifyd is creator commerce infrastructure that helps creators publish content, accept payments, manage ownership, and connect directly with their audience. It combines publishing, commerce, receipts, payouts, and creator ownership into a single system."
+          },
+          {
+            patterns: ["music distribution service", "is certifyd a distribution service", "distribution only"],
+            answer: "Partly. Certifyd supports music distribution, but it is broader than traditional distribution. It helps creators publish, sell, get paid, manage rights, and build direct relationships with their audience."
+          },
+          {
+            patterns: ["what can i publish", "publish with certifyd", "publish music", "publish videos", "publish content"],
+            answer: "Creators can publish music, videos, images, documents, digital products, downloads, memberships, premium content, and other digital media."
+          },
+          {
+            patterns: ["keep ownership", "do i own my content", "ownership of content", "retain ownership"],
+            answer: "Yes. Creators retain ownership of their content, audience relationships, receipts, and creative rights."
+          },
+          {
+            patterns: ["how do creators get paid", "how do i get paid", "payments", "paid instantly"],
+            answer: "Fans can purchase content directly. Payments are processed through the Certifyd commerce system and can settle instantly using Bitcoin Lightning where supported."
+          },
+          {
+            patterns: ["bitcoin lightning", "what is lightning", "lightning network"],
+            answer: "Bitcoin Lightning is a payment network built on Bitcoin that enables fast, low-cost payments. It allows creators to receive payments quickly without traditional payout delays."
+          },
+          {
+            patterns: ["need bitcoin", "do i need bitcoin", "must i use bitcoin"],
+            answer: "Not necessarily. Certifyd is designed to make creator commerce simple while supporting Bitcoin-powered payments behind the scenes where available."
+          },
+          {
+            patterns: ["spotify", "apple music", "youtube", "different from platforms", "patreon", "substack"],
+            answer: "Those platforms primarily control distribution and audience access. Certifyd focuses on creator ownership, direct commerce, transparent payouts, and audience relationships."
+          },
+          {
+            patterns: ["creator commerce", "what is creator commerce"],
+            answer: "Creator commerce means creators can sell directly to their audience instead of relying solely on advertising, streams, or platform-controlled monetization."
+          },
+          {
+            patterns: ["receipts", "what are receipts"],
+            answer: "Receipts are permanent records of purchases, payments, and content access. They provide transparency for creators and buyers."
+          },
+          {
+            patterns: ["splits", "split payment", "revenue split"],
+            answer: "Splits allow multiple contributors to share revenue from a sale. Certifyd can track how earnings should be allocated among collaborators."
+          },
+          {
+            patterns: ["payout", "payouts", "what are payouts"],
+            answer: "Payouts are the actual movement of earnings to creators and participants after revenue has been allocated."
+          },
+          {
+            patterns: ["collaborate", "collaboration", "collaborators", "other creators"],
+            answer: "Yes. Certifyd supports collaboration through revenue sharing, contributor participation, attribution, and payout tracking."
+          },
+          {
+            patterns: ["provenance", "what is provenance"],
+            answer: "Provenance is the history of a piece of content. It helps track who created it, who contributed to it, and how it evolved over time."
+          },
+          {
+            patterns: ["creator-owned infrastructure", "creator owned infrastructure", "what does creator-owned mean"],
+            answer: "It means creators maintain greater control over their content, audience relationships, commerce, and earnings rather than depending entirely on centralized platforms."
+          },
+          {
+            patterns: ["certifyd profile", "what is a profile", "creator storefront"],
+            answer: "A Certifyd profile is a creator storefront where fans can discover content, make purchases, and interact directly with creators."
+          },
+          {
+            patterns: ["fans discover", "discover creators", "can fans browse"],
+            answer: "Yes. Fans can browse creator profiles, discover content, unlock premium releases, and support creators directly."
+          },
+          {
+            patterns: ["certifyd network", "what is the network"],
+            answer: "The Certifyd network is a distributed creator commerce network that connects creators, fans, and operators through publishing, payments, and ownership infrastructure."
+          },
+          {
+            patterns: ["distributed network", "what does distributed mean"],
+            answer: "A distributed network is not controlled by a single platform or company. Multiple operators and creators can participate while maintaining their own presence and audience."
+          },
+          {
+            patterns: ["why was certifyd created", "why certifyd", "why did you build certifyd"],
+            answer: "Certifyd was created to give creators more control over publishing, payments, audience relationships, ownership, and long-term value creation."
+          },
+          {
+            patterns: ["is certifyd live", "is this live", "live now"],
+            answer: "Yes. Creators can publish content, fans can unlock content, and payments can settle through the Certifyd network."
+          },
+          {
+            patterns: ["who is certifyd for", "who is this for", "target users"],
+            answer: "Certifyd is designed for musicians, creators, labels, publishers, educators, media companies, creator collectives, and independent operators."
+          },
+          {
+            patterns: ["biggest benefit", "main benefit", "key benefit"],
+            answer: "Direct creator ownership. Creators can publish, sell, get paid, and build audience relationships without giving up control of their work."
+          },
+          {
+            patterns: ["why bitcoin", "use bitcoin", "bitcoin payments"],
+            answer: "Bitcoin enables borderless payments, global accessibility, and direct value transfer without requiring traditional banking infrastructure."
+          },
+          {
+            patterns: ["certifyd vision", "vision", "future"],
+            answer: "A world where creators own their audience, control their commerce, publish independently, and participate in a distributed creator economy."
+          }
+        ];
+
+        for (const item of faq) {
+          if (item.patterns.some((pattern) => q.includes(pattern))) {
+            return { matched: true, text: item.answer };
+          }
+        }
+
+        if (q.includes("early access") || q.includes("apply") || q.includes("waitlist")) {
+          return {
+            matched: true,
+            text: "Use the “Apply for Early Access” form on this page. It submits directly to the Certifyd intake sheet."
+          };
+        }
+
+        return {
+          matched: false,
+          text: "I can help with publishing, ownership, payments, receipts, splits, payouts, Bitcoin Lightning, and the Certifyd network."
+        };
+      }
+
+      async function askLiveAssistant(question) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+        try {
+          const response = await fetch(chatEndpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              message: question,
+              source: "certifyd.me",
+              context: {
+                page: location.href,
+                sectionHints: ["ownership", "own", "how", "product", "network", "early-access"]
+              }
+            }),
+            signal: controller.signal
+          });
+          const text = await response.text();
+          let data = null;
+          try { data = text ? JSON.parse(text) : null; } catch {}
+          if (!response.ok) {
+            throw new Error((data && (data.error || data.message)) || `chat_endpoint_${response.status}`);
+          }
+          const reply =
+            (data && (data.reply || data.message || data.answer || data.output_text)) ||
+            (typeof data === "string" ? data : "");
+          if (!String(reply || "").trim()) throw new Error("chat_endpoint_empty_reply");
+          return String(reply).trim();
+        } finally {
+          clearTimeout(timeout);
+        }
+      }
+
+      async function handleQuestion(text) {
+        const cleaned = String(text || "").trim();
+        if (!cleaned) return;
+        appendMessage("user", cleaned);
+        const localAnswer = answerFor(cleaned);
+        if (localAnswer.matched || !liveMode) {
+          appendMessage("bot", localAnswer.text);
+          return;
+        }
+        const pending = appendMessage("bot", "Thinking…");
+        try {
+          const liveReply = await askLiveAssistant(cleaned);
+          pending.textContent = liveReply;
+        } catch (err) {
+          pending.textContent = localAnswer.text;
+        }
+      }
+
+      launch.addEventListener("click", () => toggle(true));
+      closeBtn.addEventListener("click", () => toggle(false));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && panel.classList.contains("open")) toggle(false);
+      });
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        await handleQuestion(input.value);
+        input.value = "";
+      });
+      panel.querySelectorAll(".chat-chip").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          await handleQuestion(btn.getAttribute("data-q") || "");
+        });
+      });
+      appendMessage(
+        "bot",
+        liveMode
+          ? "Live assistant is connected."
+          : "Ask me about ownership, payouts, or how Certifyd works. (Live endpoint not configured.)"
+      );
+    })();
+  </script>
+</body>
+</html>
