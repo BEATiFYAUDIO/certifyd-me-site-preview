@@ -2087,23 +2087,24 @@ section[id]{
       .proof-kicker{ font-size:16px; }
       .flow-divider{ font-size:clamp(34px, 11vw, 46px); line-height:1.16; }
       #how.flow-inline{
-        padding:16px 14px;
+        padding:16px 12px;
       }
       #how .flow-divider{
-        font-size:clamp(19px, 6.6vw, 28px);
-        line-height:1.14;
+        font-size:clamp(17px, 5.9vw, 24px);
+        line-height:1.12;
         display:grid;
-        width:100%;
+        width:fit-content;
         max-width:100%;
-        grid-template-columns:minmax(0, 1fr) auto minmax(0, 1fr);
+        grid-template-columns:max-content auto max-content;
         grid-template-rows:auto auto;
-        column-gap:.24em;
+        column-gap:.22em;
         row-gap:.1em;
         justify-content:center;
         align-items:baseline;
-        margin-left:0;
-        margin-right:0;
+        margin-left:auto;
+        margin-right:auto;
         text-align:center;
+        letter-spacing:-0.005em;
       }
       #how .flow-divider > span{
         white-space:nowrap !important;
@@ -2253,9 +2254,9 @@ section[id]{
       }
       #how .flow-divider{
         text-align:center !important;
-        margin-left:0 !important;
-        margin-right:0 !important;
-        width:100% !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+        width:fit-content !important;
         max-width:100% !important;
         overflow-wrap:normal !important;
       }
