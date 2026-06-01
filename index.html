@@ -628,43 +628,8 @@ section[id]{
       object-position:center center;
     }
     .hero-main-image{
-      position:relative;
-      min-width:0;
-      width:100%;
-      max-width:1120px;
       margin:18px 0 24px;
-      border-radius:0;
-      overflow:hidden;
-      border:0 !important;
-      background:transparent !important;
-      box-shadow:none !important;
-      aspect-ratio:16 / 9;
-      isolation:isolate;
-    }
-    .hero-main-image::after{
-      content:none !important;
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:
-        linear-gradient(180deg, rgba(4,10,16,0.1), rgba(4,10,16,0.22)),
-        radial-gradient(420px 220px at 18% 16%, rgba(255,159,10,0.035), transparent 68%),
-        radial-gradient(460px 250px at 86% 10%, rgba(111,168,255,0.055), transparent 70%);
-      mix-blend-mode:multiply;
-      opacity:0.58;
-      z-index:1;
-    }
-    .hero-main-image img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center center;
-      transform:none;
-      filter:none;
-      border-radius:0;
-      -webkit-clip-path:none;
-      clip-path:none;
+      max-width:1120px;
     }
     .hero-image-caption{
       margin:-6px 0 24px;
@@ -1264,13 +1229,13 @@ section[id]{
       color:rgba(224,236,248,0.9);
       text-shadow:0 1px 8px rgba(0,0,0,0.16);
     }
-    .distribution-image-frame{
+    .card-media{
       position:relative;
       margin-top:16px;
       margin-inline:auto;
       width:100%;
       max-width:1120px;
-      border-radius:16px;
+      border-radius:var(--panel-radius);
       overflow:hidden;
       border:1px solid rgba(126,168,210,0.52);
       background:rgba(8,18,30,0.55);
@@ -1280,78 +1245,20 @@ section[id]{
         0 0 24px rgba(95,159,255,0.18);
       aspect-ratio:16 / 9;
     }
-    .distribution-image-frame::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:1;
-      pointer-events:none;
-      background:
-        linear-gradient(160deg, rgba(126,168,210,0.36), rgba(95,159,255,0.28) 44%, rgba(6,16,30,0.2));
-      mix-blend-mode:screen;
-    }
-    .distribution-image-frame::after{
-      content:"";
-      position:absolute;
-      left:16px;
-      top:16px;
-      width:clamp(120px, 18vw, 210px);
-      aspect-ratio:3.2 / 1;
-      background:url("images/certifyd_logo_transparent.svg") left center / contain no-repeat;
-      opacity:0.9;
-      filter:drop-shadow(0 6px 14px rgba(0,0,0,0.45));
-      pointer-events:none;
-      z-index:2;
-    }
-    .distribution-image-frame img{
+    .card-media img{
       width:100%;
       display:block;
-      position:relative;
-      z-index:0;
       height:100%;
-      aspect-ratio:16 / 9;
       object-fit:cover;
       object-position:center center;
-      filter:hue-rotate(-18deg) saturate(.9) contrast(1.03) brightness(.95);
     }
-    .distribution-image-frame.wallet-blue img{
-      filter:none !important;
-    }
-    .distribution-image-frame.wallet-blue::before,
-    .distribution-image-frame.wallet-blue::after{
-      content:none !important;
-      display:none !important;
-      background:none !important;
-    }
-    .distribution-image-frame.ip-group-grade img{
-      filter:none !important;
-    }
-    .distribution-image-frame.ip-group-grade::before,
-    .distribution-image-frame.ip-group-grade::after{
-      content:none !important;
-      display:none !important;
-      background:none !important;
-    }
-    .distribution-image-frame.creator-blue img{
-      filter:hue-rotate(168deg) saturate(0.62) contrast(1.03) brightness(.9);
+    .raw-panel-media{
+      margin-top:16px;
     }
     .raw-panel-image{
       width:100%;
-      max-width:1120px;
       display:block;
-      margin:16px auto 0;
-      aspect-ratio:16 / 9;
-      border:0 !important;
-      border-radius:0 !important;
-      box-shadow:none !important;
-      filter:none !important;
-      background:transparent !important;
-      object-fit:cover;
-      object-position:center center;
-      overflow:hidden;
-      -webkit-clip-path:none;
-      clip-path:none;
-      line-height:0;
+      margin:0;
     }
     .hero-subheader{
       margin:16px 0 4px;
@@ -1443,12 +1350,7 @@ section[id]{
       font-weight:700;
       line-height:1;
     }
-    .ownership-media-card{
-      padding:12px;
-    }
-    .ownership-media-card .shot-card{
-      border-radius:6px;
-    }
+    .ownership-media-card{ padding:12px; }
     .flow-section{
       padding-top:var(--space-section);
       padding-bottom:var(--space-section);
@@ -1593,24 +1495,13 @@ section[id]{
     }
     .shot:hover img{ transform:translateY(-1px); filter:brightness(1.05); }
     .shot-card{
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:block;
       text-decoration:none;
       color:inherit;
-      overflow:hidden;
-      border-radius:8px;
-      border:1px solid rgba(206,235,255,0.38);
-      background:linear-gradient(180deg, rgba(205,236,255,0.3), rgba(130,201,239,0.2));
-      aspect-ratio:16 / 10;
     }
     .shot-card img{
-      width:100%;
-      height:100%;
       border:0;
       box-shadow:none;
-      object-fit:cover;
-      object-position:center center;
     }
 
     /* Middle narrative band: consistent premium surface instead of floating text on wallpaper */
@@ -2524,7 +2415,7 @@ section[id]{
         <div>
           <h1 class="hero-title"><span class="hero-title-line"><span class="hero-title-white">Certifyd</span> <span class="hero-title-orange">Music</span> <span class="hero-title-blue-light">&amp;</span></span><br><span class="hero-title-line"><span class="hero-title-blue-light">Content</span> <span class="hero-title-white">Distribution</span></span></h1>
 
-          <figure class="hero-main-image" aria-label="Certifyd featured creators">
+          <figure class="hero-main-image card-media" aria-label="Certifyd featured creators">
             <img src="images/certifyd-main-image-edgefix-20260601.jpeg?v=20260601b" alt="Two music creators posing under stage lights" fetchpriority="high" decoding="async" />
           </figure>
 
@@ -2542,14 +2433,16 @@ section[id]{
           <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
           <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
             <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
-            <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260601b" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
+            <figure class="card-media raw-panel-media" aria-label="Certifyd creator commerce infrastructure">
+              <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260601b" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
+            </figure>
           </div>
           <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
           <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
             <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
-            <figure class="distribution-image-frame wallet-blue" aria-label="Payment received via Bitcoin Lightning">
+            <figure class="distribution-image-frame wallet-blue card-media" aria-label="Payment received via Bitcoin Lightning">
               <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260601a" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
             </figure>
             <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
@@ -2558,7 +2451,7 @@ section[id]{
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
             <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
-            <figure class="distribution-image-frame ip-group-grade" aria-label="Team collaboration on intellectual property publishing strategy">
+            <figure class="distribution-image-frame ip-group-grade card-media" aria-label="Team collaboration on intellectual property publishing strategy">
               <img src="images/screenshots/ip-team-saturated-20260601.jpeg?v=20260601a" alt="Team reviewing publishing and intellectual property strategy around a laptop" loading="lazy" decoding="async" />
             </figure>
             <ul class="infra-list plain-lines" aria-label="IP and earnings capabilities">
@@ -2637,7 +2530,7 @@ section[id]{
         </div>
 
         <div class="why-card ownership-media-card">
-          <a class="shot-card" href="#shot-how" aria-label="Open payment confirmation screenshot">
+          <a class="shot-card card-media" href="#shot-how" aria-label="Open payment confirmation screenshot">
             <img src="images/screenshots/one-payment-last-saturated-20260601.jpeg?v=20260601a" alt="Mobile payment confirmation showing sats received via Lightning" />
           </a>
         </div>
