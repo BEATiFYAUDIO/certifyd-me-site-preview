@@ -269,20 +269,24 @@ section[id]{
 
     /* Desktop nav */
     .nav-desktop{
-      justify-self:start;
+      justify-self:stretch;
+      width:100%;
       display:flex;
-      gap:4px;
+      justify-content:space-evenly;
+      gap:0;
       align-items:center;
       white-space:nowrap;
       padding-bottom:0;
     }
     .nav-desktop a{
-      padding:10px 14px;
+      padding:10px 8px;
       font-size:0.95rem;
       border-radius:12px;
       min-height:44px;
       display:flex;
       align-items:center;
+      justify-content:center;
+      text-align:center;
       border:1px solid transparent;
       transition:background 210ms ease, border-color 210ms ease, color 210ms ease, box-shadow 210ms ease;
     }
