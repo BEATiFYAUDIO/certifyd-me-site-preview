@@ -1250,7 +1250,7 @@ section[id]{
       display:block;
       height:100%;
       object-fit:cover;
-      object-position:center center;
+      object-position:var(--media-pos, center center);
       transform:scale(var(--media-zoom, 1));
       transform-origin:center center;
     }
@@ -2532,7 +2532,7 @@ section[id]{
         </div>
 
         <div class="why-card ownership-media-card">
-          <a class="shot-card card-media" style="--media-zoom:1.09;" href="#shot-how" aria-label="Open payment confirmation screenshot">
+          <a class="shot-card card-media" style="--media-zoom:1.16; --media-pos:center 52%;" href="#shot-how" aria-label="Open payment confirmation screenshot">
             <img src="images/screenshots/one-payment-last-saturated-20260601.jpeg?v=20260601a" alt="Mobile payment confirmation showing sats received via Lightning" />
           </a>
         </div>
