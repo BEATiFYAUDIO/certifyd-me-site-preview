@@ -1880,8 +1880,26 @@ section[id]{
     }
 
     @media (max-width: 680px){
+      :root{
+        --pad:12px;
+      }
       .wrap{
-        width:min(100% - 16px, 1180px);
+        width:100%;
+        max-width:var(--wrap);
+        margin-left:auto;
+        margin-right:auto;
+        padding-left:var(--pad);
+        padding-right:var(--pad);
+      }
+      .feature-panel,
+      .card,
+      .hero-main-image,
+      .distribution-image-frame,
+      .payment-note{
+        width:100%;
+        max-width:100%;
+        margin-left:auto;
+        margin-right:auto;
       }
       body{
         background:
@@ -2205,8 +2223,9 @@ section[id]{
       #network{
         padding-top:24px !important;
         padding-bottom:24px !important;
-        padding-left:var(--pad) !important;
-        padding-right:var(--pad) !important;
+        /* Keep horizontal gutters owned by .wrap only to prevent right-side squeeze */
+        padding-left:0 !important;
+        padding-right:0 !important;
       }
       #data{ margin-top:0 !important; margin-bottom:0 !important; }
       .proof-section{ margin-top:0 !important; margin-bottom:0 !important; }
