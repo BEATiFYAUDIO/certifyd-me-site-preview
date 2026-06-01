@@ -1354,14 +1354,13 @@ section[id]{
     }
     .ownership-media-card{ padding:12px; }
     .platform-logos-strip{
-      margin-top:10px;
+      margin-top:12px;
+      --media-zoom:1;
+      --media-pos:center center;
+      aspect-ratio:16 / 1.55;
     }
     .platform-logos-strip img{
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius:6px;
-      border:1px solid rgba(126,168,210,0.45);
+      border:0;
     }
     .flow-section{
       padding-top:var(--space-section);
@@ -2545,8 +2544,8 @@ section[id]{
           <a class="shot-card card-media" style="--media-zoom:1; --media-pos:center 50%;" href="#shot-how" aria-label="Open payment confirmation screenshot">
             <img src="images/screenshots/one-payment-last-20260601-135556.png?v=20260601a" alt="Mobile payment confirmation showing sats received via Lightning" />
           </a>
-          <div class="platform-logos-strip" aria-label="Available platforms">
-            <img src="images/screenshots/platform-logos-strip-20260601.png?v=20260601a" alt="Spotify, Apple Music, YouTube, TikTok, Amazon Music, Deezer, and Tidal" loading="lazy" decoding="async" />
+          <div class="platform-logos-strip card-media" aria-label="Available platforms">
+            <img src="images/screenshots/platform-logos-strip-20260601.png?v=20260601b" alt="Spotify, Apple Music, YouTube, TikTok, Amazon Music, Deezer, and Tidal" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
