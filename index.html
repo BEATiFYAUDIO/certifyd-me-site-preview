@@ -662,8 +662,11 @@ section[id]{
       display:block;
       object-fit:cover;
       object-position:center center;
-      transform:scale(1.01);
-      filter:saturate(1.04) contrast(1.06) brightness(1.01);
+      transform:none;
+      filter:none;
+      border-radius:inherit;
+      -webkit-clip-path:inset(0 round 16px);
+      clip-path:inset(0 round 16px);
     }
     .hero-image-caption{
       margin:-6px 0 24px;
