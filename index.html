@@ -1322,6 +1322,18 @@ section[id]{
     .distribution-image-frame.creator-blue img{
       filter:hue-rotate(168deg) saturate(0.62) contrast(1.03) brightness(.9);
     }
+    .distribution-image-frame.raw-true img{
+      filter:none !important;
+    }
+    .distribution-image-frame.raw-true::before,
+    .distribution-image-frame.raw-true::after{
+      content:none !important;
+      display:none !important;
+    }
+    .distribution-image-frame.raw-true{
+      background:transparent !important;
+      box-shadow:none !important;
+    }
     .hero-subheader{
       margin:16px 0 4px;
       font-size:clamp(1.45rem, 4.2vw, 2.45rem);
@@ -2511,7 +2523,7 @@ section[id]{
           <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
           <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
             <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
-            <figure class="distribution-image-frame" aria-label="Creator listening with headphones">
+            <figure class="distribution-image-frame raw-true" aria-label="Creator listening with headphones">
               <img src="images/promo-2026-01-05-58.png?v=20260601b" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
             </figure>
           </div>
