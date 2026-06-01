@@ -1251,6 +1251,8 @@ section[id]{
       height:100%;
       object-fit:cover;
       object-position:center center;
+      transform:scale(var(--media-zoom, 1));
+      transform-origin:center center;
     }
     .raw-panel-media{
       margin-top:16px;
@@ -2415,7 +2417,7 @@ section[id]{
         <div>
           <h1 class="hero-title"><span class="hero-title-line"><span class="hero-title-white">Certifyd</span> <span class="hero-title-orange">Music</span> <span class="hero-title-blue-light">&amp;</span></span><br><span class="hero-title-line"><span class="hero-title-blue-light">Content</span> <span class="hero-title-white">Distribution</span></span></h1>
 
-          <figure class="hero-main-image card-media" aria-label="Certifyd featured creators">
+          <figure class="hero-main-image card-media" style="--media-zoom:1.045;" aria-label="Certifyd featured creators">
             <img src="images/certifyd-main-image-edgefix-20260601.jpeg?v=20260601b" alt="Two music creators posing under stage lights" fetchpriority="high" decoding="async" />
           </figure>
 
@@ -2433,7 +2435,7 @@ section[id]{
           <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
           <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
             <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
-            <figure class="card-media raw-panel-media" aria-label="Certifyd creator commerce infrastructure">
+            <figure class="card-media raw-panel-media" style="--media-zoom:1.065;" aria-label="Certifyd creator commerce infrastructure">
               <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260601b" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
             </figure>
           </div>
@@ -2442,7 +2444,7 @@ section[id]{
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
             <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
-            <figure class="distribution-image-frame wallet-blue card-media" aria-label="Payment received via Bitcoin Lightning">
+            <figure class="distribution-image-frame wallet-blue card-media" style="--media-zoom:1.075;" aria-label="Payment received via Bitcoin Lightning">
               <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260601a" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
             </figure>
             <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
@@ -2451,7 +2453,7 @@ section[id]{
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
             <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
-            <figure class="distribution-image-frame ip-group-grade card-media" aria-label="Team collaboration on intellectual property publishing strategy">
+            <figure class="distribution-image-frame ip-group-grade card-media" style="--media-zoom:1.06;" aria-label="Team collaboration on intellectual property publishing strategy">
               <img src="images/screenshots/ip-team-saturated-20260601.jpeg?v=20260601a" alt="Team reviewing publishing and intellectual property strategy around a laptop" loading="lazy" decoding="async" />
             </figure>
             <ul class="infra-list plain-lines" aria-label="IP and earnings capabilities">
@@ -2530,7 +2532,7 @@ section[id]{
         </div>
 
         <div class="why-card ownership-media-card">
-          <a class="shot-card card-media" href="#shot-how" aria-label="Open payment confirmation screenshot">
+          <a class="shot-card card-media" style="--media-zoom:1.09;" href="#shot-how" aria-label="Open payment confirmation screenshot">
             <img src="images/screenshots/one-payment-last-saturated-20260601.jpeg?v=20260601a" alt="Mobile payment confirmation showing sats received via Lightning" />
           </a>
         </div>
