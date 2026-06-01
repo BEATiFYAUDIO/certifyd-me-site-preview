@@ -1317,6 +1317,12 @@ section[id]{
     .distribution-image-frame.wallet-blue img{
       filter:none !important;
     }
+    .distribution-image-frame.wallet-blue::before,
+    .distribution-image-frame.wallet-blue::after{
+      content:none !important;
+      display:none !important;
+      background:none !important;
+    }
     .distribution-image-frame.ip-group-grade img{
       filter:hue-rotate(-12deg) saturate(.98) contrast(1.07) brightness(.95);
     }
