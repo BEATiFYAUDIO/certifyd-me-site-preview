@@ -1322,35 +1322,23 @@ section[id]{
     .distribution-image-frame.creator-blue img{
       filter:hue-rotate(168deg) saturate(0.62) contrast(1.03) brightness(.9);
     }
-    .distribution-image-frame.raw-true img{
-      filter:none !important;
-      border-radius:inherit;
-      -webkit-clip-path:inset(0 round 16px);
-      clip-path:inset(0 round 16px);
-    }
-    .distribution-image-frame.raw-true::before,
-    .distribution-image-frame.raw-true::after{
-      content:none !important;
-      display:none !important;
-    }
-    .distribution-image-frame.raw-true{
-      padding:0 !important;
-      border:0 !important;
-      background:transparent !important;
-      box-shadow:none !important;
-      overflow:hidden !important;
-      border-radius:16px !important;
-      line-height:0;
-    }
-    .distribution-image-frame.raw-true img{
-      width:100% !important;
-      height:100% !important;
+    .raw-panel-image{
+      width:100%;
+      max-width:1120px;
       display:block;
+      margin:16px auto 0;
+      aspect-ratio:16 / 9;
+      border:0 !important;
+      border-radius:14px !important;
+      box-shadow:none !important;
+      filter:none !important;
+      background:transparent !important;
       object-fit:cover;
       object-position:center center;
-      border-radius:inherit !important;
-      -webkit-clip-path:none !important;
-      clip-path:none !important;
+      overflow:hidden;
+      -webkit-clip-path:inset(0 round 14px);
+      clip-path:inset(0 round 14px);
+      line-height:0;
     }
     .hero-subheader{
       margin:16px 0 4px;
@@ -2541,9 +2529,7 @@ section[id]{
           <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
           <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
             <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
-            <figure class="distribution-image-frame raw-true" aria-label="Creator listening with headphones">
-              <img src="images/creator-commerce-raw-20260601.jpeg?v=20260601a" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
-            </figure>
+            <img class="raw-panel-image" src="images/creator-commerce-raw-20260601.jpeg?v=20260601a" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
           </div>
           <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
           <h3 class="hero-subheader inner-rail">A Fans pay. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
