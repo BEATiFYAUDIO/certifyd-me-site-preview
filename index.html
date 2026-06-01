@@ -1869,6 +1869,9 @@ section[id]{
     }
 
     @media (max-width: 680px){
+      .wrap{
+        width:min(100% - 16px, 1180px);
+      }
       body{
         background:
           linear-gradient(180deg, rgba(23,94,132,0.86), rgba(10,56,84,0.9)),
@@ -1917,9 +1920,9 @@ section[id]{
       p{ font-size:1.03rem; line-height:1.62; }
       .hero-grid{ gap:28px; }
       .hero-main-image{
-        border-radius:20px;
+        border-radius:14px;
         aspect-ratio:16 / 9;
-        margin:14px 0 18px;
+        margin:10px 0 14px;
       }
       .hero-image-caption{
         margin:-8px 0 18px;
@@ -1938,7 +1941,7 @@ section[id]{
         min-height:48px;
       }
       .distribution-manifesto{
-        padding:22px 22px;
+        padding:16px 14px;
       }
       .distribution-manifesto .distribution-card-title{
         margin-bottom:16px;
@@ -1965,7 +1968,7 @@ section[id]{
         padding:12px 14px;
       }
       .infra-manifesto{
-        padding:22px 22px;
+        padding:16px 14px;
       }
       .infra-manifesto .distribution-card-title{
         margin-bottom:14px;
@@ -1999,6 +2002,31 @@ section[id]{
       }
       .distribution-image-frame::after{
         display:none;
+      }
+      .distribution-image-frame{
+        margin-top:12px;
+        border-radius:12px;
+        max-width:none;
+        width:100%;
+      }
+      .hero-subheader{
+        margin:12px 0 4px;
+        font-size:clamp(1.28rem, 6.2vw, 1.9rem);
+        line-height:1.14;
+        text-wrap:balance;
+      }
+      .hero-subheader.inner-rail{
+        margin-top:14px;
+      }
+      .payment-note{
+        width:100%;
+        margin-top:10px;
+        padding:8px 10px;
+        font-size:0.92rem;
+      }
+      .infra-list.plain-lines li{
+        font-size:0.9rem;
+        line-height:1.52;
       }
       .hero-btc-mark{
         width:34px;
