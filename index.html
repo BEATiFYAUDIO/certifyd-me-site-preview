@@ -242,24 +242,24 @@ section[id]{
 
     .header-inner{
       display:grid;
-      grid-template-columns:auto auto 1fr; /* brand | nav | spacer */
-      align-items:end;
-      gap:4px;
-      min-height:94px;
+      grid-template-columns:auto 1fr auto; /* brand | nav | menu */
+      align-items:center;
+      gap:14px;
+      min-height:82px;
       padding:6px 0;
     }
 
     /* Brand */
     .brand{
       display:flex;
-      align-items:flex-end;
-      height:74px;
+      align-items:center;
+      height:64px;
       overflow:visible;
       min-width:0;
-      padding-bottom:8px;
+      padding-bottom:0;
     }
     .brand img{
-      height:68px;
+      height:56px;
       width:auto;
       max-width:100%;
       object-fit:contain;
@@ -271,10 +271,10 @@ section[id]{
     .nav-desktop{
       justify-self:start;
       display:flex;
-      gap:2px;
-      align-items:flex-end;
+      gap:4px;
+      align-items:center;
       white-space:nowrap;
-      padding-bottom:10px;
+      padding-bottom:0;
     }
     .nav-desktop a{
       padding:10px 14px;
