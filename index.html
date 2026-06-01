@@ -993,6 +993,17 @@ section[id]{
       line-height:1.02;
       margin:0;
       text-shadow:0 10px 30px rgba(0,0,0,0.48);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:.12em;
+    }
+    .flow-line{
+      display:flex;
+      align-items:baseline;
+      justify-content:center;
+      gap:.22em;
+      white-space:nowrap;
     }
     .flow-inline{
       width:100%;
@@ -2092,35 +2103,18 @@ section[id]{
       #how .flow-divider{
         font-size:clamp(17px, 5.9vw, 24px);
         line-height:1.12;
-        display:grid;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
         width:fit-content;
         max-width:100%;
-        grid-template-columns:max-content auto max-content;
-        grid-template-rows:auto auto;
-        column-gap:.22em;
-        row-gap:.1em;
         justify-content:center;
-        align-items:baseline;
+        gap:.12em;
         margin-left:auto;
         margin-right:auto;
         text-align:center;
         letter-spacing:-0.005em;
       }
-      #how .flow-divider > span{
-        white-space:nowrap !important;
-      }
-      #how .flow-divider > span:nth-child(1){ grid-column:1; grid-row:1; }
-      #how .flow-divider > span:nth-child(2){ grid-column:2; grid-row:1; }
-      #how .flow-divider > span:nth-child(3){ grid-column:3; grid-row:1; }
-      #how .flow-divider > span:nth-child(5){ grid-column:1; grid-row:2; }
-      #how .flow-divider > span:nth-child(6){ grid-column:2; grid-row:2; }
-      #how .flow-divider > span:nth-child(7){ grid-column:3; grid-row:2; }
-      #how .flow-divider > span:nth-child(1),
-      #how .flow-divider > span:nth-child(5){ justify-self:end; }
-      #how .flow-divider > span:nth-child(2),
-      #how .flow-divider > span:nth-child(6){ justify-self:center; }
-      #how .flow-divider > span:nth-child(3),
-      #how .flow-divider > span:nth-child(7){ justify-self:start; }
       #how .flow-break{
         display:none;
       }
@@ -2480,7 +2474,10 @@ section[id]{
           </div>
           <h3 class="hero-subheader">Certifyd gives artists unlimited worldwide access to decentralized, blockchain-powered distribution.</h3>
           <div id="how" class="feature-panel flow-inline" style="margin-top:18px;">
-            <h2 class="flow-divider"><span>CREATE</span> <span class="flow-arrow" aria-hidden="true">→</span> <span>PUBLISH</span> <span class="flow-break" aria-hidden="true"></span><span>SELL</span> <span class="flow-arrow" aria-hidden="true">→</span> <span>GET PAID</span></h2>
+            <h2 class="flow-divider">
+              <span class="flow-line"><span>CREATE</span><span class="flow-arrow" aria-hidden="true">→</span><span>PUBLISH</span></span>
+              <span class="flow-line"><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></span>
+            </h2>
           </div>
           <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
           <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
