@@ -2090,15 +2090,18 @@ section[id]{
         padding:18px 20px;
       }
       #how .flow-divider{
-        font-size:clamp(28px, 10vw, 44px);
+        font-size:clamp(21px, 7.2vw, 30px);
         line-height:1.14;
         display:grid;
-        grid-template-columns:auto auto auto;
+        grid-template-columns:max-content max-content max-content;
         grid-template-rows:auto auto;
-        column-gap:.35em;
-        row-gap:.18em;
+        column-gap:.28em;
+        row-gap:.12em;
         justify-content:start;
         align-items:baseline;
+      }
+      #how .flow-divider > span{
+        white-space:nowrap;
       }
       #how .flow-divider > span:nth-child(1){ grid-column:1; grid-row:1; }
       #how .flow-divider > span:nth-child(2){ grid-column:2; grid-row:1; }
