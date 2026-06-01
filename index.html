@@ -2093,12 +2093,17 @@ section[id]{
         font-size:clamp(21px, 7.2vw, 30px);
         line-height:1.14;
         display:grid;
-        grid-template-columns:max-content max-content max-content;
+        width:fit-content;
+        max-width:100%;
+        grid-template-columns:auto auto auto;
         grid-template-rows:auto auto;
-        column-gap:.28em;
+        column-gap:.3em;
         row-gap:.12em;
-        justify-content:start;
+        justify-content:center;
         align-items:baseline;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
       }
       #how .flow-divider > span{
         white-space:nowrap;
@@ -2109,6 +2114,12 @@ section[id]{
       #how .flow-divider > span:nth-child(5){ grid-column:1; grid-row:2; }
       #how .flow-divider > span:nth-child(6){ grid-column:2; grid-row:2; }
       #how .flow-divider > span:nth-child(7){ grid-column:3; grid-row:2; }
+      #how .flow-divider > span:nth-child(1),
+      #how .flow-divider > span:nth-child(5){ justify-self:end; }
+      #how .flow-divider > span:nth-child(2),
+      #how .flow-divider > span:nth-child(6){ justify-self:center; }
+      #how .flow-divider > span:nth-child(3),
+      #how .flow-divider > span:nth-child(7){ justify-self:start; }
       #how .flow-break{
         display:none;
       }
@@ -2241,11 +2252,12 @@ section[id]{
         opacity:0.9 !important;
       }
       #how .flow-divider{
-        text-align:left !important;
-        margin-left:0 !important;
-        margin-right:0 !important;
-        max-width:none !important;
-        overflow-wrap:break-word !important;
+        text-align:center !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+        width:fit-content !important;
+        max-width:100% !important;
+        overflow-wrap:normal !important;
       }
     }
 
