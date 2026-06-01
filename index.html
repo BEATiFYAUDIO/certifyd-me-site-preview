@@ -1351,6 +1351,35 @@ section[id]{
     .btc-copy{
       margin:0;
     }
+    .payment-note{
+      margin:14px auto 0;
+      width:calc(100% - (var(--space-card) * 2));
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 12px;
+      border-radius:8px;
+      border:1px solid rgba(255,138,0,0.52);
+      background:linear-gradient(180deg, rgba(255,138,0,0.16), rgba(255,138,0,0.06));
+      color:rgba(237,243,250,0.96);
+      font-size:clamp(0.96rem, 1.42vw, 1.05rem);
+      line-height:1.4;
+      box-shadow:0 8px 20px rgba(0,0,0,0.24);
+    }
+    .payment-note-icon{
+      width:22px;
+      height:22px;
+      flex:0 0 22px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      background:var(--certifyd-orange);
+      color:#fff;
+      font-size:14px;
+      font-weight:700;
+      line-height:1;
+    }
     .ownership-media-card{
       padding:12px;
     }
@@ -2382,8 +2411,8 @@ section[id]{
             <figure class="distribution-image-frame" aria-label="Creator listening with headphones">
               <img src="images/promo-2026-01-27-14.png" alt="Creator commerce infrastructure promo visual with creator profile and platform metrics" loading="lazy" decoding="async" />
             </figure>
-            <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
           </div>
+          <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
           <h3 class="hero-subheader inner-rail">No Label Needed. Sell your music worldwide. Stream, distribute and own your future.</h3>
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
