@@ -258,7 +258,7 @@ section[id]{
       min-width:0;
     }
     .brand img{
-      height:104px;
+      height:84px;
       width:auto;
       max-width:100%;
       object-fit:contain;
@@ -384,10 +384,10 @@ section[id]{
         margin-left:0;
       }
       .brand img{
-        height:92px;
+        height:74px;
         width:auto;
         max-width:min(70vw, 410px);
-        max-height:98px;
+        max-height:80px;
         object-fit:contain;
         object-position:left center;
         display:block;
@@ -405,7 +405,7 @@ section[id]{
     }
     @media (max-width: 380px){
       .brand img{
-        height:80px;
+        height:66px;
         max-width:min(66vw, 300px);
       }
       .nav-mobile summary{
@@ -1249,7 +1249,7 @@ section[id]{
       width:100%;
       display:block;
       height:100%;
-      object-fit:cover;
+      object-fit:var(--media-fit, cover);
       object-position:var(--media-pos, center center);
       transform:scale(var(--media-zoom, 1));
       transform-origin:center center;
@@ -2532,7 +2532,7 @@ section[id]{
         </div>
 
         <div class="why-card ownership-media-card">
-          <a class="shot-card card-media" style="--media-zoom:1; --media-pos:center 50%;" href="#shot-how" aria-label="Open payment confirmation screenshot">
+          <a class="shot-card card-media" style="--media-zoom:1; --media-pos:center 50%; --media-fit:contain;" href="#shot-how" aria-label="Open payment confirmation screenshot">
             <img src="images/screenshots/one-payment-last-20260601-keep-audience.png?v=20260601a" alt="Mobile payment confirmation showing sats received via Lightning" />
           </a>
         </div>
