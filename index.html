@@ -1283,6 +1283,9 @@ section[id]{
       pointer-events:none;
       filter:drop-shadow(0 2px 5px rgba(0,0,0,0.28));
     }
+    .logo-overlay-frame .media-logo-overlay-mobile{
+      display:none;
+    }
     .ip-group-grade{
       border-color:rgba(94,122,224,0.68);
       background:
@@ -1899,6 +1902,26 @@ section[id]{
         margin-left:auto;
         margin-right:auto;
       }
+      .logo-overlay-frame .media-logo-overlay{
+        display:none;
+      }
+      .logo-overlay-frame .media-logo-overlay-mobile{
+        display:block;
+        position:absolute;
+        top:var(--logo-mobile-top, 8px);
+        left:var(--logo-mobile-left, 8px);
+        z-index:4;
+        width:var(--logo-mobile-width, clamp(44px, 15vw, 68px));
+        aspect-ratio:1 / 1;
+        height:auto;
+        object-fit:cover;
+        object-position:center;
+        border-radius:6px;
+        transform:none;
+        pointer-events:none;
+        opacity:0.92;
+        filter:drop-shadow(0 2px 5px rgba(0,0,0,0.32));
+      }
       body{
         background:
           linear-gradient(180deg, rgba(23,94,132,0.86), rgba(10,56,84,0.9)),
@@ -2507,6 +2530,7 @@ section[id]{
             <figure class="card-media raw-panel-media logo-overlay-frame" style="--media-zoom:1.065; --logo-width:clamp(150px, 24%, 300px); --logo-top:16px; --logo-left:18px;" aria-label="Certifyd creator commerce infrastructure">
               <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260602clean" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
               <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </figure>
           </div>
           <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
@@ -2517,6 +2541,7 @@ section[id]{
             <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
               <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
               <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </figure>
             <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
           </div>
