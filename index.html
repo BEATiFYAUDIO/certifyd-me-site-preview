@@ -1305,14 +1305,16 @@ section[id]{
       z-index:2;
       pointer-events:none;
       background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 .18 .34 .48 .62'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E"),
         radial-gradient(24% 22% at 91% 77%, rgba(202,70,0,0.32), transparent 74%),
         radial-gradient(22% 18% at 82% 13%, rgba(226,82,0,0.18), transparent 78%);
-      mix-blend-mode:multiply;
-      opacity:0.14;
+      background-size:140px 140px, auto, auto;
+      mix-blend-mode:soft-light;
+      opacity:0.42;
     }
     .ip-group-grade img{
       opacity:0.97;
-      filter:saturate(1.08) contrast(0.97) brightness(1.04) sepia(0.04) blur(0.08px);
+      filter:saturate(1.05) contrast(0.94) brightness(1.03) sepia(0.04) blur(0.16px);
     }
     .raw-panel-media{
       margin-top:16px;
