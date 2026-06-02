@@ -1271,6 +1271,18 @@ section[id]{
       transform:scale(var(--media-zoom, 1));
       transform-origin:center center;
     }
+    .logo-overlay-frame .media-logo-overlay{
+      position:absolute;
+      top:var(--logo-top, 16px);
+      left:var(--logo-left, 18px);
+      z-index:4;
+      width:var(--logo-width, clamp(150px, 22%, 270px));
+      height:auto;
+      object-fit:contain;
+      transform:none;
+      pointer-events:none;
+      filter:drop-shadow(0 2px 5px rgba(0,0,0,0.28));
+    }
     .ip-group-grade{
       border-color:rgba(94,122,224,0.68);
       background:
@@ -2492,8 +2504,9 @@ section[id]{
           <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
           <div class="feature-panel distribution-manifesto" style="margin-top:16px;">
             <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
-            <figure class="card-media raw-panel-media" style="--media-zoom:1.065;" aria-label="Certifyd creator commerce infrastructure">
-              <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260602logo" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
+            <figure class="card-media raw-panel-media logo-overlay-frame" style="--media-zoom:1.065; --logo-width:clamp(150px, 24%, 300px); --logo-top:16px; --logo-left:18px;" aria-label="Certifyd creator commerce infrastructure">
+              <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260602clean" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
+              <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </figure>
           </div>
           <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
@@ -2501,8 +2514,9 @@ section[id]{
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
             <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
-            <figure class="distribution-image-frame wallet-blue card-media" style="--media-zoom:1.075;" aria-label="Payment received via Bitcoin Lightning">
-              <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602logo" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
+            <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
+              <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
+              <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </figure>
             <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
           </div>
