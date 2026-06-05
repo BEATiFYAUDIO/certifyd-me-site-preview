@@ -1271,6 +1271,14 @@ section[id]{
       transform:scale(var(--media-zoom, 1));
       transform-origin:center center;
     }
+    .card-media.natural-media{
+      aspect-ratio:auto;
+    }
+    .card-media.natural-media img{
+      height:auto;
+      object-fit:contain;
+      transform:none;
+    }
     .logo-overlay-frame .media-logo-overlay{
       position:absolute;
       top:var(--logo-top, 16px);
@@ -2549,8 +2557,8 @@ section[id]{
           <div class="feature-panel infra-manifesto" style="margin-top:16px;">
             <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
             <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
-            <figure class="distribution-image-frame ip-group-grade card-media" style="--media-zoom:1; --media-fit:contain; --media-pos:center center;" aria-label="Creators collaborating in a studio">
-              <img src="images/creator-collab-studio-orangeblue-20260603.jpeg?v=20260603" alt="Creators collaborating around a laptop in a studio" loading="lazy" decoding="async" />
+            <figure class="distribution-image-frame ip-group-grade card-media natural-media" aria-label="Creators in a Certifyd IP and publishing strategy room">
+              <img src="images/ip-publishing-creators-20260605.jpeg?v=20260605" alt="Creators in a Certifyd IP and publishing strategy room" loading="lazy" decoding="async" />
             </figure>
           </div>
         </div>
