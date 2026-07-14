@@ -1222,11 +1222,18 @@ section[id]{
     .awards-spotlight h2{
       margin:0 0 14px;
       max-width:720px;
-      font-size:clamp(2.1rem, 5.4vw, 5.2rem);
-      line-height:0.98;
-      letter-spacing:-0.055em;
+      font-size:clamp(3.6rem, 7vw, 6.8rem);
+      line-height:0.94;
+      letter-spacing:-0.035em;
       color:#fff;
       text-shadow:0 14px 34px rgba(0,0,0,0.42);
+    }
+    .awards-subline{
+      margin:0 0 22px;
+      color:rgba(234,244,255,0.94);
+      font-size:clamp(1.18rem, 2vw, 1.55rem);
+      line-height:1.35;
+      font-weight:600;
     }
     .awards-copy{
       display:grid;
@@ -1258,6 +1265,12 @@ section[id]{
       object-fit:cover;
       object-position:center;
       filter:saturate(1.04) contrast(1.03);
+    }
+    .awards-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
     }
     .awards-visual::after{
       content:"";
@@ -2568,10 +2581,15 @@ section[id]{
         gap:18px;
       }
       .awards-spotlight h2{
-        font-size:clamp(2rem, 11vw, 3rem);
+        font-size:clamp(3rem, 17vw, 4.3rem);
         line-height:1.02;
-        letter-spacing:-0.045em;
+        letter-spacing:-0.025em;
         margin-bottom:12px;
+      }
+      .awards-subline{
+        font-size:1rem;
+        line-height:1.45;
+        margin-bottom:16px;
       }
       .awards-copy{
         gap:8px;
@@ -2586,6 +2604,11 @@ section[id]{
         justify-content:center;
         min-height:48px;
         padding:12px 14px;
+      }
+      .awards-actions{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
       }
       .awards-visual{
         min-height:240px;
@@ -2670,16 +2693,20 @@ section[id]{
             <div class="awards-spotlight-grid">
               <div>
                 <p class="awards-kicker">🏆 Certifyd Awards</p>
-                <h2 id="awards-heading">Recognition Backed by Proof.</h2>
+                <h2 id="awards-heading">Certifyd<br />Awards</h2>
+                <p class="awards-subline">Creators. Work. Credits. Culture.</p>
                 <div class="awards-copy">
                   <p>Every creator hopes their work is remembered.</p>
                   <p>The Certifyd Awards celebrate outstanding creators, remarkable content, and the people who help bring it to life—from artists and authors to producers, publishers, engineers, platforms, and creator innovators.</p>
                   <p>A two-day annual celebration of Creative Excellence and Creator Innovation.</p>
                 </div>
-                <a class="btn primary" href="https://awards.certifyd.me" target="_blank" rel="noreferrer">Explore the Certifyd Awards →</a>
+                <div class="awards-actions">
+                  <a class="btn primary" href="https://awards.certifyd.me" target="_blank" rel="noreferrer">Explore the Awards</a>
+                  <a class="btn secondary" href="https://awards.certifyd.me/nominate" target="_blank" rel="noreferrer">Submit a Nomination</a>
+                </div>
               </div>
               <figure class="awards-visual" aria-label="Certifyd Awards trophy">
-                <img src="images/awards/awards-trophy.png?v=20260714" alt="Certifyd Awards trophy on a stage with blue and orange lights" loading="lazy" decoding="async" />
+                <img src="images/awards/vassal-benford-founders-award.png?v=20260714" alt="Vassal Benford Founders' Award globe trophy" loading="lazy" decoding="async" />
               </figure>
             </div>
           </section>
