@@ -1239,15 +1239,26 @@ section[id]{
       font-size:clamp(3.6rem, 7vw, 6.8rem);
       line-height:0.94;
       letter-spacing:-0.035em;
-      color:#d99a35;
-      background:linear-gradient(180deg, #fff0bf 0%, #f5c15a 31%, #b86f13 58%, #ffe2a0 76%, #8b4a08 100%);
+      color:#ffc62f;
+      background:
+        linear-gradient(112deg, transparent 0%, transparent 32%, rgba(255,255,255,0.96) 42%, rgba(255,246,185,0.92) 47%, transparent 58%, transparent 100%),
+        linear-gradient(180deg, #fff9bf 0%, #ffe15c 15%, #ffc11c 31%, #d98405 48%, #6f3900 58%, #f7ad18 70%, #fff1a0 82%, #b76505 100%);
+      background-size:230% 100%, 100% 100%;
+      background-position:-140% 0, 0 0;
       -webkit-background-clip:text;
       background-clip:text;
       -webkit-text-fill-color:transparent;
+      animation:awards-title-shine 5.8s ease-in-out infinite;
       text-shadow:
-        0 1px 0 rgba(255,244,196,0.52),
-        0 2px 0 rgba(108,56,0,0.7),
-        0 14px 34px rgba(0,0,0,0.42);
+        0 1px 0 rgba(255,252,202,0.84),
+        0 2px 0 rgba(128,66,0,0.9),
+        0 4px 0 rgba(76,37,0,0.44),
+        0 0 24px rgba(255,194,34,0.42),
+        0 14px 34px rgba(0,0,0,0.46);
+    }
+    @keyframes awards-title-shine{
+      0%, 58%{ background-position:-140% 0, 0 0; }
+      82%, 100%{ background-position:140% 0, 0 0; }
     }
     .awards-subline{
       margin:0 0 22px;
