@@ -55,7 +55,7 @@ section[id]{
 }
 
     :root{
-      --bg:#146f95;
+      --bg:#05060b;
       --bg-elevated:#1a86b0;
       --bg-overlay:#319cc4;
       --panel:rgba(8,55,78,0.58);
@@ -69,7 +69,7 @@ section[id]{
       --certifyd-gold:var(--certifyd-orange);
       --certifyd-sapphire:#5f9fff;
       --certifyd-blue:var(--certifyd-sapphire);
-      --certifyd-bg:#147dab;
+      --certifyd-bg:#05060b;
       --certifyd-text:#ffffff;
       --glass-surface:rgba(255,255,255,0.042);
       --glass-surface-soft:rgba(255,255,255,0.026);
@@ -98,7 +98,7 @@ section[id]{
     *{ box-sizing:border-box; }
     html{
       font-size:clamp(16px,1.02vw,18px);
-      background:var(--certifyd-bg);
+      background:#05060b;
       overflow-x:hidden;
     }
     body{
@@ -106,48 +106,14 @@ section[id]{
       isolation:isolate;
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-      background:
-        linear-gradient(180deg, rgba(34,120,158,0.9), rgba(12,80,114,0.94)),
-        radial-gradient(1100px 720px at 10% -8%, rgba(184,238,255,0.36), transparent 60%),
-        radial-gradient(980px 660px at 88% 6%, rgba(82,207,250,0.30), transparent 62%),
-        radial-gradient(920px 620px at 42% 42%, rgba(38,169,220,0.40), transparent 70%),
-        radial-gradient(720px 460px at 84% 78%, rgba(255,160,20,0.14), transparent 70%),
-        var(--bg);
+      background:#05060b;
       color:var(--text);
       line-height:1.6;
       overflow-x:hidden;
       text-rendering:optimizeLegibility;
     }
-    body::after{
-      content:"";
-      position:fixed;
-      inset:-20%;
-      pointer-events:none;
-    }
-    body::after{
-      z-index:-1;
-      opacity:0.64;
-      background:
-        radial-gradient(760px 500px at 16% 12%, rgba(208,246,255,0.28), transparent 66%),
-        radial-gradient(700px 460px at 78% 18%, rgba(78,214,255,0.22), transparent 64%),
-        radial-gradient(760px 520px at 18% 82%, rgba(22,139,190,0.18), transparent 70%),
-        radial-gradient(620px 400px at 72% 78%, rgba(255,143,0,0.08), transparent 70%),
-        radial-gradient(900px 620px at 50% 48%, rgba(12,102,148,0.04), rgba(0,0,0,0.14) 76%);
-      filter:blur(12px);
-      animation:certifyd-ambient-drift 46s ease-in-out infinite alternate;
-    }
-    .site-background-video{
-      position:fixed;
-      inset:0;
-      z-index:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:0.18;
-      filter:saturate(0.82) contrast(1.08) brightness(0.84);
-      mix-blend-mode:luminosity;
-      pointer-events:none;
-    }
+    body::after{ content:none; }
+    .site-background-video{ display:none; }
 
     header,
     main,
@@ -2045,17 +2011,10 @@ section[id]{
         filter:drop-shadow(0 2px 5px rgba(0,0,0,0.32));
       }
       body{
-        background:
-          linear-gradient(180deg, rgba(23,94,132,0.86), rgba(10,56,84,0.9)),
-          radial-gradient(820px 520px at 14% -12%, rgba(188,234,255,0.26), transparent 60%),
-          radial-gradient(760px 460px at 88% 10%, rgba(255,165,46,0.16), transparent 62%),
-          url("images/certifyd-bg.png") center/cover no-repeat,
-          var(--bg);
+        background:#05060b;
       }
       body::after{
-        opacity:0.74;
-        filter:blur(8px);
-        animation:none;
+        content:none;
       }
       section{ padding:22px 0; }
       #top{
@@ -2623,7 +2582,6 @@ section[id]{
 
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <video class="site-background-video" src="images/certifyd-background-ambient.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
 
   <header class="site-header" role="banner">
     <div class="header-rail">
