@@ -419,7 +419,8 @@ section[id]{
     #own,
     #data,
     .proof-section,
-    #network{
+    #network,
+    #register-node{
       border-left:1px solid rgba(206,235,255,0.22);
       border-right:1px solid rgba(206,235,255,0.22);
       background:linear-gradient(180deg, rgba(10,44,67,0.16), rgba(7,33,52,0.14));
@@ -468,7 +469,8 @@ section[id]{
     #data,
     .proof-section,
     #how,
-    #network{
+    #network,
+    #register-node{
       padding-top:var(--space-section-tight);
       padding-bottom:var(--space-section-tight);
     }
@@ -1872,6 +1874,13 @@ section[id]{
       background:linear-gradient(180deg, var(--brand-active), #ff8a00);
     }
 
+    .register-node-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+
     .chatbot{
       position:fixed;
       right:16px;
@@ -2588,11 +2597,11 @@ section[id]{
         </a>
 
         <nav class="nav-desktop" aria-label="Primary navigation">
-          <a href="#live-profile">Live profile</a>
+          <a href="#live-profile">Profile</a>
           <a href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
-          <a href="#how">How it works</a>
-          <a href="#built-for">Built for</a>
-          <a href="#network">Network</a>
+          <a href="#how">Build</a>
+          <a href="#early-access">Join Network</a>
+          <a href="#register-node">Register Node</a>
         </nav>
 
         <details class="nav-mobile">
@@ -2601,11 +2610,11 @@ section[id]{
           </summary>
 
           <nav class="nav-drawer" aria-label="Mobile navigation">
-            <a href="#live-profile">Live profile</a>
+            <a href="#live-profile">Profile</a>
             <a href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
-            <a href="#how">How it works</a>
-            <a href="#built-for">Built for</a>
-            <a href="#network">Network</a>
+            <a href="#how">Build</a>
+            <a href="#early-access">Join Network</a>
+            <a href="#register-node">Register Node</a>
           </nav>
         </details>
       </div>
@@ -2788,6 +2797,19 @@ section[id]{
           </div>
           <div id="early-access-status" class="ea-status" role="status" aria-live="polite"></div>
         </form>
+      </div>
+    </section>
+
+    <!-- REGISTER NODE -->
+    <section id="register-node" class="wrap">
+      <div class="feature-panel distribution-manifesto register-node-panel">
+        <p class="live-profile-eyebrow">Register Node</p>
+        <h2>Bring your creator node into the Certifyd Network.</h2>
+        <p class="network-body">Run infrastructure, publish creator profiles, support discovery, and help independent creators stay reachable without platform lock-in.</p>
+        <div class="register-node-actions">
+          <a class="btn primary" href="./network.html">Register Node</a>
+          <a class="btn" href="#network">Learn about the network</a>
+        </div>
       </div>
     </section>
 
