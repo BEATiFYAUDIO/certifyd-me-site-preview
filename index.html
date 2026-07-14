@@ -1239,8 +1239,15 @@ section[id]{
       font-size:clamp(3.6rem, 7vw, 6.8rem);
       line-height:0.94;
       letter-spacing:-0.035em;
-      color:#fff;
-      text-shadow:0 14px 34px rgba(0,0,0,0.42);
+      color:#d99a35;
+      background:linear-gradient(180deg, #fff0bf 0%, #f5c15a 31%, #b86f13 58%, #ffe2a0 76%, #8b4a08 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow:
+        0 1px 0 rgba(255,244,196,0.52),
+        0 2px 0 rgba(108,56,0,0.7),
+        0 14px 34px rgba(0,0,0,0.42);
     }
     .awards-subline{
       margin:0 0 22px;
@@ -2896,7 +2903,7 @@ section[id]{
       <section class="awards-spotlight" aria-labelledby="awards-heading">
         <div class="awards-spotlight-grid">
           <div>
-            <p class="awards-kicker">🏆 Certifyd Awards</p>
+            <p class="awards-kicker" aria-hidden="true">🏆</p>
             <h2 id="awards-heading">Certifyd<br />Awards</h2>
             <p class="awards-subline">Creators. Work. Credits. Culture.</p>
             <div class="awards-copy">
