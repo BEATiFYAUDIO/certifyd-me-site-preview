@@ -42,6 +42,9 @@
     .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
     .brand{display:flex;align-items:center;font-weight:700}
     .brand img{height:74px;width:auto;display:block}
+    .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:16px;flex-wrap:wrap;color:#d8ecf8;font-size:.92rem}
+    .nav-links a{opacity:.86}
+    .nav-links a:hover{opacity:1;color:#fff}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:14px;border:1px solid var(--border2);background:#1a212a;font-weight:700}
     .btn.primary{background:var(--brand);color:#111418;border-color:transparent}
     .btn.primary:hover{background:var(--brand-hover)}
@@ -65,10 +68,19 @@
 <body>
   <header>
     <div class="wrap row">
-      <a class="brand" href="./index.html">
+      <a class="brand" href="/">
         <img src="screenshots/logo-lockup.png" alt="Certifyd Creator logo" />
       </a>
-      <a class="btn" href="./index.html">Back to Certifyd</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="https://certifyd.me/profile/">Profile</a>
+        <a href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
+        <a href="https://certifyd.me/retail-partners/">Partners</a>
+        <a href="https://certifyd.me/services/">Checkout</a>
+        <a href="https://awards.certifyd.me" target="_blank" rel="noreferrer">Awards</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://certifyd.me/join/">Join Network</a>
+        <a href="https://investor.certifyd.me/">Investment Opportunity</a>
+      </nav>
     </div>
   </header>
 
