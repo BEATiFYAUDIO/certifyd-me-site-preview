@@ -61,8 +61,7 @@ Preserving B.B. King’s legacy through Vassal Benford offers several business o
 5. **Direct Attribution:**
 
    - Vassal Benford can provide creators with transparent attribution tools, allowing them to share credit where it’s due without fear of accusations or disputes.
-   - This helps in maintaining the integrity of their work and fostering a community of creators who value transparency and 
-recognition.
+   - This helps in maintaining the integrity of their work and fostering a community of creators who value transparency and recognition.
 
 
 ### Conclusion
