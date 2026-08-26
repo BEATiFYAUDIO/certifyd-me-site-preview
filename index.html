@@ -1339,14 +1339,12 @@ section[id]{
     .home-blog-body p{margin:0;color:var(--text-secondary)}
     @media (max-width:860px){.social-home-panel,.blog-home-panel{border-radius:24px}.social-feed-frame{border-radius:20px}.social-feed-frame iframe{height:min(72vh,640px)}.blog-home-head{align-items:start;flex-direction:column}.blog-home-grid{grid-template-columns:1fr}.home-blog-body{padding:16px}}
     /* Apply "Grow Your IP..." visual system to the rest of the page cards */
-    #live-profile .live-profile-frame,
     #fan-app .feature-panel,
     #product .feature-panel,
     #ownership .feature-panel,
     #own .feature-panel,
     #data .feature-panel,
-    .proof-section .feature-panel,
-    #network .feature-panel{
+    .proof-section .feature-panel{
       border-radius:8px;
       border:1px solid rgba(125,198,241,0.34);
       background:
@@ -1369,27 +1367,22 @@ section[id]{
       box-shadow:0 8px 22px rgba(0,0,0,0.16);
     }
     /* Match top-card spacing and typography rhythm on sections below IP card */
-    #live-profile .live-profile-frame,
     #fan-app .feature-panel,
     #product .feature-panel,
     #ownership .feature-panel,
     #own .feature-panel,
     #data .feature-panel,
-    .proof-section .feature-panel,
-    #network .feature-panel{
+    .proof-section .feature-panel{
       padding:clamp(26px, 3vw, 38px);
     }
-    #live-profile .feature-panel .live-profile-frame{
-      padding:0 !important;
-    }
+    .section-flow{padding-block:clamp(10px,2vw,22px)}
     #live-profile h2,
     #fan-app .feature-panel h2,
     #product .feature-panel h2,
     #ownership .feature-panel h2,
     #own .feature-panel h2,
     #data .feature-panel h2,
-    .proof-section .feature-panel h2,
-    #network .feature-panel h2{
+    .proof-section .feature-panel h2{
       margin:0 0 16px;
       font-size:clamp(1.34rem, 2.15vw, 1.82rem);
       line-height:1.18;
@@ -1404,8 +1397,7 @@ section[id]{
     #ownership .feature-panel p,
     #own .feature-panel p,
     #data .feature-panel p,
-    .proof-section .feature-panel p,
-    #network .feature-panel p{
+    .proof-section .feature-panel p{
       font-size:clamp(1rem, 1.34vw, 1.11rem);
       line-height:1.72;
       font-weight:460;
@@ -2484,14 +2476,12 @@ section[id]{
     }
 
     /* Enforce top-card styling across all sections below the IP card */
-    #live-profile .live-profile-frame,
     #fan-app > .feature-panel,
     #product > .feature-panel,
     #ownership > .feature-panel,
     #own > .feature-panel,
     #data > .feature-panel,
-    .proof-section > .feature-panel,
-    #network > .feature-panel{
+    .proof-section > .feature-panel{
       position:relative;
       overflow:hidden;
       padding:clamp(26px, 3vw, 38px) !important;
@@ -2516,9 +2506,7 @@ section[id]{
     #ownership > .feature-panel::after,
     #own > .feature-panel::after,
     #data > .feature-panel::after,
-    .proof-section > .feature-panel::after,
-    #network > .feature-panel::after,
-    #live-profile .feature-panel::after{
+    .proof-section > .feature-panel::after{
       content:"";
       position:absolute;
       inset:0;
@@ -2546,8 +2534,7 @@ section[id]{
     #ownership > .feature-panel h2,
     #own > .feature-panel h2,
     #data > .feature-panel h2,
-    .proof-section > .feature-panel h2,
-    #network > .feature-panel h2{
+    .proof-section > .feature-panel h2{
       margin:0 0 16px !important;
       font-size:clamp(1.34rem, 2.15vw, 1.82rem) !important;
       line-height:1.18 !important;
@@ -2562,8 +2549,7 @@ section[id]{
     #ownership > .feature-panel p,
     #own > .feature-panel p,
     #data > .feature-panel p,
-    .proof-section > .feature-panel p,
-    #network > .feature-panel p{
+    .proof-section > .feature-panel p{
       font-size:clamp(1rem, 1.34vw, 1.11rem) !important;
       line-height:1.72 !important;
       font-weight:460 !important;
@@ -2582,14 +2568,12 @@ section[id]{
     }
 
     /* Cohesive section system pass (primary experience) */
-    #live-profile > .feature-panel,
     #fan-app > .feature-panel,
     #product > .feature-panel,
     #ownership > .feature-panel,
     #own > .feature-panel,
     #data > .feature-panel,
-    .proof-section > .feature-panel,
-    #network > .feature-panel{
+    .proof-section > .feature-panel{
       width:100%;
       max-width:none;
       margin:0;
@@ -2609,8 +2593,7 @@ section[id]{
     #ownership > .feature-panel h2,
     #own > .feature-panel h2,
     #data > .feature-panel h2,
-    .proof-section > .feature-panel h2,
-    #network > .feature-panel h2{
+    .proof-section > .feature-panel h2{
       font-size:clamp(1.38rem, 2.2vw, 1.92rem) !important;
       line-height:1.18 !important;
       margin:0 0 14px !important;
@@ -2622,8 +2605,7 @@ section[id]{
     #ownership > .feature-panel p,
     #own > .feature-panel p,
     #data > .feature-panel p,
-    .proof-section > .feature-panel p,
-    #network > .feature-panel p{
+    .proof-section > .feature-panel p{
       margin:0 0 10px;
       max-width:72ch;
     }
@@ -2637,9 +2619,7 @@ section[id]{
         linear-gradient(155deg, rgba(9,41,65,0.95), rgba(6,31,50,0.95)),
         rgba(6,30,49,0.94) !important;
     }
-    #live-profile .live-profile-intro{
-      margin:0 0 14px;
-    }
+    #live-profile .live-profile-intro{margin:0 0 14px}
     @media (max-width: 760px){
       .awards-spotlight{
         margin-top:12px;
@@ -2685,63 +2665,6 @@ section[id]{
       }
       .awards-visual img{
         object-position:center 58%;
-      }
-    }
-
-    /* Normalize the preview homepage panel frames. */
-    #how.feature-panel,
-    .distribution-manifesto,
-    .infra-manifesto,
-    .hero-main-image,
-    .raw-panel-media,
-    .distribution-image-frame,
-    .live-profile-frame,
-    #early-access .card,
-    .register-node-panel,
-    .awards-spotlight,
-    .awards-visual,
-    .social-home-panel,
-    .social-feed-frame,
-    .home-blog-card,
-    .blog-home-panel{
-      border:1px solid rgba(125,198,241,0.34) !important;
-      border-radius:8px !important;
-      background:
-        linear-gradient(155deg, rgba(8,38,60,0.95), rgba(5,27,45,0.95)),
-        rgba(6,30,49,0.94) !important;
-      box-shadow:
-        0 20px 58px rgba(0,0,0,0.24),
-        inset 0 1px 0 rgba(206,235,255,0.18) !important;
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-    }
-    .awards-spotlight::before{
-      background:linear-gradient(110deg, rgba(255,255,255,0.08), transparent 28%, transparent 72%, rgba(95,159,255,0.08)) !important;
-    }
-    .social-feed-frame,
-    .blog-home-grid .home-blog-card{
-      border-radius:8px !important;
-    }
-    .social-feed-frame iframe{
-      overflow:hidden;
-    }
-    @media (max-width:860px){
-      #how.feature-panel,
-      .distribution-manifesto,
-      .infra-manifesto,
-      .hero-main-image,
-      .raw-panel-media,
-      .distribution-image-frame,
-      .live-profile-frame,
-      #early-access .card,
-      .register-node-panel,
-      .awards-spotlight,
-      .awards-visual,
-      .social-home-panel,
-      .social-feed-frame,
-      .home-blog-card,
-      .blog-home-panel{
-        border-radius:8px !important;
       }
     }
   </style>
@@ -2846,7 +2769,7 @@ section[id]{
 
     <!-- PRODUCT PROOF -->
     <section class="wrap live-profile-section" id="live-profile">
-      <div class="feature-panel distribution-manifesto">
+      <div class="section-flow">
         <p class="live-profile-eyebrow">Live profile</p>
         <h2>Certifyd Live Profile</h2>
         <div class="live-profile-frame" role="region" aria-label="Live Certifyd profile embed">
@@ -2865,7 +2788,7 @@ section[id]{
 
     <!-- NETWORK -->
     <section id="network" class="wrap declaration-section network-section">
-      <div class="feature-panel distribution-manifesto">
+      <div class="section-flow">
         <h2 class="network-headline">Run it. Or use it.</h2>
         <div class="declaration-copy">
           <p class="network-body">Use Certifyd as a creator,<br />or run infrastructure and earn from network activity.</p>
@@ -2951,7 +2874,7 @@ section[id]{
 
     <!-- REGISTER NODE -->
     <section id="register-node" class="wrap">
-      <div class="feature-panel distribution-manifesto register-node-panel">
+      <div class="section-flow register-node-panel">
         <p class="live-profile-eyebrow">Register Node</p>
         <h2>Bring your creator node into the Certifyd Network.</h2>
         <p class="network-body">Run infrastructure, publish creator profiles, support discovery, and help independent creators stay reachable without platform lock-in.</p>
