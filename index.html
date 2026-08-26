@@ -1577,8 +1577,10 @@ section[id]{
     .social-home-kicker{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 12px}
     .social-home-new{display:inline-flex;align-items:center;border:1px solid rgba(255,190,94,.5);border-radius:999px;background:rgba(255,138,0,.1);color:var(--certifyd-orange);font-size:9px;font-weight:900;letter-spacing:.12em;line-height:1;padding:4px 7px;text-transform:uppercase;transform:translateY(-1px)}
     .social-home-head{max-width:880px;margin-bottom:24px}
-    .social-home-head h2{margin:0;font-size:clamp(34px,5vw,74px);line-height:.9;letter-spacing:-.065em;color:var(--certifyd-text)}
-    .social-home-head p{max-width:760px;margin:14px 0 0;color:var(--text-secondary);font-size:clamp(16px,1.5vw,20px)}
+    .social-home-head h2,
+    .section-major-heading{margin:0;font-size:clamp(34px,5vw,74px);line-height:.9;letter-spacing:-.065em;color:var(--certifyd-text)}
+    .social-home-head p,
+    .section-deck{max-width:760px;margin:14px 0 0;color:var(--text-secondary);font-size:clamp(16px,1.5vw,20px);line-height:1.45}
     .social-home-head strong{color:var(--certifyd-text)}
     .social-feed-frame{overflow:hidden;border:1px solid var(--premium-border-strong);border-radius:var(--panel-radius);background:rgba(2,12,22,.58);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 16px 44px rgba(0,0,0,.22);overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
     .social-feed-frame iframe{display:block;width:calc(100% + var(--embed-scrollbar-mask));max-width:none;height:clamp(520px,72vh,820px);border:0;background:#062133;margin-right:calc(var(--embed-scrollbar-mask) * -1);touch-action:pan-y}
@@ -1587,7 +1589,7 @@ section[id]{
     .blog-home-panel{border:0;border-radius:0;background:none;box-shadow:none;padding:0}
     .blog-home-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}
     .blog-home-head h2{margin:0;font-size:clamp(34px,5vw,74px);line-height:.9;letter-spacing:-.065em;color:var(--certifyd-text)}
-    .blog-home-head p{max-width:620px;margin:12px 0 0;color:var(--text-secondary);font-size:clamp(16px,1.5vw,20px)}
+    .blog-home-head p{max-width:620px;margin:12px 0 0;color:var(--text-secondary);font-size:clamp(16px,1.5vw,20px);line-height:1.45}
     .blog-home-head .btn{flex:0 0 auto;white-space:nowrap;min-width:max-content;min-height:52px;padding:12px 20px;border-radius:18px}
     .blog-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
     .home-blog-card{overflow:hidden;border:1px solid var(--premium-border);border-radius:var(--panel-radius);background:rgba(2,12,22,.42);min-height:100%;display:flex;flex-direction:column}
@@ -1597,6 +1599,7 @@ section[id]{
     .home-blog-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
     .home-blog-meta{margin:0;color:var(--certifyd-orange);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
     .home-blog-body h3{margin:0;font-size:clamp(21px,2vw,28px);line-height:1;letter-spacing:-.04em;color:#fff}
+    .section-subheading{margin:clamp(20px,2.4vw,30px) 0 0;font-size:clamp(21px,2vw,28px);line-height:1;letter-spacing:-.04em;color:#fff}
     .home-blog-body p{margin:0;color:var(--text-secondary)}
     @media (max-width:860px){.social-feed-frame{border-radius:var(--panel-radius)}.social-feed-frame iframe{height:min(72vh,640px)}.blog-home-head{align-items:start;flex-direction:column}.blog-home-grid{grid-template-columns:1fr}.home-blog-body{padding:16px}}
     /* Apply "Grow Your IP..." visual system to the rest of the page cards */
@@ -2987,8 +2990,9 @@ section[id]{
           <div class="home-section">
             <div class="home-section-panel bitcoin-panel">
               <div>
-                <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
-                <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
+                <h2 class="section-major-heading">A Fan Pays. Artists Earn. Instant Bitcoin Lightning Payments.</h2>
+                <p class="section-deck">Worldwide distribution. Total ownership.</p>
+                <h3 class="section-subheading">In 2026, We Changed the Game.</h3>
               </div>
               <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
                 <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
@@ -3005,8 +3009,8 @@ section[id]{
           <div class="home-section">
             <div class="home-section-panel">
               <div>
-                <h3 class="hero-subheader inner-rail">Accelerate your publishing earnings through the power of your own IP.</h3>
-                <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
+                <h2 class="section-major-heading">Grow Your IP and Earnings Worldwide.</h2>
+                <p class="section-deck">Accelerate your publishing earnings through the power of your own IP.</p>
                 <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
               </div>
               <figure class="distribution-image-frame ip-group-grade card-media natural-media" aria-label="Creators in a Certifyd IP and publishing strategy room">
