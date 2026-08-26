@@ -588,8 +588,21 @@ section[id]{
       grid-template-columns:minmax(420px, 1fr) minmax(380px, 1.03fr);
       padding-top:clamp(42px, 5vw, 64px);
     }
+    .story-split.bitcoin-story{
+      grid-template-columns:1fr;
+      gap:clamp(22px, 3.6vw, 44px);
+      max-width:940px;
+      margin-inline:auto;
+    }
     .story-split.reverse .story-media{
       order:-1;
+    }
+    .bitcoin-story .story-media .card-media{
+      width:100%;
+      max-width:100%;
+    }
+    .bitcoin-story .story-copy{
+      max-width:760px;
     }
     .story-copy{
       display:grid;
@@ -642,7 +655,7 @@ section[id]{
       from{ transform:translate3d(-1%, -0.5%, 0) scale(1); }
       to{ transform:translate3d(1%, 0.8%, 0) scale(1.025); }
     }
-    @media (max-width: 1080px){
+    @media (max-width: 1440px){
       .hero-grid{ grid-template-columns:1fr; }
       .section-band,
       .section-band:first-child{
@@ -655,7 +668,12 @@ section[id]{
       .story-split,
       .story-split.reverse{
         grid-template-columns:1fr;
+        max-width:860px;
+        margin-inline:auto;
         gap:clamp(18px, 4vw, 30px);
+      }
+      .story-media .card-media{
+        max-width:760px;
       }
       .story-split.reverse .story-media{
         order:-1;
@@ -2798,7 +2816,7 @@ section[id]{
             </div>
           </div>
 
-          <div class="section-band story-split reverse infra-manifesto">
+          <div class="section-band story-split reverse bitcoin-story infra-manifesto">
             <div class="story-copy">
               <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
               <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
