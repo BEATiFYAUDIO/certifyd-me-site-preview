@@ -2687,6 +2687,63 @@ section[id]{
         object-position:center 58%;
       }
     }
+
+    /* Normalize the preview homepage panel frames. */
+    #how.feature-panel,
+    .distribution-manifesto,
+    .infra-manifesto,
+    .hero-main-image,
+    .raw-panel-media,
+    .distribution-image-frame,
+    .live-profile-frame,
+    #early-access .card,
+    .register-node-panel,
+    .awards-spotlight,
+    .awards-visual,
+    .social-home-panel,
+    .social-feed-frame,
+    .home-blog-card,
+    .blog-home-panel{
+      border:1px solid rgba(125,198,241,0.34) !important;
+      border-radius:8px !important;
+      background:
+        linear-gradient(155deg, rgba(8,38,60,0.95), rgba(5,27,45,0.95)),
+        rgba(6,30,49,0.94) !important;
+      box-shadow:
+        0 20px 58px rgba(0,0,0,0.24),
+        inset 0 1px 0 rgba(206,235,255,0.18) !important;
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+    .awards-spotlight::before{
+      background:linear-gradient(110deg, rgba(255,255,255,0.08), transparent 28%, transparent 72%, rgba(95,159,255,0.08)) !important;
+    }
+    .social-feed-frame,
+    .blog-home-grid .home-blog-card{
+      border-radius:8px !important;
+    }
+    .social-feed-frame iframe{
+      overflow:hidden;
+    }
+    @media (max-width:860px){
+      #how.feature-panel,
+      .distribution-manifesto,
+      .infra-manifesto,
+      .hero-main-image,
+      .raw-panel-media,
+      .distribution-image-frame,
+      .live-profile-frame,
+      #early-access .card,
+      .register-node-panel,
+      .awards-spotlight,
+      .awards-visual,
+      .social-home-panel,
+      .social-feed-frame,
+      .home-blog-card,
+      .blog-home-panel{
+        border-radius:8px !important;
+      }
+    }
   </style>
 </head>
 
@@ -2978,7 +3035,7 @@ section[id]{
           <p>Every Certifyd Post is cryptographically signed and tied to a verified network participant, helping keep conversations accountable, authentic, and resistant to impersonation.</p>
         </div>
         <div class="social-feed-frame" role="region" aria-label="Public Certifyd Social feed">
-          <iframe src="https://social.certifyd.me/#feed" title="Public Certifyd Social feed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+          <iframe src="https://social.certifyd.me/#feed" title="Public Certifyd Social feed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups" scrolling="no"></iframe>
         </div>
         <div class="social-home-actions">
           <a class="btn primary" href="https://social.certifyd.me/" target="_blank" rel="noreferrer">Explore Certifyd Social →</a>
