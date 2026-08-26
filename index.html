@@ -576,19 +576,19 @@ section[id]{
     }
     .story-split{
       display:grid;
-      grid-template-columns:minmax(0, 0.86fr) minmax(360px, 1.14fr);
-      gap:clamp(28px, 5vw, 72px);
+      grid-template-columns:minmax(300px, 0.88fr) minmax(440px, 1.12fr);
+      gap:clamp(34px, 4.8vw, 64px);
       align-items:center;
     }
     .story-split.reverse{
-      grid-template-columns:minmax(360px, 1.08fr) minmax(0, 0.92fr);
+      grid-template-columns:minmax(430px, 1fr) minmax(360px, 1fr);
     }
     .story-split.reverse .story-media{
       order:-1;
     }
     .story-copy{
       display:grid;
-      gap:12px;
+      gap:clamp(12px, 1.5vw, 18px);
       align-content:center;
     }
     .story-copy .hero-subheader,
@@ -598,14 +598,14 @@ section[id]{
       margin:0;
     }
     .story-copy .hero-subheader + .distribution-card-title{
-      margin-top:6px;
+      margin-top:2px;
     }
     .story-media .card-media{
       margin-top:0;
     }
     .statement-band{
       text-align:center;
-      padding-block:clamp(50px, 7vw, 96px);
+      padding-block:clamp(24px, 3.2vw, 42px) clamp(30px, 4.2vw, 58px);
     }
     .statement-band .flow-divider{
       align-items:center;
@@ -633,11 +633,11 @@ section[id]{
       from{ transform:translate3d(-1%, -0.5%, 0) scale(1); }
       to{ transform:translate3d(1%, 0.8%, 0) scale(1.025); }
     }
-    @media (max-width: 900px){
+    @media (max-width: 1080px){
       .hero-grid{ grid-template-columns:1fr; }
       .section-band,
       .section-band:first-child{
-        padding-block:clamp(30px, 8vw, 52px);
+        padding-block:clamp(32px, 7vw, 56px);
       }
       .section-band.alt{
         margin-inline:calc(var(--pad) * -0.5);
@@ -646,10 +646,13 @@ section[id]{
       .story-split,
       .story-split.reverse{
         grid-template-columns:1fr;
-        gap:18px;
+        gap:clamp(18px, 4vw, 30px);
       }
       .story-split.reverse .story-media{
-        order:0;
+        order:-1;
+      }
+      .statement-band{
+        padding-block:clamp(20px, 5vw, 34px) clamp(26px, 6vw, 44px);
       }
       .hero-media-stack{ margin-top:8px; }
       .hero-actions{ gap:10px; }
@@ -689,6 +692,7 @@ section[id]{
     }
     #how.flow-inline{
       margin-inline:auto;
+      padding-inline:0;
       background:none;
       border:0;
       box-shadow:none;
@@ -1050,7 +1054,7 @@ section[id]{
     }
     .flow-divider{
       text-align:left;
-      font-size:clamp(40px, 6.4vw, 82px);
+      font-size:clamp(38px, 5.4vw, 68px);
       font-weight:900;
       letter-spacing:-0.03em;
       line-height:1.02;
@@ -1637,37 +1641,6 @@ section[id]{
     .btc-copy{
       margin:0;
     }
-    .payment-note{
-      margin:16px 0 0;
-      width:auto;
-      display:inline-flex;
-      align-items:center;
-      justify-content:flex-start;
-      gap:10px;
-      padding:0;
-      border-radius:0;
-      border:0;
-      background:none;
-      color:rgba(237,243,250,0.96);
-      font-size:clamp(0.96rem, 1.42vw, 1.05rem);
-      line-height:1.4;
-      text-align:left;
-      box-shadow:none;
-    }
-    .payment-note-icon{
-      width:22px;
-      height:22px;
-      flex:0 0 22px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:999px;
-      background:var(--certifyd-orange);
-      color:#fff;
-      font-size:14px;
-      font-weight:700;
-      line-height:1;
-    }
     .ownership-media-card{ padding:12px; }
     .flow-section{
       padding-top:var(--space-section);
@@ -2140,8 +2113,7 @@ section[id]{
       .feature-panel,
       .card,
       .hero-main-image,
-      .distribution-image-frame,
-      .payment-note{
+      .distribution-image-frame{
         width:100%;
         max-width:100%;
         margin-left:auto;
@@ -2311,12 +2283,6 @@ section[id]{
       .hero-subheader.inner-rail{
         margin-top:12px;
       }
-      .payment-note{
-        width:100%;
-        margin-top:10px;
-        padding:8px 10px;
-        font-size:0.92rem;
-      }
       .infra-list.plain-lines li{
         font-size:0.9rem;
         line-height:1.52;
@@ -2380,7 +2346,7 @@ section[id]{
       .proof-kicker{ font-size:16px; }
       .flow-divider{ font-size:clamp(34px, 11vw, 46px); line-height:1.16; }
       #how.flow-inline{
-        padding:16px 12px;
+        padding:10px 0 18px;
       }
       #how .flow-divider{
         font-size:clamp(17px, 5.9vw, 24px);
@@ -2825,7 +2791,6 @@ section[id]{
 
           <div class="section-band story-split reverse infra-manifesto">
             <div class="story-copy">
-              <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
               <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
               <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
               <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
