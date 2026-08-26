@@ -637,6 +637,9 @@ section[id]{
     .home-section{
       margin-top:clamp(26px, 5vw, 64px);
     }
+    .mobile-wide-media{
+      width:100%;
+    }
     .home-section-panel{
       position:relative;
       overflow:hidden;
@@ -2310,7 +2313,13 @@ section[id]{
 
     @media (max-width: 680px){
       :root{
-        --pad:12px;
+        --pad:clamp(20px, 5.6vw, 24px);
+        --space-section:clamp(48px, 12vw, 64px);
+        --space-section-tight:clamp(24px, 7vw, 34px);
+        --mobile-section-gap:clamp(48px, 12vw, 64px);
+        --mobile-copy-gap:clamp(12px, 4vw, 18px);
+        --mobile-media-gap:clamp(24px, 7vw, 32px);
+        --mobile-chat-clearance:calc(104px + env(safe-area-inset-bottom, 0px));
       }
       .wrap{
         width:100%;
@@ -2372,10 +2381,40 @@ section[id]{
         animation:certifyd-tv-static 9000ms steps(8, end) infinite;
         will-change:transform, background-position, opacity;
       }
-      section{ padding:22px 0; }
+      section{ padding:var(--space-section-tight) 0; }
       #top{
-        padding-top:16px;
-        padding-bottom:22px;
+        padding-top:18px;
+        padding-bottom:var(--space-section-tight);
+      }
+      main{
+        padding-bottom:var(--mobile-chat-clearance);
+      }
+      .home-section,
+      .social-home-section,
+      .blog-home-section{
+        margin-top:var(--mobile-section-gap);
+      }
+      .home-section-panel{
+        padding:clamp(18px, 5vw, 22px);
+      }
+      .home-section-panel .section-major-heading + .section-deck,
+      .home-section-panel .section-deck + .section-deck,
+      .social-home-head p,
+      .blog-home-head p{
+        margin-top:var(--mobile-copy-gap);
+      }
+      .card-media,
+      .raw-panel-media,
+      .network-media,
+      .live-profile-frame,
+      .social-feed-frame{
+        margin-top:var(--mobile-media-gap);
+      }
+      .mobile-wide-media{
+        width:calc(100% + 12px);
+        max-width:none;
+        margin-left:-6px;
+        margin-right:-6px;
       }
       h1{ font-size:clamp(2.15rem, 10.6vw, 2.85rem); line-height:1.03; }
       .hero-title{
@@ -2395,7 +2434,7 @@ section[id]{
       .hero-main-image{
         border-radius:14px;
         aspect-ratio:16 / 9;
-        margin:10px 0 14px;
+        margin:var(--mobile-media-gap) 0 14px;
       }
       .hero-image-caption{
         margin:-8px 0 18px;
@@ -2477,7 +2516,7 @@ section[id]{
         display:none;
       }
       .distribution-image-frame{
-        margin-top:12px;
+        margin-top:var(--mobile-media-gap);
         border-radius:12px;
         max-width:none;
         width:100%;
@@ -2632,13 +2671,16 @@ section[id]{
         overflow-wrap:anywhere;
       }
       .chatbot{
-        right:12px;
-        left:12px;
+        right:var(--pad);
+        left:var(--pad);
         width:auto;
-        bottom:66px;
+        bottom:calc(76px + env(safe-area-inset-bottom, 0px));
         max-height:68vh;
       }
-      .chat-launch{ right:12px; bottom:12px; }
+      .chat-launch{
+        right:calc(var(--pad) + env(safe-area-inset-right, 0px));
+        bottom:calc(18px + env(safe-area-inset-bottom, 0px));
+      }
     }
 
     /* Mid-section readability for phone/tablet widths where 680px rules may not trigger */
@@ -3038,7 +3080,7 @@ section[id]{
       <div class="home-section-panel">
         <p class="home-eyebrow">Live profile</p>
         <h2 class="section-major-heading">Certifyd Live Profile</h2>
-        <div class="live-profile-frame" role="region" aria-label="Live Certifyd profile embed">
+        <div class="live-profile-frame mobile-wide-media" role="region" aria-label="Live Certifyd profile embed">
           <a class="live-profile-open" href="https://public.certifyd.me/u/certifyd" target="_blank" rel="noreferrer">Open full profile ↗</a>
           <iframe
             class="live-profile-embed"
@@ -3226,7 +3268,7 @@ section[id]{
           <p>Posts and conversations from creators across the Certifyd network — <strong>authorship proven by cryptography.</strong></p>
           <p>Every Certifyd Post is cryptographically signed and tied to a verified network participant, helping keep conversations accountable, authentic, and resistant to impersonation.</p>
         </div>
-        <div class="social-feed-frame" role="region" aria-label="Public Certifyd Social feed">
+        <div class="social-feed-frame mobile-wide-media" role="region" aria-label="Public Certifyd Social feed">
           <iframe src="https://social.certifyd.me/#feed" title="Public Certifyd Social feed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
         </div>
         <div class="social-home-actions">
