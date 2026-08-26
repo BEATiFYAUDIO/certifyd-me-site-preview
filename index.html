@@ -473,18 +473,12 @@ section[id]{
     #product,
     #ownership,
     #live-profile,
-    #fan-app,
-    #product,
-    #ownership,
-    #live-profile,
-    #fan-app,
-    #product,
-    #ownership,
     #own,
     #data,
     .proof-section,
     #network,
-    #register-node{
+    #register-node,
+    #early-access{
       padding-top:var(--space-section-tight);
       padding-bottom:var(--space-section-tight);
     }
@@ -771,6 +765,22 @@ section[id]{
     .home-section-panel > .distribution-image-frame{
       margin-top:22px;
     }
+    .home-section-panel .section-major-heading + .section-deck,
+    .home-section-panel .section-deck + .section-deck{
+      margin-top:14px;
+    }
+    .early-access-form-shell{
+      margin-top:22px;
+    }
+    .early-access-form-shell .ea-form{
+      margin-top:0;
+    }
+    .network-media{
+      margin-top:24px;
+    }
+    .register-node-panel{
+      padding-block:clamp(22px, 3vw, 34px);
+    }
     @media(max-width:980px){
       .category-grid{
         grid-template-columns:1fr 1fr;
@@ -801,6 +811,9 @@ section[id]{
       }
       .commerce-grid{
         gap:16px;
+      }
+      .network-media{
+        margin-top:18px;
       }
     }
     .hero-grid::before{
@@ -1642,12 +1655,10 @@ section[id]{
     .section-flow{padding-block:clamp(10px,2vw,22px)}
     .section-flow > :first-child{margin-top:0}
     .section-flow > :last-child{margin-bottom:0}
-    #live-profile .section-flow,
-    #network .section-flow,
-    #register-node .section-flow,
-    #early-access > h2,
-    #early-access > p,
-    #early-access > .card,
+    #live-profile .home-section-panel,
+    #network .home-section-panel,
+    #register-node .home-section-panel,
+    #early-access .home-section-panel,
     .awards-spotlight,
     .social-home-panel,
     .blog-home-panel{
@@ -1655,7 +1666,7 @@ section[id]{
       margin-left:auto;
       margin-right:auto;
     }
-    #live-profile h2,
+    #live-profile .legacy-section-heading,
     #fan-app .feature-panel h2,
     #product .feature-panel h2,
     #ownership .feature-panel h2,
@@ -1670,7 +1681,7 @@ section[id]{
       color:rgba(241,248,255,0.96);
       text-shadow:0 3px 12px rgba(0,0,0,0.24);
     }
-    #live-profile p,
+    #live-profile .legacy-section-copy,
     #fan-app .feature-panel p,
     #product .feature-panel p,
     #ownership .feature-panel p,
@@ -2764,7 +2775,7 @@ section[id]{
         inset 0 0 0 1px rgba(255,255,255,0.06),
         inset 0 1px 0 rgba(255,255,255,0.08);
     }
-    #live-profile h2,
+    #live-profile .legacy-section-heading,
     #fan-app > .feature-panel h2,
     #product > .feature-panel h2,
     #ownership > .feature-panel h2,
@@ -2779,7 +2790,7 @@ section[id]{
       color:rgba(241,248,255,0.96) !important;
       text-shadow:0 3px 12px rgba(0,0,0,0.24) !important;
     }
-    #live-profile p,
+    #live-profile .legacy-section-copy,
     #fan-app > .feature-panel p,
     #product > .feature-panel p,
     #ownership > .feature-panel p,
@@ -2823,7 +2834,7 @@ section[id]{
         0 20px 58px rgba(0,0,0,0.24),
         inset 0 1px 0 rgba(206,235,255,0.18) !important;
     }
-    #live-profile h2,
+    #live-profile .legacy-section-heading,
     #fan-app > .feature-panel h2,
     #product > .feature-panel h2,
     #ownership > .feature-panel h2,
@@ -2835,7 +2846,7 @@ section[id]{
       margin:0 0 14px !important;
       letter-spacing:0.003em;
     }
-    #live-profile p,
+    #live-profile .legacy-section-copy,
     #fan-app > .feature-panel p,
     #product > .feature-panel p,
     #ownership > .feature-panel p,
@@ -3023,10 +3034,10 @@ section[id]{
     </section>
 
     <!-- PRODUCT PROOF -->
-    <section class="wrap live-profile-section" id="live-profile">
-      <div class="section-flow">
-        <p class="live-profile-eyebrow">Live profile</p>
-        <h2>Certifyd Live Profile</h2>
+    <section class="wrap live-profile-section home-section" id="live-profile">
+      <div class="home-section-panel">
+        <p class="home-eyebrow">Live profile</p>
+        <h2 class="section-major-heading">Certifyd Live Profile</h2>
         <div class="live-profile-frame" role="region" aria-label="Live Certifyd profile embed">
           <a class="live-profile-open" href="https://public.certifyd.me/u/certifyd" target="_blank" rel="noreferrer">Open full profile ↗</a>
           <iframe
@@ -3043,98 +3054,100 @@ section[id]{
     </section>
 
     <!-- NETWORK -->
-    <section id="network" class="wrap declaration-section network-section">
-      <div class="section-flow">
-        <h2 class="network-headline">Run it. Or use it.</h2>
+    <section id="network" class="wrap home-section network-section">
+      <div class="home-section-panel">
+        <h2 class="section-major-heading">Run it. Or use it.</h2>
         <div class="declaration-copy">
-          <p class="network-body">Use Certifyd as a creator,<br />or run infrastructure and earn from network activity.</p>
-          <p class="network-body" style="margin-top:10px;">Powered by peer-to-peer infrastructure, creator ownership, and borderless payments.</p>
+          <p class="section-deck">Use Certifyd as a creator,<br />or run infrastructure and earn from network activity.</p>
+          <p class="section-deck">Powered by peer-to-peer infrastructure, creator ownership, and borderless payments.</p>
         </div>
-        <figure class="card-media raw-panel-media natural-media" aria-label="Certifyd creator distribution promo">
+        <figure class="card-media raw-panel-media natural-media network-media" aria-label="Certifyd creator distribution promo">
           <img src="images/certifyd-creators-web3-powered-20260607.png?v=20260607" alt="Certifyd Built for Creators Powered by You promo" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
 
     <!-- EARLY ACCESS -->
-    <section id="early-access" class="wrap">
-      <h2>Apply for Early Access</h2>
-      <p>
-        Certifyd is opening to creators, musicians, writers, publishers, and node operators.
-      </p>
+    <section id="early-access" class="wrap home-section">
+      <div class="home-section-panel early-access-panel">
+        <h2 class="section-major-heading">Apply for Early Access</h2>
+        <p class="section-deck">
+          Certifyd is opening to creators, musicians, writers, publishers, and node operators.
+        </p>
 
-      <div class="card" style="margin-top:20px;">
-        <form class="ea-form" id="early-access-form" action="#" method="post" data-endpoint="https://script.google.com/macros/s/AKfycbxO8lMdZTsPWvtEuTInZ1jRtuW854X_hde4gBSYXa1PktcT9bAuAhFR3Bwl_9lVqWENpw/exec">
-          <div class="ea-grid">
-            <label class="ea-field">
-              <span class="ea-label">Name</span>
-              <input class="ea-input" type="text" name="name" autocomplete="name" />
-            </label>
-            <label class="ea-field">
-              <span class="ea-label">Email</span>
-              <input class="ea-input" type="email" name="email" autocomplete="email" />
-            </label>
-          </div>
+        <div class="early-access-form-shell">
+          <form class="ea-form" id="early-access-form" action="#" method="post" data-endpoint="https://script.google.com/macros/s/AKfycbxO8lMdZTsPWvtEuTInZ1jRtuW854X_hde4gBSYXa1PktcT9bAuAhFR3Bwl_9lVqWENpw/exec">
+            <div class="ea-grid">
+              <label class="ea-field">
+                <span class="ea-label">Name</span>
+                <input class="ea-input" type="text" name="name" autocomplete="name" />
+              </label>
+              <label class="ea-field">
+                <span class="ea-label">Email</span>
+                <input class="ea-input" type="email" name="email" autocomplete="email" />
+              </label>
+            </div>
 
-          <label class="ea-field">
-            <span class="ea-label">Website / Domain</span>
-            <input class="ea-input" type="url" name="website" placeholder="https://yourdomain.com" />
-          </label>
-
-          <div class="ea-grid">
             <label class="ea-field">
-              <span class="ea-label">Role</span>
-              <select class="ea-select" name="role">
-                <option>Musician</option>
-                <option>Artist</option>
-                <option>Producer</option>
-                <option>Publisher</option>
-                <option>Label</option>
-                <option>Video creator</option>
-                <option>Developer</option>
-                <option>Creative team</option>
-              </select>
+              <span class="ea-label">Website / Domain</span>
+              <input class="ea-input" type="url" name="website" placeholder="https://yourdomain.com" />
             </label>
+
+            <div class="ea-grid">
+              <label class="ea-field">
+                <span class="ea-label">Role</span>
+                <select class="ea-select" name="role">
+                  <option>Musician</option>
+                  <option>Artist</option>
+                  <option>Producer</option>
+                  <option>Publisher</option>
+                  <option>Label</option>
+                  <option>Video creator</option>
+                  <option>Developer</option>
+                  <option>Creative team</option>
+                </select>
+              </label>
+              <label class="ea-field">
+                <span class="ea-label">Do you run a Bitcoin / Lightning node?</span>
+                <select class="ea-select" name="node_status">
+                  <option>Yes — Bitcoin Core + LND</option>
+                  <option>Yes — another Lightning implementation</option>
+                  <option>No but interested</option>
+                  <option>No</option>
+                </select>
+              </label>
+            </div>
+
             <label class="ea-field">
-              <span class="ea-label">Do you run a Bitcoin / Lightning node?</span>
-              <select class="ea-select" name="node_status">
-                <option>Yes — Bitcoin Core + LND</option>
-                <option>Yes — another Lightning implementation</option>
-                <option>No but interested</option>
+              <span class="ea-label">Are you comfortable testing early software?</span>
+              <select class="ea-select" name="testing_comfort">
+                <option>Yes</option>
+                <option>Somewhat</option>
                 <option>No</option>
               </select>
             </label>
-          </div>
 
-          <label class="ea-field">
-            <span class="ea-label">Are you comfortable testing early software?</span>
-            <select class="ea-select" name="testing_comfort">
-              <option>Yes</option>
-              <option>Somewhat</option>
-              <option>No</option>
-            </select>
-          </label>
+            <label class="ea-field">
+              <span class="ea-label">What do you want to publish with Certifyd?</span>
+              <textarea class="ea-textarea" name="publish_goals"></textarea>
+            </label>
 
-          <label class="ea-field">
-            <span class="ea-label">What do you want to publish with Certifyd?</span>
-            <textarea class="ea-textarea" name="publish_goals"></textarea>
-          </label>
-
-          <div class="form-cta">
-            <button class="btn primary" type="submit">Apply for Early Access</button>
-          </div>
-          <div id="early-access-status" class="ea-status" role="status" aria-live="polite"></div>
-        </form>
+            <div class="form-cta">
+              <button class="btn primary" type="submit">Apply for Early Access</button>
+            </div>
+            <div id="early-access-status" class="ea-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
       </div>
     </section>
 
     <!-- REGISTER NODE -->
-    <section id="register-node" class="wrap">
-      <div class="section-flow register-node-panel">
-        <p class="live-profile-eyebrow">Register Node</p>
-        <h2>Bring your creator node into the Certifyd Network.</h2>
-        <p class="network-body">Run infrastructure, publish creator profiles, support discovery, and help independent creators stay reachable without platform lock-in.</p>
-        <p class="network-body">No banks. No platforms. No lock-in.<br />Take your audience. Take your income.</p>
+    <section id="register-node" class="wrap home-section">
+      <div class="home-section-panel register-node-panel">
+        <p class="home-eyebrow">Register Node</p>
+        <h2 class="section-major-heading">Bring your creator node into the Certifyd Network.</h2>
+        <p class="section-deck">Run infrastructure, publish creator profiles, support discovery, and help independent creators stay reachable without platform lock-in.</p>
+        <p class="section-deck">No banks. No platforms. No lock-in.<br />Take your audience. Take your income.</p>
         <div class="register-node-actions">
           <a class="btn primary" href="/network.html" target="_blank" rel="noreferrer">Register Node</a>
           <a class="btn" href="#network">Learn about the network</a>
