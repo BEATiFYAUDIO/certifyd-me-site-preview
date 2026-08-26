@@ -556,6 +556,65 @@ section[id]{
       max-width:1120px;
       margin-inline:auto;
     }
+    .product-story{
+      width:100%;
+      max-width:1120px;
+      margin-inline:auto;
+    }
+    .section-band{
+      padding-block:clamp(44px, 6.4vw, 84px);
+      border-top:1px solid rgba(255,255,255,0.065);
+    }
+    .section-band:first-child{
+      padding-top:0;
+      border-top:0;
+    }
+    .section-band.alt{
+      margin-inline:calc(var(--pad) * -0.35);
+      padding-inline:calc(var(--pad) * 0.35);
+      background:linear-gradient(180deg, rgba(4,28,44,0.13), rgba(4,28,44,0.07));
+    }
+    .story-split{
+      display:grid;
+      grid-template-columns:minmax(0, 0.86fr) minmax(360px, 1.14fr);
+      gap:clamp(28px, 5vw, 72px);
+      align-items:center;
+    }
+    .story-split.reverse{
+      grid-template-columns:minmax(360px, 1.08fr) minmax(0, 0.92fr);
+    }
+    .story-split.reverse .story-media{
+      order:-1;
+    }
+    .story-copy{
+      display:grid;
+      gap:12px;
+      align-content:center;
+    }
+    .story-copy .hero-subheader,
+    .story-copy .distribution-card-title,
+    .story-copy .infra-subhead,
+    .story-copy .infra-close{
+      margin:0;
+    }
+    .story-copy .hero-subheader + .distribution-card-title{
+      margin-top:6px;
+    }
+    .story-media .card-media{
+      margin-top:0;
+    }
+    .statement-band{
+      text-align:center;
+      padding-block:clamp(50px, 7vw, 96px);
+    }
+    .statement-band .flow-divider{
+      align-items:center;
+      text-align:center;
+    }
+    .grow-band .story-copy{
+      max-width:760px;
+      margin-bottom:20px;
+    }
     .hero-grid::before{
       content:"";
       position:absolute;
@@ -576,6 +635,22 @@ section[id]{
     }
     @media (max-width: 900px){
       .hero-grid{ grid-template-columns:1fr; }
+      .section-band,
+      .section-band:first-child{
+        padding-block:clamp(30px, 8vw, 52px);
+      }
+      .section-band.alt{
+        margin-inline:calc(var(--pad) * -0.5);
+        padding-inline:calc(var(--pad) * 0.5);
+      }
+      .story-split,
+      .story-split.reverse{
+        grid-template-columns:1fr;
+        gap:18px;
+      }
+      .story-split.reverse .story-media{
+        order:0;
+      }
       .hero-media-stack{ margin-top:8px; }
       .hero-actions{ gap:10px; }
       .hero-actions .btn{ flex:1 1 220px; }
@@ -2711,50 +2786,66 @@ section[id]{
     <!-- HERO -->
     <section class="wrap" id="top">
       <div class="hero-grid">
-        <div>
-          <h1 class="hero-title"><span class="hero-title-line"><span class="hero-title-white">Certifyd</span> <span class="hero-title-orange">Music</span> <span class="hero-title-blue-light">&amp;</span></span><br><span class="hero-title-line"><span class="hero-title-blue-light">Content</span> <span class="hero-title-white">Distribution</span></span></h1>
+        <div class="product-story">
+          <div class="section-band hero-band">
+            <h1 class="hero-title"><span class="hero-title-line"><span class="hero-title-white">Certifyd</span> <span class="hero-title-orange">Music</span> <span class="hero-title-blue-light">&amp;</span></span><br><span class="hero-title-line"><span class="hero-title-blue-light">Content</span> <span class="hero-title-white">Distribution</span></span></h1>
 
-          <figure class="hero-main-image card-media" style="--media-zoom:1.045;" aria-label="Certifyd featured creators">
-            <img src="images/certifyd-main-image-edgefix-20260601.jpeg?v=20260601b" alt="Two music creators posing under stage lights" fetchpriority="high" decoding="async" />
-          </figure>
-          <p class="hero-recommendation">super star producers Vassal Benford &amp; Mally Mall recommend Certifyd for all music creators</p>
+            <figure class="hero-main-image card-media" style="--media-zoom:1.045;" aria-label="Certifyd featured creators">
+              <img src="images/certifyd-main-image-edgefix-20260601.jpeg?v=20260601b" alt="Two music creators posing under stage lights" fetchpriority="high" decoding="async" />
+            </figure>
+            <p class="hero-recommendation">super star producers Vassal Benford &amp; Mally Mall recommend Certifyd for all music creators</p>
 
-          <div class="hero-actions hero-cta">
-            <a class="btn" href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
-            <a class="btn primary" href="#early-access">Get Certifyd</a>
+            <div class="hero-actions hero-cta">
+              <a class="btn" href="https://fan.certifyd.me" target="_blank" rel="noreferrer">Discover</a>
+              <a class="btn primary" href="#early-access">Get Certifyd</a>
+            </div>
+            <h3 class="hero-subheader">Certifyd gives artists unlimited worldwide access to sovereign decentralized blockchain-powered distribution</h3>
           </div>
-          <h3 class="hero-subheader">Certifyd gives artists unlimited worldwide access to sovereign decentralized blockchain-powered distribution</h3>
-          <div id="how" class="flow-inline" style="margin-top:18px;">
+
+          <div id="how" class="section-band statement-band flow-inline">
             <h2 class="flow-divider">
               <span class="flow-line"><span>CREATE</span><span class="flow-arrow" aria-hidden="true">→</span><span>PUBLISH</span></span>
               <span class="flow-line"><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></span>
             </h2>
           </div>
-          <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
-          <div class="distribution-manifesto" style="margin-top:16px;">
-            <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
-            <figure class="card-media raw-panel-media logo-overlay-frame" style="--media-zoom:1.065; --logo-width:clamp(150px, 24%, 300px); --logo-top:16px; --logo-left:18px;" aria-label="Certifyd creator commerce infrastructure">
-              <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260602clean" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
-              <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-            </figure>
+
+          <div class="section-band alt story-split distribution-manifesto">
+            <div class="story-copy">
+              <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
+              <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
+            </div>
+            <div class="story-media">
+              <figure class="card-media raw-panel-media logo-overlay-frame" style="--media-zoom:1.065; --logo-width:clamp(150px, 24%, 300px); --logo-top:16px; --logo-left:18px;" aria-label="Certifyd creator commerce infrastructure">
+                <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260602clean" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
+                <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              </figure>
+            </div>
           </div>
-          <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
-          <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
-          <div class="infra-manifesto" style="margin-top:16px;">
-            <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
-            <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
-            <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
-              <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
-              <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-            </figure>
-            <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
+
+          <div class="section-band story-split reverse infra-manifesto">
+            <div class="story-copy">
+              <p class="payment-note"><span class="payment-note-icon" aria-hidden="true">₿</span>A fan pays. You receive money directly over Bitcoin Lightning.</p>
+              <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
+              <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
+              <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
+              <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
+            </div>
+            <div class="story-media">
+              <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
+                <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
+                <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              </figure>
+            </div>
           </div>
-          <h3 class="hero-subheader inner-rail">Accelerate your publishing earnings through the power of your own IP.</h3>
-          <div class="infra-manifesto" style="margin-top:16px;">
-            <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
-            <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
+
+          <div class="section-band alt grow-band infra-manifesto">
+            <div class="story-copy">
+              <h3 class="hero-subheader inner-rail">Accelerate your publishing earnings through the power of your own IP.</h3>
+              <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
+              <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
+            </div>
             <figure class="distribution-image-frame ip-group-grade card-media natural-media" aria-label="Creators in a Certifyd IP and publishing strategy room">
               <img src="images/ip-publishing-creators-20260605.jpeg?v=20260605" alt="Creators in a Certifyd IP and publishing strategy room" loading="lazy" decoding="async" />
             </figure>
