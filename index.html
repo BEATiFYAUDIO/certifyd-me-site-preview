@@ -763,6 +763,14 @@ section[id]{
     .commerce-grid figure{
       margin:0;
     }
+    .bitcoin-panel{
+      display:grid;
+      gap:clamp(18px, 3vw, 30px);
+    }
+    .bitcoin-panel .distribution-image-frame,
+    .home-section-panel > .distribution-image-frame{
+      margin-top:22px;
+    }
     @media(max-width:980px){
       .category-grid{
         grid-template-columns:1fr 1fr;
@@ -2958,35 +2966,18 @@ section[id]{
 
           <div id="how" class="home-section">
             <div class="home-section-panel lifecycle-panel">
-              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span><span>PROMOTE</span><span class="flow-arrow" aria-hidden="true">→</span><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span><span class="flow-arrow" aria-hidden="true">→</span><span>GROW</span></div>
-              <p class="home-copy" style="margin-inline:auto;">Certifyd connects the parts of a creator business that platforms keep separated.</p>
-            </div>
-          </div>
-
-          <div class="home-section">
-            <div class="home-section-panel">
-              <p class="home-eyebrow">MUSIC &amp; CONTENT DISTRIBUTION</p>
-              <h2 class="home-section-title">Worldwide Access.</h2>
-              <p class="home-copy">Your creator identity, commerce, and connections &mdash; available worldwide.</p>
-              <div class="distribution-grid" aria-label="Music and content distribution capabilities">
-                <article class="distribution-card"><h3>Publish</h3><p>Release content with your credits and context intact.</p></article>
-                <article class="distribution-card"><h3>Connect</h3><p>Link your profile, fans, commerce, and partners.</p></article>
-                <article class="distribution-card"><h3>Own</h3><p>Keep the audience relationship with your business.</p></article>
-              </div>
+              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span>CREATE</span><span class="flow-arrow" aria-hidden="true">→</span><span>PUBLISH</span><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></div>
             </div>
           </div>
 
           <div class="home-section">
             <div class="home-section-panel commerce-grid">
               <div>
-                <p class="home-eyebrow">BITCOIN-READY COMMERCE</p>
-                <h2 class="home-section-title">A Fan Pays. Your Business Keeps the Relationship.</h2>
-                <p class="home-copy">Connect fan support and purchases directly to your business with Bitcoin and Lightning.</p>
-                <p class="home-copy"><strong>Sell the work. Keep the relationship.</strong></p>
-                <div class="home-actions"><a class="btn primary" href="/services">Explore Bitcoin Checkout</a><a class="btn" href="./network.html">Explore Commerce Providers</a></div>
+                <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
+                <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
               </div>
-              <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
-                <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
+              <figure class="card-media raw-panel-media logo-overlay-frame" style="--media-zoom:1.065; --logo-width:clamp(150px, 24%, 300px); --logo-top:16px; --logo-left:18px;" aria-label="Certifyd creator commerce infrastructure">
+                <img class="raw-panel-image" src="images/creator-commerce-raw-20260601-edgefix.jpeg?v=20260602clean" alt="Certifyd distribution promo with creators and platform metrics" loading="lazy" decoding="async" />
                 <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
                 <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
               </figure>
@@ -2994,21 +2985,33 @@ section[id]{
           </div>
 
           <div class="home-section">
-            <div class="home-section-panel">
-              <p class="home-eyebrow">TRUSTED PARTNER DISCOVERY</p>
-              <h2 class="home-section-title">Find the Partners Your Business Needs.</h2>
-              <p class="home-copy">Discover trusted partners for every stage of your creator business.</p>
-              <div class="category-grid">
-                <article class="role-card"><h3>Promotion &amp; Media</h3><p>Promoters, publicists, agencies.</p></article>
-                <article class="role-card"><h3>Production</h3><p>Producers, designers, videographers.</p></article>
-                <article class="role-card"><h3>Distribution</h3><p>Distributors, publishers, labels.</p></article>
-                <article class="role-card"><h3>Retail</h3><p>Retail and product partners.</p></article>
-                <article class="role-card"><h3>Manufacturing</h3><p>Merchandise, physical media, packaging.</p></article>
-                <article class="role-card"><h3>Professional Services</h3><p>Lawyers, accountants, managers.</p></article>
-                <article class="role-card"><h3>Venues &amp; Events</h3><p>Venues, festivals, event partners.</p></article>
-                <article class="role-card"><h3>Technology</h3><p>Developers, platforms, infrastructure.</p></article>
-                <article class="role-card"><h3>Commerce Providers</h3><p>Payments, settlement, treasury, fulfillment.</p></article>
+            <div class="home-section-panel bitcoin-panel">
+              <div>
+                <h3 class="hero-subheader inner-rail">A fan pays. Artists earn. Instant Bitcoin Lightning payments. Worldwide distribution. Total ownership.</h3>
+                <h3 class="distribution-card-title">In 2026, We Changed the Game.</h3>
               </div>
+              <figure class="distribution-image-frame wallet-blue card-media logo-overlay-frame" style="--media-zoom:1.075; --logo-width:clamp(145px, 28%, 260px); --logo-top:18px; --logo-left:18px;" aria-label="Payment received via Bitcoin Lightning">
+                <img src="images/screenshots/payment-phone-new-20260601.jpeg?v=20260602clean" alt="Phone wallet screen showing payment received via Lightning" loading="lazy" decoding="async" />
+                <img class="media-logo-overlay" src="images/certifyd-logo-overlay.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <img class="media-logo-overlay-mobile" src="images/certifyd-logo-mobile-float-20260602.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+              </figure>
+              <div>
+                <p class="infra-subhead">Before Certifyd, creators depended on labels, platforms, and middlemen to reach audiences and monetize their work. In 2026, we changed that.</p>
+                <p class="infra-close">This is more than distribution.<br />This is independence at scale.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-section">
+            <div class="home-section-panel">
+              <div>
+                <h3 class="hero-subheader inner-rail">Accelerate your publishing earnings through the power of your own IP.</h3>
+                <h3 class="distribution-card-title">Grow Your IP and Earnings Worldwide</h3>
+                <p class="infra-subhead">Your music is more than content - it’s intellectual property with long-term value. Certifyd helps creators manage publishing, royalties, catalog performance, and long-term earnings while retaining creator rights.</p>
+              </div>
+              <figure class="distribution-image-frame ip-group-grade card-media natural-media" aria-label="Creators in a Certifyd IP and publishing strategy room">
+                <img src="images/ip-publishing-creators-20260605.jpeg?v=20260605" alt="Creators in a Certifyd IP and publishing strategy room" loading="lazy" decoding="async" />
+              </figure>
             </div>
           </div>
         </div>
