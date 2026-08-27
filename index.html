@@ -715,6 +715,9 @@ section[id]{
     .lifecycle-flow span{
       display:inline-flex;
     }
+    .lifecycle-row{
+      display:contents;
+    }
     .lifecycle-flow .flow-arrow{
       color:var(--certifyd-orange);
       letter-spacing:0;
@@ -810,7 +813,26 @@ section[id]{
         width:100%;
       }
       .lifecycle-flow{
+        display:grid;
+        grid-template-columns:1fr;
+        justify-items:start;
+        gap:clamp(10px, 3.6vw, 16px);
+        margin-top:0;
+        font-size:clamp(36px, 15vw, 58px);
+        line-height:.92;
+      }
+      .lifecycle-row{
+        display:flex;
+        align-items:center;
         justify-content:flex-start;
+        gap:clamp(10px, 3.4vw, 16px);
+        max-width:100%;
+      }
+      .lifecycle-row:last-child{
+        padding-left:clamp(28px, 10vw, 42px);
+      }
+      .lifecycle-flow .flow-arrow{
+        flex:0 0 auto;
       }
       .commerce-grid{
         gap:16px;
@@ -3022,14 +3044,14 @@ section[id]{
 
           <div id="how" class="home-section">
             <div class="home-section-panel lifecycle-panel">
-              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span>CREATE</span><span class="flow-arrow" aria-hidden="true">→</span><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></div>
+              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span class="lifecycle-row"><span>CREATE</span><span class="flow-arrow" aria-hidden="true">→</span></span><span class="lifecycle-row"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span><span>SELL</span></span><span class="lifecycle-row"><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></span></div>
             </div>
           </div>
 
           <div class="home-section">
             <div class="home-section-panel commerce-grid">
               <div>
-                <h3 class="hero-subheader inner-rail">Why Creators Choose Certifyd?</h3>
+                <h2 class="section-major-heading">Why Creators Choose Certifyd?</h2>
                 <p class="infra-subhead">No gatekeepers. No platform lock-in. Creator-to-fan commerce with audience independence.</p>
               </div>
               <figure class="card-media raw-panel-media logo-overlay-frame" style="--media-zoom:1.065; --logo-width:clamp(150px, 24%, 300px); --logo-top:16px; --logo-left:18px;" aria-label="Certifyd creator commerce infrastructure">
