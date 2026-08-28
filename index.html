@@ -722,6 +722,55 @@ section[id]{
       color:var(--certifyd-orange);
       letter-spacing:0;
     }
+    #how .home-section-panel.lifecycle-panel{
+      padding:clamp(18px, 3.2vw, 34px) 0;
+      border:0;
+      border-radius:0;
+      background:transparent;
+      box-shadow:none;
+      overflow:visible;
+    }
+    #how .home-section-panel.lifecycle-panel::before{
+      display:none;
+    }
+    #how .lifecycle-flow{
+      display:grid;
+      grid-template-columns:minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items:center;
+      justify-items:center;
+      gap:clamp(10px, 2vw, 22px);
+      width:min(100%, 920px);
+      margin:0 auto;
+      font-size:clamp(1.75rem, 4.6vw, 4.4rem);
+      line-height:1;
+      letter-spacing:-.045em;
+      text-align:center;
+    }
+    #how .lifecycle-step{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      min-width:0;
+      gap:clamp(5px, .8vw, 9px);
+      padding:clamp(8px, 1.4vw, 14px) clamp(6px, 1vw, 12px);
+      border-top:1px solid rgba(255,255,255,.10);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+    }
+    #how .lifecycle-word{
+      display:block;
+      white-space:nowrap;
+    }
+    #how .lifecycle-label{
+      display:block;
+      color:var(--text-secondary);
+      font-size:clamp(.72rem, 1.15vw, .95rem);
+      font-weight:760;
+      line-height:1.15;
+      letter-spacing:0;
+      white-space:nowrap;
+    }
     .distribution-grid,
     .category-grid{
       display:grid;
@@ -2638,11 +2687,11 @@ section[id]{
         padding:10px 0 18px;
       }
       #how.home-section{
-        margin-top:clamp(28px, 7vw, 40px);
-        margin-bottom:clamp(44px, 11vw, 60px);
+        margin-top:clamp(-10px, -2vw, -6px);
+        margin-bottom:clamp(24px, 6vw, 34px);
       }
       #how .home-section-panel.lifecycle-panel{
-        padding:clamp(10px, 3vw, 16px) 0;
+        padding:clamp(8px, 2vw, 12px) 0;
         border:0;
         border-radius:0;
         background:transparent;
@@ -2654,37 +2703,35 @@ section[id]{
       }
       #how .lifecycle-flow{
         display:grid;
-        grid-template-columns:1fr;
+        grid-template-columns:minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
         justify-items:center;
         align-items:center;
-        gap:clamp(8px, 2.6vw, 12px);
+        gap:clamp(5px, 1.9vw, 8px);
         margin-top:0;
         width:100%;
-        font-size:clamp(1.82rem, 7.4vw, 2.22rem);
-        line-height:1;
-        letter-spacing:-.04em;
+        font-size:clamp(1rem, 4.6vw, 1.22rem);
+        line-height:1.02;
+        letter-spacing:-.025em;
         text-align:center;
       }
-      #how .lifecycle-row{
-        display:grid;
-        grid-template-columns:minmax(0, max-content) auto minmax(0, max-content);
-        justify-content:center;
-        align-items:center;
-        gap:clamp(8px, 3vw, 14px);
-        width:min(100%, 276px);
+      #how .lifecycle-step{
+        width:100%;
         min-width:0;
+        gap:4px;
+        padding:8px 4px 9px;
+        border-top-color:rgba(255,255,255,.12);
+        border-bottom-color:rgba(255,255,255,.07);
       }
-      #how .lifecycle-row:last-child{
-        grid-template-columns:auto minmax(0, max-content);
-        padding-left:clamp(18px, 5vw, 28px);
+      #how .lifecycle-word{
+        white-space:normal;
       }
-      #how .lifecycle-row span:not(.flow-arrow){
-        min-width:0;
-        max-width:100%;
+      #how .lifecycle-label{
+        font-size:clamp(.58rem, 2.65vw, .68rem);
+        line-height:1.1;
         white-space:nowrap;
       }
       #how .lifecycle-flow .flow-arrow{
-        font-size:.7em;
+        font-size:1.1rem;
         line-height:1;
       }
       #how .flow-divider{
@@ -2779,10 +2826,7 @@ section[id]{
 
     @media (max-width: 430px){
       #how .lifecycle-flow{
-        font-size:clamp(1.72rem, 7.2vw, 2rem);
-      }
-      #how .lifecycle-row{
-        gap:clamp(8px, 3vw, 12px);
+        font-size:clamp(.94rem, 4.35vw, 1.08rem);
       }
       .hero-recommendation,
       .hero-subheader{
@@ -2793,19 +2837,21 @@ section[id]{
         left:calc(var(--pad) + env(safe-area-inset-left, 0px));
         right:auto;
         max-width:calc(100vw - (var(--pad) * 2));
-        width:44px;
-        min-width:44px;
-        height:44px;
-        min-height:44px;
+        width:32px;
+        min-width:32px;
+        height:48px;
+        min-height:48px;
         padding:0;
         display:inline-flex;
         align-items:center;
         justify-content:center;
         font-size:0;
+        border-radius:0 999px 999px 0;
+        transform:translateX(calc(-1 * var(--pad)));
       }
       .chat-launch::before{
         content:"?";
-        font-size:1.05rem;
+        font-size:0.95rem;
         font-weight:850;
         letter-spacing:-0.01em;
       }
@@ -3150,7 +3196,13 @@ section[id]{
 
           <div id="how" class="home-section">
             <div class="home-section-panel lifecycle-panel">
-              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span class="lifecycle-row"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span><span>SELL</span></span><span class="lifecycle-row"><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></span></div>
+              <div class="lifecycle-flow" aria-label="Creator business lifecycle">
+                <span class="lifecycle-step"><span class="lifecycle-word">OWN IT</span><span class="lifecycle-label">Your work</span></span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="lifecycle-step"><span class="lifecycle-word">SELL IT</span><span class="lifecycle-label">Direct to fans</span></span>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <span class="lifecycle-step"><span class="lifecycle-word">GET PAID</span><span class="lifecycle-label">On your terms</span></span>
+              </div>
             </div>
           </div>
 
