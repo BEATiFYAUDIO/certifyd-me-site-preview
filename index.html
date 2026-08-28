@@ -816,10 +816,10 @@ section[id]{
         display:grid;
         grid-template-columns:1fr;
         justify-items:start;
-        gap:clamp(10px, 3.6vw, 16px);
+        gap:clamp(8px, 3vw, 12px);
         margin-top:0;
-        font-size:clamp(36px, 15vw, 58px);
-        line-height:.92;
+        font-size:clamp(32px, 12vw, 50px);
+        line-height:1;
       }
       .lifecycle-row{
         display:flex;
@@ -2637,31 +2637,46 @@ section[id]{
       #how.flow-inline{
         padding:10px 0 18px;
       }
+      #how.home-section{
+        margin-top:clamp(28px, 7vw, 40px);
+        margin-bottom:clamp(44px, 11vw, 60px);
+      }
+      #how .home-section-panel.lifecycle-panel{
+        padding:clamp(10px, 3vw, 16px) 0;
+        border:0;
+        border-radius:0;
+        background:transparent;
+        box-shadow:none;
+        overflow:visible;
+      }
+      #how .home-section-panel.lifecycle-panel::before{
+        display:none;
+      }
       #how .lifecycle-flow{
         display:grid;
         grid-template-columns:1fr;
         justify-items:center;
         align-items:center;
-        gap:clamp(10px, 3.8vw, 16px);
+        gap:clamp(8px, 2.6vw, 12px);
         margin-top:0;
         width:100%;
-        font-size:clamp(2.2rem, 12.4vw, 3.25rem);
-        line-height:.96;
-        letter-spacing:-.055em;
+        font-size:clamp(1.82rem, 7.4vw, 2.22rem);
+        line-height:1;
+        letter-spacing:-.04em;
         text-align:center;
       }
       #how .lifecycle-row{
         display:grid;
-        grid-template-columns:minmax(0, max-content) auto;
+        grid-template-columns:minmax(0, max-content) auto minmax(0, max-content);
         justify-content:center;
         align-items:center;
-        gap:clamp(10px, 3.8vw, 18px);
-        width:100%;
+        gap:clamp(8px, 3vw, 14px);
+        width:min(100%, 276px);
         min-width:0;
       }
       #how .lifecycle-row:last-child{
-        grid-template-columns:minmax(0, max-content);
-        padding-left:clamp(28px, 8vw, 42px);
+        grid-template-columns:auto minmax(0, max-content);
+        padding-left:clamp(18px, 5vw, 28px);
       }
       #how .lifecycle-row span:not(.flow-arrow){
         min-width:0;
@@ -2669,7 +2684,7 @@ section[id]{
         white-space:nowrap;
       }
       #how .lifecycle-flow .flow-arrow{
-        font-size:.82em;
+        font-size:.7em;
         line-height:1;
       }
       #how .flow-divider{
@@ -2764,7 +2779,7 @@ section[id]{
 
     @media (max-width: 430px){
       #how .lifecycle-flow{
-        font-size:clamp(2rem, 11.5vw, 2.75rem);
+        font-size:clamp(1.72rem, 7.2vw, 2rem);
       }
       #how .lifecycle-row{
         gap:clamp(8px, 3vw, 12px);
@@ -2775,7 +2790,24 @@ section[id]{
         overflow-wrap:break-word;
       }
       .chat-launch{
+        left:calc(var(--pad) + env(safe-area-inset-left, 0px));
+        right:auto;
         max-width:calc(100vw - (var(--pad) * 2));
+        width:44px;
+        min-width:44px;
+        height:44px;
+        min-height:44px;
+        padding:0;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-size:0;
+      }
+      .chat-launch::before{
+        content:"?";
+        font-size:1.05rem;
+        font-weight:850;
+        letter-spacing:-0.01em;
       }
     }
 
@@ -3118,7 +3150,7 @@ section[id]{
 
           <div id="how" class="home-section">
             <div class="home-section-panel lifecycle-panel">
-              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span class="lifecycle-row"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span></span><span class="lifecycle-row"><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span></span><span class="lifecycle-row"><span>GET PAID</span></span></div>
+              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span class="lifecycle-row"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span><span>SELL</span></span><span class="lifecycle-row"><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></span></div>
             </div>
           </div>
 
