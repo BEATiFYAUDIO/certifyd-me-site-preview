@@ -829,7 +829,7 @@ section[id]{
         max-width:100%;
       }
       .lifecycle-row:last-child{
-        padding-left:clamp(28px, 10vw, 42px);
+        padding-left:clamp(34px, 11vw, 48px);
       }
       .lifecycle-flow .flow-arrow{
         flex:0 0 auto;
@@ -2652,18 +2652,16 @@ section[id]{
       }
       #how .lifecycle-row{
         display:grid;
-        grid-template-columns:minmax(0, max-content) auto minmax(0, max-content);
+        grid-template-columns:minmax(0, max-content) auto;
         justify-content:center;
         align-items:center;
         gap:clamp(10px, 3.8vw, 18px);
         width:100%;
         min-width:0;
       }
-      #how .lifecycle-row:first-child{
-        grid-template-columns:minmax(0, max-content) auto;
-      }
       #how .lifecycle-row:last-child{
-        grid-template-columns:auto minmax(0, max-content);
+        grid-template-columns:minmax(0, max-content);
+        padding-left:clamp(28px, 8vw, 42px);
       }
       #how .lifecycle-row span:not(.flow-arrow){
         min-width:0;
@@ -3120,7 +3118,7 @@ section[id]{
 
           <div id="how" class="home-section">
             <div class="home-section-panel lifecycle-panel">
-              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span class="lifecycle-row"><span>CREATE</span><span class="flow-arrow" aria-hidden="true">→</span></span><span class="lifecycle-row"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span><span>SELL</span></span><span class="lifecycle-row"><span class="flow-arrow" aria-hidden="true">→</span><span>GET PAID</span></span></div>
+              <div class="lifecycle-flow" aria-label="Creator business lifecycle"><span class="lifecycle-row"><span>PUBLISH</span><span class="flow-arrow" aria-hidden="true">→</span></span><span class="lifecycle-row"><span>SELL</span><span class="flow-arrow" aria-hidden="true">→</span></span><span class="lifecycle-row"><span>GET PAID</span></span></div>
             </div>
           </div>
 
